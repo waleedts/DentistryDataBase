@@ -15,11 +15,11 @@ public class mm extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/first_page/GUI.fxml"));
-            System.out.println(getClass());
-           /* Scene scene = new Scene(root, 400, 400);
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI.fxml"));
+           // System.out.println(getClass().getResource("/first_page/GUI.fxml"));
+            Scene scene = new Scene(root, 400, 400);
             primaryStage.setScene(scene);
-            primaryStage.show();*/
+            primaryStage.show();
         }catch (Exception e){
             System.out.println(e.fillInStackTrace());
         }
