@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.thirdPage.ThirdPageGUI">
+   <children>
+      <ImageView fitHeight="135.0" fitWidth="118.0" layoutX="247.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Desktop/project.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="255.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #1070AF;" text="SIGN UP" textFill="WHITE" />
+      <Button layoutX="255.0" layoutY="249.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #FF1943;" text="SIGN IN" textFill="WHITE" />
+      <Separator layoutX="208.0" layoutY="295.0" prefWidth="200.0" />
+      <Button layoutX="255.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Button" />
+   </children>
+</AnchorPane>
