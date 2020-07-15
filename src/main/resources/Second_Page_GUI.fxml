@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.secPage.Controller">
+   <Pane prefHeight="500.0" prefWidth="338.0" style="-fx-background-color: #1070AF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="44.0" layoutY="28.0" prefHeight="361.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF;">
+         <Circle fx:id="bigCurcle" fill="WHITE" layoutX="93.0" layoutY="60.0" radius="38.0" stroke="BLACK" strokeType="INSIDE" />
+         <Label layoutX="55.0" layoutY="109.0" text="THE Clinic Name" />
+         <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />
+         <Label layoutX="21.0" layoutY="164.0" text="Address:" />
+         <Label layoutX="79.0" layoutY="164.0" prefHeight="17.0" prefWidth="76.0" text="Label" />
+         <Label layoutX="21.0" layoutY="198.0" text="Phone:" />
+         <Label layoutX="65.0" layoutY="198.0" prefHeight="17.0" prefWidth="76.0" text="Label" />
+         <Label layoutX="21.0" layoutY="230.0" text="Special Extras:" />
+         <Circle fx:id="smallCurcle" fill="WHITE" layoutX="30.0" layoutY="319.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+         <Label layoutX="52.0" layoutY="311.0" text="Dentist in Charge:" />
+         <Label layoutX="52.0" layoutY="332.0" prefHeight="17.0" prefWidth="88.0" text="Label" />
+      </Pane>
+      <Button layoutX="64.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" style="-fx-background-color: #FF1493;" text="BOOK NOW" textFill="WHITE" />
+   </Pane>
+</AnchorPane>
