@@ -2,6 +2,15 @@
 
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.control.Button?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.Controller">
 </AnchorPane>
 
+<!--
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=301383074594617&autoLogAppEvents=1" nonce="jItQ1sAM"></script>
+Step 3: Place this code wherever you want the plugin to appear on your page.
+
+
+-->
