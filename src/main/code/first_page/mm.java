@@ -24,6 +24,5 @@ public class mm extends Application {
         }catch (Exception e){
             e.printStackTrace();
         }
-
     }
 }

@@ -9,9 +9,9 @@
    <Pane prefHeight="400.0" prefWidth="154.0" style="-fx-background-color: #1070AF;">
       <Rectangle fx:id="rec" arcHeight="75.0" arcWidth="75.0" fill="WHITE" height="114.0" layoutX="30.0" layoutY="40.0" pickOnBounds="true" stroke="BLACK" strokeType="INSIDE" width="95.0" />
       <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="30.0" layoutY="208.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: #1070AF;" text="Account Info" textAlignment="CENTER" />
-      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />
+<!--      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />-->
       <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="39.0" layoutY="254.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1070AF;" text="Bills" textAlignment="CENTER" />
-      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />
+<!--      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />-->
       <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="39.0" layoutY="303.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1070AF;" text="Sign Out" textAlignment="CENTER" />
    </Pane>
 
@@ -25,5 +25,8 @@
          </items>
       </MenuButton>
    </Pane>
-   <JFXScrollPane layoutX="154.0" layoutY="45.0" prefHeight="357.0" prefWidth="446.0" />
+   <JFXScrollPane layoutX="154.0" layoutY="45.0" prefHeight="357.0" prefWidth="446.0">
+      <children>
+         <JFXListView fx:id="list" prefHeight="200.0" prefWidth="200.0" />
+      </children></JFXScrollPane>
 </AnchorPane>
