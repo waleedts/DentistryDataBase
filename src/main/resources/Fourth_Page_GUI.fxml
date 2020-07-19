@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.*?>
-<?import javafx.scene.effect.*?>
-<?import de.jensd.fx.glyphs.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.shape.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.Four.FourthPageGUI">
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.Four.Controller">
    <children>
       <Pane prefHeight="462.0" prefWidth="301.0" style="-fx-background-color: #1070AF;">
          <children>
@@ -26,7 +21,7 @@
             <TextField layoutX="40.0" layoutY="240.0" prefHeight="27.0" prefWidth="218.0" style="-fx-background-color: #1070AF; -fx-border-color: #FFFFFF;" />
             <Label layoutX="40.0" layoutY="286.0" text="Password" textFill="WHITE" />
             <TextField layoutX="40.0" layoutY="303.0" prefHeight="27.0" prefWidth="218.0" style="-fx-background-color: #1070AF; -fx-border-color: #FFFFFF;" />
-            <Button layoutX="82.0" layoutY="371.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FF1194;" text="SIGN UP" textFill="WHITE" />
+            <JFXButton layoutX="82.0" layoutY="371.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FF1194;" text="SIGN UP" textFill="WHITE" />
          </children>
       </Pane>
       <Label layoutX="328.0" layoutY="29.0" prefHeight="17.0" prefWidth="63.0" text="First Name">
@@ -66,7 +61,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button layoutX="434.0" layoutY="401.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #1070AF;" text="UPLOAD" textFill="WHITE" />
+      <JFXButton layoutX="434.0" layoutY="401.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #1070AF;" text="UPLOAD" textFill="WHITE" />
       <DatePicker layoutX="328.0" layoutY="294.0" prefHeight="27.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
    </children>
 </AnchorPane>

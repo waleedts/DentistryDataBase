@@ -11,16 +11,20 @@ import java.util.Objects;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("sample.fxml")));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
+    public void start(Stage primaryStage) {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Third_Page_GUI.fxml")));
+            primaryStage.setTitle("W.W Dentistry Service");
+            primaryStage.setScene(new Scene(root, 300, 275));
+            primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
 
     }
-
-
-    public static void main(String[] args) {
+    public static void main (String[]args){
         launch(args);
     }
 }

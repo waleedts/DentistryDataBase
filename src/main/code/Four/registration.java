@@ -18,7 +18,6 @@ public class registration extends Application {
     public void start(Stage primaryStage) {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fourth_Page_GUI.fxml")));
-            // System.out.println(getClass().getResource("/main.java.first_page/First_Page_GUI.fxml"));
             Scene scene = new Scene(root, 400, 400);
             primaryStage.setScene(scene);
             primaryStage.show();
