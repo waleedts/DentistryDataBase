@@ -1,0 +1,692 @@
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/compiler.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,16 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="CompilerConfiguration">
+-    <annotationProcessing>
+-      <profile name="Maven default annotation processors profile" enabled="true">
+-        <sourceOutputDir name="target/generated-sources/annotations" />
+-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+-        <outputRelativeToContentRoot value="true" />
+-        <module name="DentistryDataBase" />
+-      </profile>
+-    </annotationProcessing>
+-    <bytecodeTargetLevel>
+-      <module name="DentistryDataBase" target="8" />
+-    </bytecodeTargetLevel>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/misc.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,19 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="FrameworkDetectionExcludesConfiguration">
+-    <file type="web" url="file://$PROJECT_DIR$" />
+-  </component>
+-  <component name="JavaScriptSettings">
+-    <option name="languageLevel" value="ES6" />
+-  </component>
+-  <component name="MavenProjectsManager">
+-    <option name="originalFiles">
+-      <list>
+-        <option value="$PROJECT_DIR$/pom.xml" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.gitignore	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/.gitignore	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,8 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+Index: .idea/libraries/Selenium.xml
+===================================================================
+--- .idea/libraries/Selenium.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/libraries/Selenium.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,29 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Selenium" type="repository">
+-    <properties maven-id="org.seleniumhq.selenium:selenium-java:3.141.59" />
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar!/" />
+-      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES />
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/encodings.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/encodings.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Encoding">
+-    <file url="file://$PROJECT_DIR$/src" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dataSources.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/dataSources.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,12 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+-    <data-source source="LOCAL" name="DentistDataBase" uuid="a8d2e0d0-2113-40cc-9e71-67d8fb8dcfa9">
+-      <driver-ref>oracle</driver-ref>
+-      <synchronize>true</synchronize>
+-      <auto-commit>false</auto-commit>
+-      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+-      <jdbc-url>jdbc:oracle:thin:@173.249.51.94:49161:XE</jdbc-url>
+-    </data-source>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .github/workflows/maven.yml
+===================================================================
+--- .github/workflows/maven.yml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .github/workflows/maven.yml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,24 +0,0 @@
+-# This workflow will build a Java project with Maven
+-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+-
+-name: Java CI with Maven
+-
+-on:
+-  push:
+-    branches: [ master ]
+-  pull_request:
+-    branches: [ master ]
+-
+-jobs:
+-  build:
+-
+-    runs-on: ubuntu-latest
+-
+-    steps:
+-    - uses: actions/checkout@v2
+-    - name: Set up JDK 14
+-      uses: actions/setup-java@v1
+-      with:
+-        java-version: 14
+-    - name: Build with Maven
+-      run: mvn -B package --file pom.xml
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/vcs.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/modules.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/DentistryDataBase.iml" filepath="$PROJECT_DIR$/.idea/DentistryDataBase.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/libraries/Restfb.xml
+===================================================================
+--- .idea/libraries/Restfb.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/libraries/Restfb.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,10 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Restfb" type="repository">
+-    <properties maven-id="com.restfb:restfb:3.7.0" />
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/com/restfb/restfb/3.7.0/restfb-3.7.0.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES />
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/DentistryDataBase.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/DentistryDataBase.iml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/DentistryDataBase.iml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+-      <excludeFolder url="file://$MODULE_DIR$/out" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-    <orderEntry type="library" name="Selenium" level="project" />
+-    <orderEntry type="library" name="jfoenix" level="project" />
+-    <orderEntry type="library" name="javafx" level="project" />
+-    <orderEntry type="library" name="Restfb" level="project" />
+-    <orderEntry type="library" name="FontAwesomeFX" level="project" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/libraries/javafx.xml
+===================================================================
+--- .idea/libraries/javafx.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/libraries/javafx.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,16 +0,0 @@
+-<component name="libraryTable">
+-  <library name="javafx">
+-    <CLASSES>
+-      <root url="jar://$PATH_TO_FX$/javafx-swt.jar!/" />
+-      <root url="jar://$PATH_TO_FX$/javafx.base.jar!/" />
+-      <root url="jar://$PATH_TO_FX$/javafx.controls.jar!/" />
+-      <root url="jar://$PATH_TO_FX$/javafx.fxml.jar!/" />
+-      <root url="jar://$PATH_TO_FX$/javafx.graphics.jar!/" />
+-      <root url="jar://$PATH_TO_FX$/javafx.media.jar!/" />
+-      <root url="jar://$PATH_TO_FX$/javafx.swing.jar!/" />
+-      <root url="jar://$PATH_TO_FX$/javafx.web.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES />
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/jfoenix.xml
+===================================================================
+--- .idea/libraries/jfoenix.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/libraries/jfoenix.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,10 +0,0 @@
+-<component name="libraryTable">
+-  <library name="jfoenix" type="repository">
+-    <properties maven-id="com.jfoenix:jfoenix:9.0.8" />
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/com/jfoenix/jfoenix/9.0.8/jfoenix-9.0.8.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES />
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/jarRepositories.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/jarRepositories.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,20 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RemoteRepositoriesConfiguration">
+-    <remote-repository>
+-      <option name="id" value="central" />
+-      <option name="name" value="Central Repository" />
+-      <option name="url" value="https://repo.maven.apache.org/maven2" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="central" />
+-      <option name="name" value="Maven Central repository" />
+-      <option name="url" value="https://repo1.maven.org/maven2" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="jboss.community" />
+-      <option name="name" value="JBoss Community repository" />
+-      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+-    </remote-repository>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/libraries/FontAwesomeFX.xml
+===================================================================
+--- .idea/libraries/FontAwesomeFX.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ .idea/libraries/FontAwesomeFX.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
+@@ -1,10 +0,0 @@
+-<component name="libraryTable">
+-  <library name="FontAwesomeFX" type="repository">
+-    <properties maven-id="de.jensd:fontawesomefx:8.9" />
+-    <CLASSES>
+-      <root url="jar://$MAVEN_REPOSITORY$/de/jensd/fontawesomefx/8.9/fontawesomefx-8.9.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES />
+-  </library>
+-</component>
+\ No newline at end of file
+Index: src/main/resources/Third_Page_GUI.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.image.*?>\r\n<?import java.lang.*?>\r\n<?import java.util.*?>\r\n<?import javafx.scene.*?>\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.layout.*?>\r\n\r\n\r\n<AnchorPane prefHeight=\"400.0\" prefWidth=\"600.0\" style=\"-fx-background-color: #FFFFFF;\" xmlns=\"http://javafx.com/javafx/8\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"main.code.thirdPage.ThirdPageGUI\">\r\n   <children>\r\n      <ImageView fitHeight=\"135.0\" fitWidth=\"118.0\" layoutX=\"247.0\" layoutY=\"23.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../../../../../Desktop/project.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Button layoutX=\"255.0\" layoutY=\"200.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"106.0\" style=\"-fx-background-color: #1070AF;\" text=\"SIGN UP\" textFill=\"WHITE\" />\r\n      <Button layoutX=\"255.0\" layoutY=\"249.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"106.0\" style=\"-fx-background-color: #FF1943;\" text=\"SIGN IN\" textFill=\"WHITE\" />\r\n      <Separator layoutX=\"208.0\" layoutY=\"295.0\" prefWidth=\"200.0\" />\r\n      <Button layoutX=\"255.0\" layoutY=\"318.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"106.0\" text=\"Button\" />\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/Third_Page_GUI.fxml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ src/main/resources/Third_Page_GUI.fxml	(date 1594939595277)
+@@ -1,23 +1,20 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.image.*?>
+-<?import java.lang.*?>
+-<?import java.util.*?>
+-<?import javafx.scene.*?>
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.layout.*?>
+ 
+-
+-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.thirdPage.ThirdPageGUI">
+-   <children>
+-      <ImageView fitHeight="135.0" fitWidth="118.0" layoutX="247.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+-         <image>
+-            <Image url="@../../../../../Desktop/project.png" />
+-         </image>
+-      </ImageView>
+-      <Button layoutX="255.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #1070AF;" text="SIGN UP" textFill="WHITE" />
+-      <Button layoutX="255.0" layoutY="249.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #FF1943;" text="SIGN IN" textFill="WHITE" />
+-      <Separator layoutX="208.0" layoutY="295.0" prefWidth="200.0" />
+-      <Button layoutX="255.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Button" />
+-   </children>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.control.Separator?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.AnchorPane?>
++<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;"
++            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
++            fx:controller="main.code.thirdPage.Controller">
++   <ImageView fitHeight="135.0" fitWidth="118.0" layoutX="247.0" layoutY="23.0" pickOnBounds="true"
++              preserveRatio="true">
++   </ImageView>
++   <Button layoutX="255.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0"
++           style="-fx-background-color: #1070AF;" text="SIGN UP" textFill="WHITE"/>
++   <Button layoutX="255.0" layoutY="249.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0"
++           style="-fx-background-color: #FF1943;" text="SIGN IN" textFill="WHITE"/>
++   <Separator layoutX="208.0" layoutY="295.0" prefWidth="200.0"/>
++   <Button layoutX="255.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Button"/>
+ </AnchorPane>
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n    <groupId>DentistDataBase</groupId>\r\n    <artifactId>DentistDataBase</artifactId>\r\n    <version>1.0.0</version>\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.seleniumhq.selenium</groupId>\r\n            <artifactId>selenium-java</artifactId>\r\n            <version>3.141.59</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.jfoenix</groupId>\r\n            <artifactId>jfoenix</artifactId>\r\n            <version>9.0.8</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.restfb</groupId>\r\n            <artifactId>restfb</artifactId>\r\n            <version>3.7.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>de.jensd</groupId>\r\n            <artifactId>fontawesomefx</artifactId>\r\n            <version>8.9</version>\r\n        </dependency>\r\n        <!--\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx</artifactId>\r\n            <version>11</version>\r\n            <type>pom</type>\r\n        </dependency>-->\r\n\r\n    </dependencies>\r\n    <packaging>jar</packaging>\r\n    <build>\r\n        <sourceDirectory>src</sourceDirectory>\r\n    </build>\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>\r\n        <maven.compiler.source>8</maven.compiler.source>\r\n        <maven.compiler.target>8</maven.compiler.target>\r\n    </properties>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pom.xml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ pom.xml	(date 1595108603280)
+@@ -5,11 +5,7 @@
+     <artifactId>DentistDataBase</artifactId>
+     <version>1.0.0</version>
+     <dependencies>
+-        <dependency>
+-            <groupId>org.seleniumhq.selenium</groupId>
+-            <artifactId>selenium-java</artifactId>
+-            <version>3.141.59</version>
+-        </dependency>
++
+         <dependency>
+             <groupId>com.jfoenix</groupId>
+             <artifactId>jfoenix</artifactId>
+@@ -25,23 +21,45 @@
+             <artifactId>fontawesomefx</artifactId>
+             <version>8.9</version>
+         </dependency>
+-        <!--
+         <dependency>
+-            <groupId>org.openjfx</groupId>
++            <groupId>javafx</groupId>
+             <artifactId>javafx</artifactId>
+-            <version>11</version>
+-            <type>pom</type>
+-        </dependency>-->
+-
++            <scope>system</scope>
++            <version>11.0.2</version>
++            <systemPath>${user.home}/.jdks/javafx-sdk-11.0.2/lib/javafx.properties</systemPath>
++        </dependency>
++        <dependency>
++            <groupId>com.calendarfx</groupId>
++            <artifactId>view</artifactId>
++            <version>11.8.3</version>
++        </dependency>
++        <dependency>
++            <groupId>org.controlsfx</groupId>
++            <artifactId>controlsfx</artifactId>
++            <version>11.0.2</version>
++        </dependency>
+     </dependencies>
+     <packaging>jar</packaging>
++
+     <build>
+         <sourceDirectory>src</sourceDirectory>
++        <plugins>
++            <plugin>
++                <groupId>org.apache.maven.plugins</groupId>
++                <artifactId>maven-site-plugin</artifactId>
++                <version>3.3</version>
++            </plugin>
++            <plugin>
++                <groupId>org.apache.maven.plugins</groupId>
++                <artifactId>maven-project-info-reports-plugin</artifactId>
++                <version>3.1.0</version>
++            </plugin>
++        </plugins>
+     </build>
+     <properties>
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+-        <maven.compiler.source>8</maven.compiler.source>
+-        <maven.compiler.target>8</maven.compiler.target>
++        <maven.compiler.source>9</maven.compiler.source>
++        <maven.compiler.target>9</maven.compiler.target>
+     </properties>
+ </project>
+\ No newline at end of file
+Index: src/main/resources/Fourth_Page_GUI.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import de.jensd.fx.glyphs.fontawesome.*?>\r\n<?import javafx.scene.effect.*?>\r\n<?import de.jensd.fx.glyphs.*?>\r\n<?import javafx.scene.text.*?>\r\n<?import javafx.scene.image.*?>\r\n<?import javafx.scene.shape.*?>\r\n<?import java.lang.*?>\r\n<?import java.util.*?>\r\n<?import javafx.scene.*?>\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.layout.*?>\r\n\r\n<AnchorPane prefHeight=\"462.0\" prefWidth=\"600.0\" xmlns=\"http://javafx.com/javafx/8\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"main.code.Four.FourthPageGUI\">\r\n   <children>\r\n      <Pane prefHeight=\"462.0\" prefWidth=\"301.0\" style=\"-fx-background-color: #1070AF;\">\r\n         <children>\r\n            <Rectangle arcHeight=\"90.0\" arcWidth=\"70.0\" fill=\"WHITE\" height=\"145.0\" layoutX=\"77.0\" layoutY=\"36.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"128.0\" />\r\n            <ImageView fitHeight=\"130.0\" fitWidth=\"101.0\" layoutX=\"91.0\" layoutY=\"44.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../../../Desktop/project.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <Label layoutX=\"40.0\" layoutY=\"223.0\" text=\"User Name\" textFill=\"WHITE\" />\r\n            <TextField layoutX=\"40.0\" layoutY=\"240.0\" prefHeight=\"27.0\" prefWidth=\"218.0\" style=\"-fx-background-color: #1070AF; -fx-border-color: #FFFFFF;\" />\r\n            <Label layoutX=\"40.0\" layoutY=\"286.0\" text=\"Password\" textFill=\"WHITE\" />\r\n            <TextField layoutX=\"40.0\" layoutY=\"303.0\" prefHeight=\"27.0\" prefWidth=\"218.0\" style=\"-fx-background-color: #1070AF; -fx-border-color: #FFFFFF;\" />\r\n            <Button layoutX=\"82.0\" layoutY=\"371.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"120.0\" style=\"-fx-background-color: #FF1194;\" text=\"SIGN UP\" textFill=\"WHITE\" />\r\n         </children>\r\n      </Pane>\r\n      <Label layoutX=\"328.0\" layoutY=\"29.0\" prefHeight=\"17.0\" prefWidth=\"63.0\" text=\"First Name\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"12.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField layoutX=\"328.0\" layoutY=\"53.0\" prefHeight=\"25.0\" prefWidth=\"218.0\" style=\"-fx-background-color: #FFFFFF; -fx-border-color: #000000;\" />\r\n      <Label layoutX=\"328.0\" layoutY=\"91.0\" prefHeight=\"17.0\" prefWidth=\"63.0\" text=\"Last Name\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"12.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField layoutX=\"328.0\" layoutY=\"114.0\" prefHeight=\"25.0\" prefWidth=\"218.0\" style=\"-fx-background-color: #FFFFFF; -fx-border-color: #000000;\" />\r\n      <Label layoutX=\"328.0\" layoutY=\"151.0\" prefHeight=\"17.0\" prefWidth=\"63.0\" text=\"Address\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"12.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"328.0\" layoutY=\"207.0\" prefHeight=\"17.0\" prefWidth=\"101.0\" text=\"Phone Number\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"12.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField layoutX=\"328.0\" layoutY=\"174.0\" prefHeight=\"25.0\" prefWidth=\"218.0\" style=\"-fx-background-color: #FFFFFF; -fx-border-color: #000000;\" />\r\n      <TextField layoutX=\"328.0\" layoutY=\"230.0\" prefHeight=\"25.0\" prefWidth=\"218.0\" style=\"-fx-background-color: #FFFFFF; -fx-border-color: #000000;\" />\r\n      <Label layoutX=\"332.0\" layoutY=\"270.0\" prefHeight=\"17.0\" prefWidth=\"93.0\" text=\"Date Of Birth\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"12.0\" />\r\n         </font>\r\n      </Label>\r\n      <RadioButton layoutX=\"328.0\" layoutY=\"348.0\" mnemonicParsing=\"false\" style=\"-fx-background-color: #FFFFFF;\" text=\"Male\" />\r\n      <RadioButton layoutX=\"401.0\" layoutY=\"348.0\" mnemonicParsing=\"false\" style=\"-fx-background-color: #FFFFFF;\" text=\"Female\" />\r\n      <RadioButton layoutX=\"485.0\" layoutY=\"348.0\" mnemonicParsing=\"false\" style=\"-fx-background-color: #FFFFFF;\" text=\"Non-Binary\" />\r\n      <Label layoutX=\"328.0\" layoutY=\"405.0\" prefHeight=\"17.0\" prefWidth=\"93.0\" text=\"Profile Picture:\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"12.0\" />\r\n         </font>\r\n      </Label>\r\n      <Button layoutX=\"434.0\" layoutY=\"401.0\" mnemonicParsing=\"false\" prefHeight=\"27.0\" prefWidth=\"101.0\" style=\"-fx-background-color: #1070AF;\" text=\"UPLOAD\" textFill=\"WHITE\" />\r\n      <DatePicker layoutX=\"328.0\" layoutY=\"294.0\" prefHeight=\"27.0\" prefWidth=\"218.0\" style=\"-fx-background-color: #FFFFFF; -fx-border-color: #000000;\" />\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/Fourth_Page_GUI.fxml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ src/main/resources/Fourth_Page_GUI.fxml	(date 1594940115351)
+@@ -1,72 +1,59 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import de.jensd.fx.glyphs.fontawesome.*?>
+-<?import javafx.scene.effect.*?>
+-<?import de.jensd.fx.glyphs.*?>
+-<?import javafx.scene.text.*?>
+-<?import javafx.scene.image.*?>
+-<?import javafx.scene.shape.*?>
+-<?import java.lang.*?>
+-<?import java.util.*?>
+-<?import javafx.scene.*?>
+ <?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
+ <?import javafx.scene.layout.*?>
++<?import javafx.scene.shape.*?>
++<?import javafx.scene.text.*?>
+ 
+-<AnchorPane prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.Four.FourthPageGUI">
+-   <children>
+-      <Pane prefHeight="462.0" prefWidth="301.0" style="-fx-background-color: #1070AF;">
+-         <children>
+-            <Rectangle arcHeight="90.0" arcWidth="70.0" fill="WHITE" height="145.0" layoutX="77.0" layoutY="36.0" stroke="BLACK" strokeType="INSIDE" width="128.0" />
+-            <ImageView fitHeight="130.0" fitWidth="101.0" layoutX="91.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../../../../../Desktop/project.png" />
+-               </image>
+-            </ImageView>
+-            <Label layoutX="40.0" layoutY="223.0" text="User Name" textFill="WHITE" />
+-            <TextField layoutX="40.0" layoutY="240.0" prefHeight="27.0" prefWidth="218.0" style="-fx-background-color: #1070AF; -fx-border-color: #FFFFFF;" />
+-            <Label layoutX="40.0" layoutY="286.0" text="Password" textFill="WHITE" />
+-            <TextField layoutX="40.0" layoutY="303.0" prefHeight="27.0" prefWidth="218.0" style="-fx-background-color: #1070AF; -fx-border-color: #FFFFFF;" />
+-            <Button layoutX="82.0" layoutY="371.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FF1194;" text="SIGN UP" textFill="WHITE" />
+-         </children>
+-      </Pane>
+-      <Label layoutX="328.0" layoutY="29.0" prefHeight="17.0" prefWidth="63.0" text="First Name">
+-         <font>
+-            <Font name="System Bold" size="12.0" />
+-         </font>
+-      </Label>
+-      <TextField layoutX="328.0" layoutY="53.0" prefHeight="25.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+-      <Label layoutX="328.0" layoutY="91.0" prefHeight="17.0" prefWidth="63.0" text="Last Name">
+-         <font>
+-            <Font name="System Bold" size="12.0" />
+-         </font>
+-      </Label>
+-      <TextField layoutX="328.0" layoutY="114.0" prefHeight="25.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+-      <Label layoutX="328.0" layoutY="151.0" prefHeight="17.0" prefWidth="63.0" text="Address">
+-         <font>
+-            <Font name="System Bold" size="12.0" />
+-         </font>
+-      </Label>
+-      <Label layoutX="328.0" layoutY="207.0" prefHeight="17.0" prefWidth="101.0" text="Phone Number">
+-         <font>
+-            <Font name="System Bold" size="12.0" />
+-         </font>
+-      </Label>
+-      <TextField layoutX="328.0" layoutY="174.0" prefHeight="25.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+-      <TextField layoutX="328.0" layoutY="230.0" prefHeight="25.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+-      <Label layoutX="332.0" layoutY="270.0" prefHeight="17.0" prefWidth="93.0" text="Date Of Birth">
+-         <font>
+-            <Font name="System Bold" size="12.0" />
+-         </font>
+-      </Label>
+-      <RadioButton layoutX="328.0" layoutY="348.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Male" />
+-      <RadioButton layoutX="401.0" layoutY="348.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Female" />
+-      <RadioButton layoutX="485.0" layoutY="348.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Non-Binary" />
+-      <Label layoutX="328.0" layoutY="405.0" prefHeight="17.0" prefWidth="93.0" text="Profile Picture:">
+-         <font>
+-            <Font name="System Bold" size="12.0" />
+-         </font>
+-      </Label>
+-      <Button layoutX="434.0" layoutY="401.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #1070AF;" text="UPLOAD" textFill="WHITE" />
+-      <DatePicker layoutX="328.0" layoutY="294.0" prefHeight="27.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+-   </children>
++<AnchorPane prefHeight="462.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.Four.Controller">
++   <Pane prefHeight="462.0" prefWidth="301.0" style="-fx-background-color: #1070AF;">
++      <Rectangle arcHeight="90.0" arcWidth="70.0" fill="WHITE" height="145.0" layoutX="77.0" layoutY="36.0" stroke="BLACK" strokeType="INSIDE" width="128.0" />
++      <ImageView fitHeight="130.0" fitWidth="101.0" layoutX="91.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
++      </ImageView>
++      <Label layoutX="40.0" layoutY="223.0" text="User Name" textFill="WHITE" />
++      <TextField layoutX="40.0" layoutY="240.0" prefHeight="27.0" prefWidth="218.0" style="-fx-background-color: #1070AF; -fx-border-color: #FFFFFF;" />
++      <Label layoutX="40.0" layoutY="286.0" text="Password" textFill="WHITE" />
++      <TextField layoutX="40.0" layoutY="303.0" prefHeight="27.0" prefWidth="218.0" style="-fx-background-color: #1070AF; -fx-border-color: #FFFFFF;" />
++      <Button layoutX="82.0" layoutY="371.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FF1194;" text="SIGN UP" textFill="WHITE" />
++   </Pane>
++   <Label layoutX="328.0" layoutY="29.0" prefHeight="17.0" prefWidth="63.0" text="First Name">
++      <font>
++         <Font name="System Bold" size="12.0" />
++      </font>
++   </Label>
++   <TextField layoutX="328.0" layoutY="53.0" prefHeight="25.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
++   <Label layoutX="328.0" layoutY="91.0" prefHeight="17.0" prefWidth="63.0" text="Last Name">
++      <font>
++         <Font name="System Bold" size="12.0" />
++      </font>
++   </Label>
++   <TextField layoutX="328.0" layoutY="114.0" prefHeight="25.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
++   <Label layoutX="328.0" layoutY="151.0" prefHeight="17.0" prefWidth="63.0" text="Address">
++      <font>
++         <Font name="System Bold" size="12.0" />
++      </font>
++   </Label>
++   <Label layoutX="328.0" layoutY="207.0" prefHeight="17.0" prefWidth="101.0" text="Phone Number">
++      <font>
++         <Font name="System Bold" size="12.0" />
++      </font>
++   </Label>
++   <TextField layoutX="328.0" layoutY="174.0" prefHeight="25.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
++   <TextField layoutX="328.0" layoutY="230.0" prefHeight="25.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
++   <Label layoutX="332.0" layoutY="270.0" prefHeight="17.0" prefWidth="93.0" text="Date Of Birth">
++      <font>
++         <Font name="System Bold" size="12.0" />
++      </font>
++   </Label>
++   <RadioButton layoutX="328.0" layoutY="348.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Male" />
++   <RadioButton layoutX="401.0" layoutY="348.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Female" />
++   <RadioButton layoutX="485.0" layoutY="348.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Non-Binary" />
++   <Label layoutX="328.0" layoutY="405.0" prefHeight="17.0" prefWidth="93.0" text="Profile Picture:">
++      <font>
++         <Font name="System Bold" size="12.0" />
++      </font>
++   </Label>
++   <Button layoutX="434.0" layoutY="401.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #1070AF;" text="UPLOAD" textFill="WHITE" />
++   <DatePicker layoutX="328.0" layoutY="294.0" prefHeight="27.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+ </AnchorPane>
+Index: src/main/resources/sample.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.layout.*?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"400.0\" prefWidth=\"600.0\" xmlns=\"http://javafx.com/javafx/10.0.2-internal\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"main.code.Controller\">\r\n</AnchorPane>\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/sample.fxml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ src/main/resources/sample.fxml	(date 1594939595369)
+@@ -2,6 +2,7 @@
+ 
+ <?import javafx.scene.layout.*?>
+ 
+-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.Controller">
++<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
++            fx:controller="main.code.Controller">
+ </AnchorPane>
+ 
+Index: src/main/resources/Second_Page_GUI.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import com.jfoenix.controls.*?>\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.layout.*?>\r\n<?import javafx.scene.shape.*?>\r\n<AnchorPane prefHeight=\"500.0\" prefWidth=\"700.0\" xmlns=\"http://javafx.com/javafx/10.0.2-internal\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"main.code.secPage.Controller\">\r\n   <Pane prefHeight=\"500.0\" prefWidth=\"338.0\" style=\"-fx-background-color: #1070AF;\" AnchorPane.bottomAnchor=\"0.0\" AnchorPane.leftAnchor=\"0.0\" AnchorPane.topAnchor=\"0.0\">\r\n      <Pane layoutX=\"44.0\" layoutY=\"28.0\" prefHeight=\"361.0\" prefWidth=\"186.0\" style=\"-fx-background-color: #FFFFFF;\">\r\n         <Circle fx:id=\"clinicImageCircle\" fill=\"WHITE\" layoutX=\"93.0\" layoutY=\"60.0\" radius=\"38.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n         <Label layoutX=\"55.0\" layoutY=\"109.0\" text=\"THE Clinic Name\" />\r\n         <Separator layoutX=\"21.0\" layoutY=\"136.0\" prefHeight=\"2.0\" prefWidth=\"145.0\" />\r\n         <Label layoutX=\"21.0\" layoutY=\"164.0\" text=\"Address:\" />\r\n         <Label layoutX=\"79.0\" layoutY=\"164.0\" prefHeight=\"17.0\" prefWidth=\"76.0\" text=\"Label\" />\r\n         <Label layoutX=\"21.0\" layoutY=\"198.0\" text=\"Phone:\" />\r\n         <Label layoutX=\"65.0\" layoutY=\"198.0\" prefHeight=\"17.0\" prefWidth=\"76.0\" text=\"Label\" />\r\n         <Label layoutX=\"21.0\" layoutY=\"230.0\" text=\"Special Extras:\" />\r\n         <Circle fx:id=\"doctorImageCircle\" fill=\"WHITE\" layoutX=\"30.0\" layoutY=\"319.0\" radius=\"16.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n         <Label layoutX=\"52.0\" layoutY=\"311.0\" text=\"Dentist in Charge:\" />\r\n         <Label layoutX=\"52.0\" layoutY=\"332.0\" prefHeight=\"17.0\" prefWidth=\"88.0\" text=\"Label\" />\r\n      </Pane>\r\n\r\n      <Button layoutX=\"64.0\" layoutY=\"428.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"134.0\" style=\"-fx-background-color: #FF1493;\" text=\"BOOK NOW\" textFill=\"WHITE\" />\r\n   </Pane>\r\n   <JFXScrollPane layoutX=\"338.0\" layoutY=\"-2.0\" prefHeight=\"506.0\" prefWidth=\"362.0\" AnchorPane.bottomAnchor=\"0.0\" AnchorPane.rightAnchor=\"0.0\" AnchorPane.topAnchor=\"0.0\">\r\n      <children>\r\n         <JFXListView fx:id=\"postsList\" prefHeight=\"200.0\" prefWidth=\"200.0\" />\r\n      </children>\r\n   </JFXScrollPane>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/Second_Page_GUI.fxml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ src/main/resources/Second_Page_GUI.fxml	(date 1594940115175)
+@@ -4,25 +4,27 @@
+ <?import javafx.scene.control.*?>
+ <?import javafx.scene.layout.*?>
+ <?import javafx.scene.shape.*?>
+-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.secPage.Controller">
++
++<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.secPage.Controller">
+    <Pane prefHeight="500.0" prefWidth="338.0" style="-fx-background-color: #1070AF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+-      <Pane layoutX="44.0" layoutY="28.0" prefHeight="361.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF;">
++      <Pane layoutX="44.0" layoutY="28.0" prefHeight="361.0" prefWidth="186.0" style="-fx-background-color: white;">
+          <Circle fx:id="clinicImageCircle" fill="WHITE" layoutX="93.0" layoutY="60.0" radius="38.0" stroke="BLACK" strokeType="INSIDE" />
+          <Label layoutX="55.0" layoutY="109.0" text="THE Clinic Name" />
+          <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />
++         <JFXChipView layoutX="85.0" layoutY="220.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" />
+          <Label layoutX="21.0" layoutY="164.0" text="Address:" />
+          <Label layoutX="79.0" layoutY="164.0" prefHeight="17.0" prefWidth="76.0" text="Label" />
+          <Label layoutX="21.0" layoutY="198.0" text="Phone:" />
+          <Label layoutX="65.0" layoutY="198.0" prefHeight="17.0" prefWidth="76.0" text="Label" />
+          <Label layoutX="21.0" layoutY="230.0" text="Special Extras:" />
+-         <Circle fx:id="doctorImageCircle" fill="WHITE" layoutX="30.0" layoutY="319.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
++         <Circle fx:id="doctorImageCircle" fill="WHITE" layoutX="30.0" layoutY="330.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+          <Label layoutX="52.0" layoutY="311.0" text="Dentist in Charge:" />
+          <Label layoutX="52.0" layoutY="332.0" prefHeight="17.0" prefWidth="88.0" text="Label" />
+       </Pane>
+ 
+       <Button layoutX="64.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" style="-fx-background-color: #FF1493;" text="BOOK NOW" textFill="WHITE" />
+    </Pane>
+-   <JFXScrollPane layoutX="338.0" layoutY="-2.0" prefHeight="506.0" prefWidth="362.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
++   <JFXScrollPane layoutX="338.0" layoutY="-2.0" prefHeight="506.0" prefWidth="362.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+       <children>
+          <JFXListView fx:id="postsList" prefHeight="200.0" prefWidth="200.0" />
+       </children>
+Index: src/main/resources/First_Page_GUI.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import com.jfoenix.controls.*?>\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.layout.*?>\r\n<?import javafx.scene.shape.*?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"400.0\" prefWidth=\"600.0\" xmlns=\"http://javafx.com/javafx/10.0.2-internal\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"main.code.first_page.controller\">\r\n   <Pane prefHeight=\"400.0\" prefWidth=\"154.0\" style=\"-fx-background-color: #1070AF;\">\r\n      <Rectangle fx:id=\"rec\" arcHeight=\"75.0\" arcWidth=\"75.0\" fill=\"WHITE\" height=\"114.0\" layoutX=\"30.0\" layoutY=\"40.0\" pickOnBounds=\"true\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"95.0\" />\r\n      <JFXButton alignment=\"CENTER\" buttonType=\"RAISED\" layoutX=\"30.0\" layoutY=\"208.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"95.0\" style=\"-fx-background-color: #1070AF;\" text=\"Account Info\" textAlignment=\"CENTER\" />\r\n<!--      <Separator layoutX=\"21.0\" layoutY=\"136.0\" prefHeight=\"2.0\" prefWidth=\"145.0\" />-->\r\n      <JFXButton alignment=\"CENTER\" buttonType=\"RAISED\" layoutX=\"39.0\" layoutY=\"254.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"80.0\" style=\"-fx-background-color: #1070AF;\" text=\"Bills\" textAlignment=\"CENTER\" />\r\n<!--      <Separator layoutX=\"21.0\" layoutY=\"136.0\" prefHeight=\"2.0\" prefWidth=\"145.0\" />-->\r\n      <JFXButton alignment=\"CENTER\" buttonType=\"RAISED\" layoutX=\"39.0\" layoutY=\"303.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"80.0\" style=\"-fx-background-color: #1070AF;\" text=\"Sign Out\" textAlignment=\"CENTER\" />\r\n   </Pane>\r\n\r\n   <Pane layoutX=\"154.0\" prefHeight=\"45.0\" prefWidth=\"446.0\" style=\"-fx-background-color: #1077BB;\">\r\n      <JFXTextField fx:id=\"search\" layoutX=\"67.0\" layoutY=\"10.0\" prefHeight=\"25.0\" prefWidth=\"154.0\" promptText=\"\uD83D\uDD0D\" style=\"-fx-background-color: white;\" />\r\n      <JFXButton layoutX=\"236.0\" layoutY=\"10.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"69.0\" style=\"-fx-background-color: #1077BB;\" text=\"\uD83D\uDD0D\" textFill=\"WHITE\" />\r\n      <MenuButton layoutX=\"296.0\" layoutY=\"10.0\" mnemonicParsing=\"false\" prefHeight=\"25.0\" prefWidth=\"50.0\" style=\"-fx-background-color: #1077BB; -fx-mark-color: white;\" text=\"All\" textFill=\"WHITE\">\r\n         <items>\r\n            <MenuItem mnemonicParsing=\"false\" text=\"Action 1\" />\r\n            <MenuItem mnemonicParsing=\"false\" text=\"Action 2\" />\r\n         </items>\r\n      </MenuButton>\r\n   </Pane>\r\n   <JFXScrollPane layoutX=\"154.0\" layoutY=\"45.0\" prefHeight=\"357.0\" prefWidth=\"446.0\">\r\n      <children>\r\n         <JFXListView fx:id=\"list\" prefHeight=\"200.0\" prefWidth=\"200.0\" />\r\n      </children></JFXScrollPane>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/First_Page_GUI.fxml	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ src/main/resources/First_Page_GUI.fxml	(date 1594940115226)
+@@ -5,7 +5,7 @@
+ <?import javafx.scene.layout.*?>
+ <?import javafx.scene.shape.*?>
+ 
+-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.first_page.controller">
++<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.first_page.controller">
+    <Pane prefHeight="400.0" prefWidth="154.0" style="-fx-background-color: #1070AF;">
+       <Rectangle fx:id="rec" arcHeight="75.0" arcWidth="75.0" fill="WHITE" height="114.0" layoutX="30.0" layoutY="40.0" pickOnBounds="true" stroke="BLACK" strokeType="INSIDE" width="95.0" />
+       <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="30.0" layoutY="208.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: #1070AF;" text="Account Info" textAlignment="CENTER" />
+@@ -27,6 +27,6 @@
+    </Pane>
+    <JFXScrollPane layoutX="154.0" layoutY="45.0" prefHeight="357.0" prefWidth="446.0">
+       <children>
+-         <JFXListView fx:id="list" prefHeight="200.0" prefWidth="200.0" />
++         <JFXListView fx:id="list" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
+       </children></JFXScrollPane>
+ </AnchorPane>
+Index: src/main/code/Four/registration.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main.code.Four;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.util.Objects;\r\n\r\npublic class registration extends Application {\r\n\r\n    public static void main(String[] args) {\r\n        launch(args);\r\n    }\r\n\r\n    @Override\r\n    public void start(Stage primaryStage) {\r\n        try {\r\n            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(\"Fourth_Page_GUI.fxml\")));\r\n            // System.out.println(getClass().getResource(\"/main.java.first_page/First_Page_GUI.fxml\"));\r\n            Scene scene = new Scene(root, 400, 400);\r\n            primaryStage.setScene(scene);\r\n            primaryStage.show();\r\n        }catch (Exception e){\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/code/Four/registration.java	(revision 3f11ef8f8c6692cf3fc4d36cae65adc1a3548e85)
++++ src/main/code/Four/registration.java	(date 1594931489234)
+@@ -18,7 +18,7 @@
+     public void start(Stage primaryStage) {
+         try {
+             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fourth_Page_GUI.fxml")));
+-            // System.out.println(getClass().getResource("/main.java.first_page/First_Page_GUI.fxml"));
++//             System.out.println(getClass().getClassLoader().getResource("Fourth_Page_GUI.fxml"));
+             Scene scene = new Scene(root, 400, 400);
+             primaryStage.setScene(scene);
+             primaryStage.show();

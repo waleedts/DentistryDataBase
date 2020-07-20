@@ -1,6 +1,6 @@
 package main.code.requirements;
 
-public class Patient extends User{
+public class Patient {
     private String bloodType;
     private String allergies;
     private int cost;

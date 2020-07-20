@@ -6,9 +6,9 @@
     <version>1.0.0</version>
     <dependencies>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.4.5</version>
         </dependency>
         <dependency>
             <groupId>com.jfoenix</groupId>
@@ -20,28 +20,46 @@
             <artifactId>restfb</artifactId>
             <version>3.7.0</version>
         </dependency>
+
         <dependency>
             <groupId>de.jensd</groupId>
             <artifactId>fontawesomefx</artifactId>
             <version>8.9</version>
         </dependency>
-        <!--
         <dependency>
-            <groupId>org.openjfx</groupId>
+            <groupId>javafx</groupId>
             <artifactId>javafx</artifactId>
-            <version>11</version>
-            <type>pom</type>
-        </dependency>-->
-
+            <scope>system</scope>
+            <version>11.0.2</version>
+            <systemPath>${user.home}/.jdks/javafx-sdk-11.0.2/lib/javafx.properties</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.calendarfx</groupId>
+            <artifactId>view</artifactId>
+            <version>11.8.3</version>
+        </dependency>
     </dependencies>
     <packaging>jar</packaging>
+
     <build>
         <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+        </plugins>
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>9</maven.compiler.source>
+        <maven.compiler.target>9</maven.compiler.target>
     </properties>
 </project>

@@ -11,6 +11,14 @@
       <root url="jar://$PATH_TO_FX$/javafx.web.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PATH_TO_FX$/src.zip!/javafx.base" />
+      <root url="jar://$PATH_TO_FX$/src.zip!/javafx.controls" />
+      <root url="jar://$PATH_TO_FX$/src.zip!/javafx.fxml" />
+      <root url="jar://$PATH_TO_FX$/src.zip!/javafx.graphics" />
+      <root url="jar://$PATH_TO_FX$/src.zip!/javafx.media" />
+      <root url="jar://$PATH_TO_FX$/src.zip!/javafx.swing" />
+      <root url="jar://$PATH_TO_FX$/src.zip!/javafx.web" />
+    </SOURCES>
   </library>
 </component>

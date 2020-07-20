@@ -9,5 +9,7 @@ public class Doctor extends User{
     public int getSalary(){
         return salary;
     }
-
+    public Doctor(String firstName,String lastName,String userName){
+        super(firstName,lastName,userName);
+    }
 }

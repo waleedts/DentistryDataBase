@@ -1,34 +1,47 @@
 package main.code.requirements;
 
-import java.awt.*;
+
+import javafx.scene.image.Image;
 
 public class Clinic {
     private String name;
-    private int phoneNumber;
-    private String city;
-    private String  street;
+    private String phoneNumber;
+    private String address;
+    private String doctorName;
     private int id;
-    private int profit;
+    private int balance;
     private String type;
     private Image profilePicture;
 
+
+
+    public Clinic(int id, String name, String phoneNumber, String address,String doctorName,  String type, int balance){
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.doctorName = doctorName;
+        this.id = id;
+        this.balance = balance;
+        this.type = type;
+//        this.profilePicture = profilePicture;
+    }
     public void setName(String n){
         name =n;
     }
-    public void setPhoneNumber(int p){
+    public void setPhoneNumber(String p){
         phoneNumber=p;
     }
-    public void setCity(String c){
-        city=c;
+    public void setAddress(String address){
+        this.address=address;
     }
-    public void setStreet(String s){
-        street=s;
+    public String getAddress(){
+        return address;
     }
     public void setId(int i){
         id=i;
     }
-    public void setProfit(int r){
-        profit=r;
+    public void setBalance(int r){
+        balance=r;
     }
     public void setType(String t){
         type=t;
@@ -39,14 +52,11 @@ public class Clinic {
     public String getName(){
         return name;
     }
-    public int getPhoneNumber(){
+    public String getPhoneNumber(){
         return phoneNumber;
     }
-    public String getCity(){
-        return city;
-    }
-    public String getStreet(){
-        return street;
+    public String getDoctorName(){
+        return doctorName;
     }
     public String getType(){
         return type;
@@ -54,8 +64,8 @@ public class Clinic {
     public int getId(){
         return id;
     }
-    public int getProfit(){
-        return profit;
+    public int getBalance(){
+        return balance;
     }
     public Image getProfilePicture(){
         return  profilePicture;

@@ -1,37 +1,46 @@
 package main.code.requirements;
 
+import javafx.scene.image.Image;
+
+import java.util.Date;
+
 public class User {
+
+    public User(String firstName,String lastName,String userName){
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.userName=userName;
+    }
+    public User(){}
     private String userName;
     private String passWord;
-    private int phoneNumber;
-    private String gender;
-    private int age;
-    private String city;
-    private String street;
+    private String phoneNumber;
+    private char gender;
+    private Date birthDate;
+    private String address;
     private String firstName;
     private String lastName;
-
+    private Image profilePic;
+    public void setProfilePic(Image n) {
+        profilePic = n;
+    }
     public void setUserName(String n) {
         userName = n;
     }
-
     public void setPassWord(String p) {
         passWord = p;
     }
-    public void setPhoneNumber(int o){
+    public void setPhoneNumber(String o){
         phoneNumber=o;
     }
-    public void setGender(String g){
-        gender=g;
+    public void setGender(char g){
+
     }
-    public void setAge(int a){
-        age=a;
+    public void setBirthDate(Date a){
+        birthDate=a;
     }
-    public void setCity(String c){
-        city=c;
-    }
-    public void setStreet(String s){
-        street=s;
+    public void setAddress(String c){
+        address=c;
     }
     public void setFirstName(String f){
         firstName=f;
@@ -45,14 +54,11 @@ public class User {
     public String getPassWord(){
         return passWord;
     }
-    public String getGender(){
+    public char getGender(){
         return gender;
     }
-    public String getCity(){
-        return city;
-    }
-    public String getStreet(){
-        return street;
+    public String getAddress(){
+        return address;
     }
     public String getFirstName(){
         return firstName;
@@ -60,10 +66,14 @@ public class User {
     public String getLastName(){
         return lastName;
     }
-    public int getPhoneNumber(){
+    public String getPhoneNumber(){
         return phoneNumber;
     }
-    public int getAge(){
-        return age;
+    public Date getBirthDate(){
+        return birthDate;
     }
+    public Image getProfilePic(){
+        return profilePic;
+    }
+
 }
