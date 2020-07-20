@@ -11,7 +11,7 @@
          <Circle fx:id="clinicImageCircle" fill="WHITE" layoutX="93.0" layoutY="60.0" radius="38.0" stroke="BLACK" strokeType="INSIDE" />
          <Label layoutX="55.0" layoutY="109.0" text="THE Clinic Name" />
          <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />
-         <JFXChipView layoutX="85.0" layoutY="220.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" />
+<!--         <JFXChipView layoutX="85.0" layoutY="220.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" />-->
          <Label layoutX="21.0" layoutY="164.0" text="Address:" />
          <Label layoutX="79.0" layoutY="164.0" prefHeight="17.0" prefWidth="76.0" text="Label" />
          <Label layoutX="21.0" layoutY="198.0" text="Phone:" />

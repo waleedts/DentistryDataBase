@@ -32,10 +32,10 @@ public class Controller implements Initializable {
     String tempPhoto ="Photo.png";
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        doctorImage =new Image(temp);
-        clinicImage =new Image(temp);
-        doctorImageCircle.setFill(new ImagePattern(doctorImage));
-        clinicImageCircle.setFill(new ImagePattern(clinicImage));
+//        doctorImage =new Image(temp);
+//        clinicImage =new Image(temp);
+//        doctorImageCircle.setFill(new ImagePattern(doctorImage));
+//        clinicImageCircle.setFill(new ImagePattern(clinicImage));
         postsList.setOnMouseClicked((e)->{
             //TODO: add a mouse click
         });
