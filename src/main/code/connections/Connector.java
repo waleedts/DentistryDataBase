@@ -27,7 +27,7 @@ public class Connector {
         }
         assert prop != null;
         username=prop.getProperty("db.user");
-        url=prop.getProperty("db.Url");
+        url=prop.getProperty("db.url");
         password=prop.getProperty("db.password");
         driver=prop.getProperty("db.driver");
         config.setJdbcUrl(url);
