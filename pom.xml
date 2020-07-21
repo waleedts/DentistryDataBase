@@ -27,6 +27,11 @@
             <version>8.9</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <version>5.3.3.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>com.calendarfx</groupId>
             <artifactId>view</artifactId>
             <version>11.8.3</version>
