@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.Five.controller">
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.code.Five.controller">
    <Pane prefHeight="400.0" prefWidth="282.0" style="-fx-background-color: #1070af;">
+
       <JFXButton fx:id="b1" layoutY="2.0" onAction="#reurnBack" text="Left Arrow" textFill="WHITE"/>
       <Rectangle arcHeight="90.0" arcWidth="70.0" fill="WHITE" height="163.0" layoutX="60.0" layoutY="69.0"
                  stroke="BLACK" strokeType="INSIDE" width="143.0"/>
@@ -22,7 +25,6 @@
                  preserveRatio="true">
          <Image url="@project.png"/>
       </ImageView>
-
    </Pane>
    <Pane layoutX="281.0" prefHeight="400.0" prefWidth="319.0" style="-fx-background-color: #ffffff;">
       <JFXTextField focusColor="WHITE" layoutX="71.0" layoutY="132.0" prefHeight="27.0" prefWidth="178.0"
@@ -39,13 +41,14 @@
             <Font name="System Bold" size="13.0"/>
          </font>
       </Label>
-      <JFXButton layoutX="98.0" layoutY="306.0" prefHeight="25.0" prefWidth="124.0"
+      <JFXButton fx:id="b2" layoutX="98.0" layoutY="306.0" prefHeight="25.0" prefWidth="124.0"
                  style="-fx-background-color: #ff1943;" text="Sign In" textFill="WHITE"/>
-      <JFXRadioButton layoutX="50.0" layoutY="267.0" text="Doctor">
+      <JFXRadioButton fx:id="r1" layoutX="50.0" layoutY="267.0" style="-fx-background-color: #FFFFFF;" text="Doctor">
          <toggleGroup>
             <ToggleGroup fx:id="t"/>
          </toggleGroup>
       </JFXRadioButton>
-      <JFXRadioButton layoutX="160.0" layoutY="267.0" text="Patient" toggleGroup="$t"/>
+      <JFXRadioButton fx:id="r2" layoutX="160.0" layoutY="267.0" style="-fx-background-color: #FFFFFF;"
+                      text="Patient" toggleGroup="$t"/>
    </Pane>
 </AnchorPane>

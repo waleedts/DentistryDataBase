@@ -1,6 +1,7 @@
 package main.code.Five;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXRadioButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,7 +18,9 @@ public class controller {
     @FXML
     JFXButton b2;
     @FXML
-    JFXButton b3;
+    JFXRadioButton r1;
+    @FXML
+    JFXRadioButton r2;
 
     @FXML
     ToggleGroup t = new ToggleGroup();

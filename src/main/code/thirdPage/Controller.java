@@ -26,10 +26,10 @@ public class Controller  {
  }
  @FXML
  public void loginButtonAction(){//i thins its done
-     Stage stage =(Stage)b1.getScene().getWindow();
+    Stage stage =(Stage)b2.getScene().getWindow();
      try {
-         Parent ro = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fourth_Page_GUI.fxml")));
-         Scene scene = new Scene(ro, 400, 400);
+         Parent ro = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fifth_Page_GUI.fxml")));
+         Scene scene = new Scene(ro, 600, 400);
          stage.setScene(scene);
          stage.show();
      } catch (IOException e) {
@@ -38,9 +38,14 @@ public class Controller  {
  }
  @FXML
     public void signinButtonAction(){
-     Stage stage=(Stage)b2.getScene().getWindow();
-
-
-
+    Stage stage =(Stage)b1.getScene().getWindow();
+     try {
+         Parent ro = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fourth_Page_GUI.fxml")));
+         Scene scene = new Scene(ro, 600, 462);
+         stage.setScene(scene);
+         stage.show();
+     } catch (IOException e) {
+         e.printStackTrace();
+     }
  }
 }
