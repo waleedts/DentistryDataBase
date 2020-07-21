@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.code.connections.Login;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -48,4 +49,13 @@ public class Controller  {
          e.printStackTrace();
      }
  }
+    @FXML
+    public void login() {
+        Login login=new Login();
+        try {
+            login.facebookLogin();
+        }catch(IllegalStateException e){
+            System.out.println(e.getMessage());
+        }
+    }
 }

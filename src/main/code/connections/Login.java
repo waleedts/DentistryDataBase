@@ -45,10 +45,10 @@ public class Login {
             return true;
         }
     }
-    Login(){
+    public Login(){
         Properties prop;
         try (InputStream input = new FileInputStream("target/classes/config.properties")) {
-            passwordEncoder= new BCryptPasswordEncoder();
+//            passwordEncoder= new BCryptPasswordEncoder();
             prop = new Properties();
             prop.load(input);
             connection=Connector.getConnection();
@@ -79,7 +79,7 @@ public class Login {
     }
 
     private String appId;
-    void facebookLogin() throws IllegalStateException{
+    public void facebookLogin() throws IllegalStateException{
         // parse arguments
         Stage stage = new Stage();
         WebView webView = new WebView();
