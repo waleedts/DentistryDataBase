@@ -1,60 +1,100 @@
 package main.code.thirdPage;
 
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
+
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import main.code.connections.Login;
 
-import javax.swing.*;
-import java.io.IOException;
-import java.util.Objects;
-
-public class Controller  {
+public class Controller {
     @FXML
     JFXButton b1;
     @FXML
     JFXButton b2;
     @FXML
     JFXButton b3;
- public Controller() {
+    @FXML
+    private AnchorPane anchorRoot;
+    @FXML
+    private StackPane parentContainer;
 
- }
- @FXML
- public void loginButtonAction(){//i thins its done
-    Stage stage =(Stage)b2.getScene().getWindow();
-     try {
-         Parent ro = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fifth_Page_GUI.fxml")));
-         Scene scene = new Scene(ro, 600, 400);
-         stage.setScene(scene);
-         stage.show();
-     } catch (IOException e) {
-         e.printStackTrace();
-     }
- }
+    public Controller() {
+
+    }
+
+    @FXML
+    public void loginButtonAction() {
+        try {
+
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Fifth_Page_GUI.fxml"));
+            Scene scene = b1.getScene();
+
+            root.translateXProperty().set(-scene.getWidth());
+
+            parentContainer.getChildren().add(root);
+            Timeline timeline = new Timeline();
+            KeyValue kv = new KeyValue(root.translateXProperty(), 0, Interpolator.EASE_IN);
+            KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+            timeline.getKeyFrames().add(kf);
+            timeline.setOnFinished(t -> {
+                parentContainer.getChildren().remove(anchorRoot);
+            });
+            timeline.play();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
  @FXML
     public void signinButtonAction(){
-    Stage stage =(Stage)b1.getScene().getWindow();
      try {
-         Parent ro = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fourth_Page_GUI.fxml")));
-         Scene scene = new Scene(ro, 600, 462);
-         stage.setScene(scene);
-         stage.show();
+         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Fourth_Page_GUI.fxml"));
+         Scene scene=b2.getScene();;
+
+
+         root.translateXProperty().set(scene.getWidth());
+
+         parentContainer.getChildren().add(root);
+         Timeline timeline = new Timeline();
+         KeyValue kv = new KeyValue(root.translateXProperty(), 0, Interpolator.EASE_IN);
+         KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+         timeline.getKeyFrames().add(kf);
+         timeline.setOnFinished(t -> parentContainer.getChildren().remove(anchorRoot));
+         timeline.play();
+
+
      } catch (IOException e) {
          e.printStackTrace();
      }
  }
     @FXML
     public void login() {
-        Login login=new Login();
+        Login login = new Login();
         try {
             login.facebookLogin();
-        }catch(IllegalStateException e){
+        } catch (IllegalStateException e) {
             System.out.println(e.getMessage());
         }
     }
