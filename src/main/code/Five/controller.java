@@ -2,24 +2,29 @@ package main.code.Five;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.effects.JFXDepthManager;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class controller {
+public class controller implements Initializable {
     @FXML
     JFXButton b1;
     @FXML
@@ -35,22 +40,26 @@ public class controller {
     private AnchorPane anchorRoot;
     @FXML
     private StackPane parentContainer;
+    @FXML
+    Pane p;
+    JFXDepthManager manager;
+    int depth=5;
 
-    public controller(){
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        manager=new JFXDepthManager();
+        manager.setDepth(p,depth);
+        manager.setDepth(b2,depth);
+        manager.setDepth(b1,depth);
     }
+
+
+
     @FXML
     public void reurnBack(){
-       // Stage stage =(Stage)b1.getScene().getWindow();
         try {
-            /*Parent ro = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Third_Page_GUI.fxml")));
-            Scene scene = new Scene(ro, 600, 400);
-            stage.setScene(scene);
-            stage.show();*/
-
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Third_Page_GUI.fxml"));
             Scene scene = b1.getScene();
-
             root.translateXProperty().set(scene.getWidth());
             StackPane parentContainer = (StackPane) b1.getScene().getRoot();
             parentContainer.getChildren().add(root);

@@ -48,7 +48,7 @@ public class Login {
     public Login(){
         Properties prop;
         try (InputStream input = new FileInputStream("target/classes/config.properties")) {
-//            passwordEncoder= new BCryptPasswordEncoder();
+            //passwordEncoder= new BCryptPasswordEncoder();
             prop = new Properties();
             prop.load(input);
             connection=Connector.getConnection();
@@ -98,18 +98,18 @@ public class Login {
         String loginDialogUrl = facebookClient.getLoginDialogUrl(appId, SUCCESS_URL, scope);
         webEngine.load(loginDialogUrl + "&display=popup&response_type=token");
         webEngine.locationProperty().addListener((property, oldValue, newValue) -> {
-                    if (newValue.startsWith(SUCCESS_URL)) {
-                        // extract access token
-                        CLIENT_LOGGER.debug(newValue);
-                        int codeOffset = newValue.indexOf("token=");
+            if (newValue.startsWith(SUCCESS_URL)) {
+                // extract access token
+                CLIENT_LOGGER.debug(newValue);
+                int codeOffset = newValue.indexOf("token=");
 
-                        String []token = newValue.substring(codeOffset + "token=".length()).split("&");
-                        saveUserData(token[0]);
-                        stage.close();
-                        throw new IllegalStateException("dialog done");
-                    } else if ("https://www.facebook.com/dialog/close".equals(newValue)) {
-                        throw new IllegalStateException("dialog closed");
-                    }
-                });
+                String []token = newValue.substring(codeOffset + "token=".length()).split("&");
+                saveUserData(token[0]);
+                stage.close();
+                throw new IllegalStateException("dialog done");
+            } else if ("https://www.facebook.com/dialog/close".equals(newValue)) {
+                throw new IllegalStateException("dialog closed");
+            }
+        });
     }
 }

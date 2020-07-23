@@ -7,6 +7,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.effects.JFXDepthManager;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -25,7 +26,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import main.code.connections.Login;
 
-public class Controller {
+public class Controller implements Initializable{
     @FXML
     JFXButton b1;
     @FXML
@@ -33,13 +34,25 @@ public class Controller {
     @FXML
     JFXButton b3;
     @FXML
-    private AnchorPane anchorRoot;
+    public AnchorPane anchorRoot;
     @FXML
     private StackPane parentContainer;
+    JFXDepthManager manager;
+    int depth=5;
 
-    public Controller() {
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+       // manager=new JFXDepthManager();
+        Depth();
     }
+    @FXML
+    public void Depth(){
+        manager.setDepth(b1,depth);
+        manager.setDepth(b2,depth);
+        manager.setDepth(b3,depth);
+    }
+
 
     @FXML
     public void loginButtonAction() {
@@ -98,4 +111,6 @@ public class Controller {
             System.out.println(e.getMessage());
         }
     }
+
+
 }
