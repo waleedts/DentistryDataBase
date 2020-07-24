@@ -12,19 +12,25 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Controller implements Initializable {
     @FXML
@@ -47,28 +53,28 @@ public class Controller implements Initializable {
     private StackPane parentContainer;
     @FXML
     Pane p;
-    JFXDepthManager manager;
-    int depth=5;
-
-
+    int depth = 5;
+    @FXML
+    private AnchorPane aa;
+    private Desktop desktop = Desktop.getDesktop();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        manager=new JFXDepthManager();
-        manager.setDepth(p,depth);
-        manager.setDepth(b2,depth);
-        manager.setDepth(b3,depth);
+        JFXDepthManager.setDepth(p, depth);
+        JFXDepthManager.setDepth(b2, depth);
+        JFXDepthManager.setDepth(b3, depth);
     }
 
-    public Controller(){
-        t=new ToggleGroup();
+    public Controller() {
+        t = new ToggleGroup();
 
 
     }
-    public void returnBack(){
+
+    public void returnBack() {
 
         try {
 
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Third_Page_GUI.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Third_Page_GUI.fxml")));
             Scene scene = b1.getScene();
 
             root.translateXProperty().set(-scene.getWidth());
@@ -78,15 +84,33 @@ public class Controller implements Initializable {
             KeyValue kv = new KeyValue(root.translateXProperty(), 0, Interpolator.EASE_IN);
             KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
             timeline.getKeyFrames().add(kf);
-            timeline.setOnFinished(t -> {
-                parentContainer.getChildren().remove(anchorRoot);
-            });
+            timeline.setOnFinished(t -> parentContainer.getChildren().remove(anchorRoot));
             timeline.play();
-
 
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void toupload() {
+        final FileChooser d=new FileChooser();
+        Stage s =(Stage) aa.getScene().getWindow();
+        File file=  d.showOpenDialog(s);
+        if(file!=null){
+            openFile(file);
+            Image image1 = new Image(file.toURI().toString());
+            ImageView ip = new ImageView(image1);
+        }
+    }
+    private void openFile(File file) {
+        try {
+            desktop.open(file);
+        } catch (IOException ex) {
+            Logger.getLogger(
+                    FileChooserSample.class.getName()).log(
+                    Level.SEVERE, null, ex
+            );
         }
     }
 }
