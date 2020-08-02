@@ -29,7 +29,7 @@ public class Login{
     private  BCryptPasswordEncoder passwordEncoder;
     public  boolean loginSuccess(String username,String password,boolean isDoctor) throws SQLException {
         try (
-                PreparedStatement stmnt = connection.prepareStatement("select PASSWORD from \"USER\" where USER_NAME="+username+"");
+                PreparedStatement stmnt = connection.prepareStatement("select PASSWORD from \"USER\" where USER_NAME='"+username+"'");
                 ResultSet rs = stmnt.executeQuery()
         ){
             if(rs.next())

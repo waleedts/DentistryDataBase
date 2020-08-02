@@ -1,5 +1,6 @@
 package main.java.first_page;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.effects.JFXDepthManager;
@@ -10,6 +11,8 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import main.java.connections.ClinicDataAccessor;
+import main.java.connections.SelectedClinic;
+import main.java.helper.Helper;
 import main.java.pane.PaneController;
 import main.java.requirements.Clinic;
 
@@ -31,15 +34,22 @@ public class controller implements Initializable {
     @FXML
     Rectangle rec;
     String Temp=null;
+    @FXML
+    JFXButton accountInfoBtn;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        list.setDepth(3);
         try {
             ClinicDataAccessor dataAccessor=new ClinicDataAccessor();
             List<Clinic> clinics=dataAccessor.getClinicList();
-//            list.setOnMouseClicked((e)->{
-//                //TODO: add a mouse click
-//                System.out.println(list.getSelectionModel().getSelectedItem().getId());
-//            });
+            list.setOnMouseClicked((e)->{
+                try {
+                    SelectedClinic.setClinic(dataAccessor.getClinic(list.getSelectionModel().getSelectedItem().getId()));
+                    Helper.changeScene("Second_Page_GUI.fxml",accountInfoBtn);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            });
             for (Clinic c: clinics) {
                 list.getItems().add(createPane(c));
             }
@@ -51,7 +61,7 @@ public class controller implements Initializable {
         FXMLLoader loader = new FXMLLoader();
         Pane pane=loader.load(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Pane.fxml")));
         PaneController controller=loader.getController();
-        controller.setDentist(clinic.getDoctorName());
+        controller.setDentist(clinic.getDoctor().getFirstName()+" "+clinic.getDoctor().getLastName());
         controller.setAddress(clinic.getAddress());
         controller.setImgV(null);
         controller.setName(clinic.getName());

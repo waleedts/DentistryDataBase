@@ -38,9 +38,9 @@ public class LimitedTextField extends JFXTextField {
             // Compute the text that should normally be in the textfield now
             String finalText = currentText.substring(0, start) + insertedText + currentText.substring(end);
 
-            // If the max length is not excedeed
-            int numberOfexceedingCharacters = finalText.length() - this.getMaxLength();
-            if (numberOfexceedingCharacters <= 0) {
+            // If the max length is not exceeded
+            int numberOfExceedingCharacters = finalText.length() - this.getMaxLength();
+            if (numberOfExceedingCharacters <= 0) {
                 // Normal behavior
                 super.replaceText(start, end, insertedText);
             }
@@ -48,7 +48,7 @@ public class LimitedTextField extends JFXTextField {
                 // Otherwise, cut the the text that was going to be inserted
                 String cutInsertedText = insertedText.substring(
                         0,
-                        insertedText.length() - numberOfexceedingCharacters
+                        insertedText.length() - numberOfExceedingCharacters
                 );
 
                 // And replace this text

@@ -12,14 +12,19 @@ public class Clinic {
     private int balance;
     private String type;
     private Image profilePicture;
+    private Doctor doctor;
+    public void setDoctor(Doctor doctor){
+        this.doctor=doctor;
+    }
 
+    public Doctor getDoctor() {
+        return doctor;
+    }
 
-
-    public Clinic(int id, String name, String phoneNumber, String address,String doctorName,  String type, int balance){
+    public Clinic(int id, String name, String phoneNumber, String address, String type, int balance){
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
-        this.doctorName = doctorName;
         this.id = id;
         this.balance = balance;
         this.type = type;
@@ -54,9 +59,6 @@ public class Clinic {
     }
     public String getPhoneNumber(){
         return phoneNumber;
-    }
-    public String getDoctorName(){
-        return doctorName;
     }
     public String getType(){
         return type;

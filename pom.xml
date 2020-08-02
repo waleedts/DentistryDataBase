@@ -10,6 +10,7 @@
             <artifactId>HikariCP</artifactId>
             <version>3.4.5</version>
         </dependency>
+
         <dependency>
             <groupId>com.jfoenix</groupId>
             <artifactId>jfoenix</artifactId>
@@ -30,6 +31,22 @@
             <artifactId>fontawesomefx-controls</artifactId>
             <version>9.1.2</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.openjfx</groupId>-->
+<!--            <artifactId>javafx-web</artifactId>-->
+<!--            <version>11</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.openjfx</groupId>-->
+<!--            <artifactId>javafx-fxml</artifactId>-->
+<!--            <version>11</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.openjfx</groupId>-->
+<!--            <artifactId>javafx</artifactId>-->
+<!--            <version>11</version>-->
+<!--            <type>pom</type>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
@@ -50,6 +67,8 @@
             <artifactId>view</artifactId>
             <version>11.8.3</version>
         </dependency>
+
+
     </dependencies>
     <packaging>jar</packaging>
 
@@ -77,13 +96,37 @@
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.4</version>
+                <configuration>
+                    <mainClass>main.java.Main</mainClass>
+                    <includePathExceptionsInClasspath>true</includePathExceptionsInClasspath>
+                </configuration>
+                <executions>
+                    <execution>
+                        <!-- Default configuration for running -->
+                        <id>default-cli</id>
+                        <configuration>
+                            <mainClass>main.java.Main</mainClass>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <!-- Configuration for debugging -->
+                        <id>debug</id>
+                        <configuration>
+                            <options>
+                                <option> -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8001</option>
+                            </options>
+                            <mainClass>main.java.Main</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>9</maven.compiler.source>
-        <maven.compiler.target>9</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
     </properties>
 </project>

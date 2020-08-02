@@ -26,13 +26,13 @@ public class MainController {
 
     @FXML
     public void login() {
-        Service<Boolean> service=new Service<Boolean>() {
+        Service<Boolean> service= new Service<>() {
             @Override
             protected Task<Boolean> createTask() {
-                return new Task<Boolean>() {
+                return new Task<>() {
                     @Override
                     protected Boolean call() {
-                        Login login =new Login();
+                        Login login = new Login();
                         return login.facebookLogin();
                     }
                 };
