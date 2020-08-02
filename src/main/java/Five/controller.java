@@ -65,7 +65,7 @@ public class controller implements Initializable {
         service.setOnSucceeded(workerStateEvent -> {
             boolean loginSuccess = service.getValue();
             if (loginSuccess) {
-                Helper.changeScene("First_Page_GUI.fxml",b1);
+                Helper.changeScene("Six_Page_GUI.fxml",b1);
             } else {
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error signing in!");

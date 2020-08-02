@@ -5,67 +5,74 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.six.controller">
-   <children>
-      <Pane prefHeight="462.0" prefWidth="301.0" style="-fx-background-color: #1070af;">
-         <children>
-            <Label layoutX="37.0" layoutY="41.0" text="Registration For Doctor's" textFill="WHITE">
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Label>
-            <JFXTextField layoutX="37.0" layoutY="160.0" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: #FFFFFF;" unFocusColor="#1070af" />
-            <Label layoutX="37.0" layoutY="129.0" prefHeight="17.0" prefWidth="60.0" text="Salary" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <JFXButton layoutX="75.0" layoutY="393.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #FF1943;" text="Button" textFill="WHITE" />
-            <JFXButton fx:id="b1" onAction="#returnBack" text="left arrow" textFill="WHITE" />
-            <MenuButton layoutX="39.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: #ffffff;" text="MenuButton">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </MenuButton>
-            <Label layoutX="37.0" layoutY="242.0" text="Clinic Name" textFill="WHITE">
-               <font>
-                  <Font name="System Bold Italic" size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Label layoutX="333.0" layoutY="43.0" prefHeight="27.0" prefWidth="241.0" text="Registration For Patient's">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font>
-      </Label>
-      <MenuButton layoutX="349.0" layoutY="162.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #ffffff;" text="Choose...">
-        <items>
-          <MenuItem mnemonicParsing="false" text="A+" />
-          <MenuItem mnemonicParsing="false" text="A-" />
-            <MenuItem mnemonicParsing="false" text="B+" />
-            <MenuItem mnemonicParsing="false" text="B-" />
-            <MenuItem mnemonicParsing="false" text="O+" />
-            <MenuItem mnemonicParsing="false" text="O-" />
-            <MenuItem mnemonicParsing="false" text="AB+" />
-            <MenuItem mnemonicParsing="false" text="AB-" />
-        </items>
-         <font>
-            <Font name="System Bold Italic" size="13.0" />
-         </font>
-      </MenuButton>
-      <Label layoutX="349.0" layoutY="137.0" prefHeight="17.0" prefWidth="82.0" text="Blood Type">
-         <font>
-            <Font name="System Bold Italic" size="13.0" />
-         </font>
-      </Label>
-      <JFXTextField layoutX="349.0" layoutY="306.0" prefHeight="27.0" prefWidth="210.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
-      <Label layoutX="349.0" layoutY="279.0" prefHeight="17.0" prefWidth="106.0" text="Allergies">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <JFXButton layoutX="389.0" layoutY="392.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #1070AF;" text="Button" textFill="WHITE" />
-   </children>
+<AnchorPane prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.DocPatReg">
+    <Pane prefHeight="462.0" prefWidth="301.0" style="-fx-background-color: #1070af;">
+        <Label layoutX="37.0" layoutY="41.0" text="Registration For Doctor's" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="18.0"/>
+            </font>
+        </Label>
+        <JFXTextField layoutX="37.0" layoutY="160.0" prefHeight="25.0" prefWidth="199.0"
+                      style="-fx-background-color: #FFFFFF;" unFocusColor="#1070af"/>
+        <Label layoutX="37.0" layoutY="129.0" prefHeight="17.0" prefWidth="60.0" text="Salary" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Label>
+        <JFXButton layoutX="75.0" layoutY="393.0" prefHeight="25.0" prefWidth="133.0"
+                   style="-fx-background-color: #FF1943;" text="Button" textFill="WHITE"/>
+        <JFXButton   text="left arrow" textFill="WHITE"/>
+        <MenuButton layoutX="39.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="177.0"
+                    style="-fx-background-color: #ffffff;" text="MenuButton">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                <MenuItem mnemonicParsing="false" text="Action 2"/>
+            </items>
+        </MenuButton>
+        <Label layoutX="37.0" layoutY="242.0" text="Clinic Name" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="14.0"/>
+            </font>
+        </Label>
+        <Pane fx:id="doctorShadow" layoutX="-8.0" layoutY="-4.0" prefHeight="466.5" prefWidth="310.0"
+              style="-fx-background-color: black; -fx-opacity: 40%;"/>
+    </Pane>
+    <Label layoutX="333.0" layoutY="43.0" prefHeight="27.0" prefWidth="241.0" text="Registration For Patient's">
+        <font>
+          <Font name="System Bold Italic" size="18.0"/>
+        </font>
+    </Label>
+    <MenuButton layoutX="349.0" layoutY="162.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0"
+                style="-fx-background-color: #ffffff;" text="Choose...">
+      <items>
+          <MenuItem mnemonicParsing="false" text="A+"/>
+          <MenuItem mnemonicParsing="false" text="A-"/>
+          <MenuItem mnemonicParsing="false" text="B+"/>
+          <MenuItem mnemonicParsing="false" text="B-"/>
+          <MenuItem mnemonicParsing="false" text="O+"/>
+          <MenuItem mnemonicParsing="false" text="O-"/>
+          <MenuItem mnemonicParsing="false" text="AB+"/>
+          <MenuItem mnemonicParsing="false" text="AB-"/>
+      </items>
+        <font>
+          <Font name="System Bold Italic" size="13.0"/>
+        </font>
+    </MenuButton>
+    <Label layoutX="349.0" layoutY="137.0" prefHeight="17.0" prefWidth="82.0" text="Blood Type">
+        <font>
+          <Font name="System Bold Italic" size="13.0"/>
+        </font>
+    </Label>
+    <JFXTextField layoutX="349.0" layoutY="306.0" prefHeight="27.0" prefWidth="210.0" style="-fx-border-color: #000000;"
+                  unFocusColor="WHITE"/>
+    <Label layoutX="349.0" layoutY="279.0" prefHeight="17.0" prefWidth="106.0" text="Allergies">
+        <font>
+          <Font name="System Bold" size="13.0"/>
+        </font>
+    </Label>
+    <JFXButton fx:id="patientBtn" layoutX="389.0" layoutY="392.0" prefHeight="25.0" prefWidth="133.0"
+               style="-fx-background-color: #1070AF;" text="Button" textFill="WHITE"/>
+    <Pane fx:id="patientShadow" layoutX="302.0" prefHeight="462.0" prefWidth="302.0"
+          style="-fx-background-color: black; -fx-opacity: 40%;"/>
 </AnchorPane>

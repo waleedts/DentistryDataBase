@@ -26,6 +26,7 @@ public class MainController {
 
     @FXML
     public void login() {
+
         Service<Boolean> service= new Service<>() {
             @Override
             protected Task<Boolean> createTask() {
@@ -50,6 +51,5 @@ public class MainController {
 
             }
         });
-//        service.setOnFailed(workerStateEvent -> service.restart());
     }
 }

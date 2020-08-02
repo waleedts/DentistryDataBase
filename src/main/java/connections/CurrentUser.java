@@ -24,7 +24,7 @@ public class CurrentUser{
     public static void deleteCurrentUser(){
         user=null;
     }
-    public static boolean getTypeOfCurrentUser(){
+    public static boolean isDoctor(){
         return isDoctor;
     }
 

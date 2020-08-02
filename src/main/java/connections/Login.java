@@ -6,6 +6,8 @@ import com.restfb.Parameter;
 import com.restfb.Version;
 import com.restfb.scope.FacebookPermissions;
 import com.restfb.scope.ScopeBuilder;
+import com.sun.javafx.application.PlatformImpl;
+import javafx.application.Platform;
 import javafx.scene.image.Image;
 import main.java.requirements.User;
 import javafx.scene.Scene;
@@ -97,6 +99,7 @@ public class Login{
     boolean loginSucceeded=false;
     private String appId;
     public  boolean facebookLogin(){
+        PlatformImpl.runAndWait(()->{
             Stage stage = new Stage();
             WebView webView = new WebView();
             WebEngine webEngine = webView.getEngine();
@@ -129,7 +132,9 @@ public class Login{
                     throw new IllegalStateException("dialog closed");
                 }
             });
-            return loginSucceeded;
+
+        });
+        return loginSucceeded;
     }
 
 }
