@@ -4,11 +4,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.Five.controller">
-   <Pane fx:id="p" prefHeight="462.0" prefWidth="282.0" style="-fx-background-color: #1070af;">
+<?import main.java.LimitedTextField?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Five.controller">
+   <Pane prefHeight="400.0" prefWidth="299.0" style="-fx-background-color: #1070af;">
+
       <JFXButton fx:id="b1" layoutY="2.0" onAction="#reurnBack" text="Left Arrow" textFill="WHITE" />
       <Rectangle arcHeight="90.0" arcWidth="70.0" fill="WHITE" height="163.0" layoutX="60.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="143.0" />
       <Label layoutX="60.0" layoutY="294.0" prefHeight="17.0" prefWidth="143.0" text="Welcome Back" textFill="WHITE">
@@ -20,25 +23,35 @@
          <Image url="@project.png" />
       </ImageView>
    </Pane>
-   <Pane layoutX="281.0" prefHeight="462.0" prefWidth="319.0" style="-fx-background-color: #ffffff;">
-      <JFXTextField focusColor="WHITE" layoutX="71.0" layoutY="169.0" prefHeight="27.0" prefWidth="178.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" unFocusColor="WHITE" />
-      <JFXPasswordField focusColor="WHITE" layoutX="71.0" layoutY="231.0" prefHeight="27.0" prefWidth="178.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" unFocusColor="WHITE" />
-      <Label layoutX="74.0" layoutY="140.0" text="User Name">
+   <Pane layoutX="297.0" prefHeight="400.0" prefWidth="299.0" style="-fx-background-color: white;">
+      <LimitedTextField fx:id="usernameField" focusColor="WHITE" layoutX="71.0" layoutY="132.0" prefHeight="27.0" prefWidth="178.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" unFocusColor="WHITE" maxLength="100"/>
+      <LimitedTextField fx:id="passwordField" focusColor="WHITE" layoutX="71.0" layoutY="200.0" prefHeight="27.0" prefWidth="178.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" unFocusColor="WHITE" maxLength="100"/>
+      <Label layoutX="74.0" layoutY="111.0" text="User Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="77.0" layoutY="176.0" text="Password">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="79.0" layoutY="203.0" text="Password">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="b2" layoutX="98.0" layoutY="334.0" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #ff1943;" text="Sign In" textFill="WHITE" />
-      <JFXRadioButton fx:id="r1" layoutX="50.0" layoutY="284.0" style="-fx-background-color: #FFFFFF;" text="Doctor">
+      <JFXButton fx:id="b2" layoutX="98.0" layoutY="306.0" onAction="#signIn" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #FF1194;" text="SIGN IN " textFill="WHITE" />
+      <JFXRadioButton fx:id="r1" layoutX="50.0" layoutY="267.0" style="-fx-background-color: #FFFFFF;" text="Doctor">
          <toggleGroup>
             <ToggleGroup fx:id="t" />
          </toggleGroup>
+         <selectedColor>
+            <Color red="0.062745101749897" green="0.43921568989753723" blue="0.686274528503418" />
+         </selectedColor>
       </JFXRadioButton>
-      <JFXRadioButton fx:id="r2" layoutX="160.0" layoutY="284.0" style="-fx-background-color: #FFFFFF;" text="Patient" toggleGroup="$t" />
+      <JFXRadioButton fx:id="r2" layoutX="160.0" layoutY="267.0" style="-fx-background-color: #FFFFFF;" text="Patient" toggleGroup="$t">
+         <selectedColor>
+            <Color red="0.062745101749897" green="0.43921568989753723" blue="0.686274528503418" />
+         </selectedColor></JFXRadioButton>
    </Pane>
+   <Pane fx:id="progressPane" layoutX="294.0" prefHeight="400.0" prefWidth="307.0" style="-fx-background-color: #FFFFFF;">
+      <ProgressIndicator fx:id="progressIndicator"  layoutX="133.0" layoutY="168.0" />
+   </Pane>
+
 </AnchorPane>

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.code.secPage.Controller">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.secPage.Controller">
    <Pane prefHeight="500.0" prefWidth="338.0" style="-fx-background-color: #1070AF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Pane layoutX="44.0" layoutY="28.0" prefHeight="361.0" prefWidth="186.0" style="-fx-background-color: white;">
          <Circle fx:id="clinicImageCircle" fill="WHITE" layoutX="93.0" layoutY="60.0" radius="38.0" stroke="BLACK" strokeType="INSIDE" />

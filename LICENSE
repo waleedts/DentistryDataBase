@@ -283,7 +283,7 @@ in one of these ways:
     clear directions next to the object code saying where to find the
     Corresponding Source.  Regardless of what server hosts the
     Corresponding Source, you remain obligated to ensure that it is
-    available for as long as needed to satisfy these main.code.requirements.
+    available for as long as needed to satisfy these main.java.requirements.
 
     e) Convey the object code using peer-to-peer transmission, provided
     you inform other peers where the object code and Corresponding
@@ -402,7 +402,7 @@ where to find the applicable terms.
 
   Additional terms, permissive or non-permissive, may be stated in the
 form of a separately written license, or stated as exceptions;
-the above main.code.requirements apply either way.
+the above main.java.requirements apply either way.
 
   8. Termination.
 
@@ -481,7 +481,7 @@ by this License, of making, using, or selling its contributor version,
 but do not include claims that would be infringed only as a
 consequence of further modification of the contributor version.  For
 purposes of this definition, "control" includes the right to grant
-patent sublicenses in a manner consistent with the main.code.requirements of
+patent sublicenses in a manner consistent with the main.java.requirements of
 this License.
 
   Each contributor grants you a non-exclusive, worldwide, royalty-free
@@ -503,7 +503,7 @@ publicly available network server or other readily accessible means,
 then you must either (1) cause the Corresponding Source to be so
 available, or (2) arrange to deprive yourself of the benefit of the
 patent license for this particular work, or (3) arrange, in a manner
-consistent with the main.code.requirements of this License, to extend the patent
+consistent with the main.java.requirements of this License, to extend the patent
 license to downstream recipients.  "Knowingly relying" means you have
 actual knowledge that, but for the patent license, your conveying the
 covered work in a country, or your recipient's use of the covered work
@@ -556,7 +556,7 @@ permission to link or combine any covered work with a work licensed
 under version 3 of the GNU Affero General Public License into a single
 combined work, and to convey the resulting work.  The terms of this
 License will continue to apply to the part which is the covered work,
-but the special main.code.requirements of the GNU Affero General Public License,
+but the special main.java.requirements of the GNU Affero General Public License,
 section 13, concerning interaction through a network will apply to the
 combination as such.
 

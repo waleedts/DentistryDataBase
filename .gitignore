@@ -1,4 +1,5 @@
 /.idea/
 /target/
 /src/main/resources/config.properties
-/DentistDataBase.iml
+DentistDataBase.iml
+*و
