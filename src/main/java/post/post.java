@@ -8,9 +8,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class post extends Application {
+public class post  {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         launch(args);
     }
     Label l=new Label("hi");
@@ -30,6 +30,6 @@ public class post extends Application {
            p.getChildren().add(new ImageView(image));
        }
        anchorPane.getChildren().add(p);
-    }
+    }*/
 
 }
