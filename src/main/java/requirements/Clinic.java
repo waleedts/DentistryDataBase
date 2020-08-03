@@ -27,17 +27,13 @@ public class Clinic {
         return doctor;
     }
 
-    public Clinic(int id, String name, String phoneNumber, String address, String type, int balance,String date,String time,String des,String price){
+    public Clinic(int id, String name, String phoneNumber, String address, String type, int balance){
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.id = id;
         this.balance = balance;
         this.type = type;
-        this.date=date;
-        this.time=time;
-        this.des=des;
-        this.price=price;
 //        this.profilePicture = profilePicture;
     }
     public void setName(String n){

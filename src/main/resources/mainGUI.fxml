@@ -5,6 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.MainController">
    <ImageView fitHeight="135.0" fitWidth="118.0" layoutX="247.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@project.png" />
@@ -12,5 +13,11 @@
    <JFXButton fx:id="b1" layoutX="255.0" layoutY="256.0" mnemonicParsing="false" onAction="#signUpButtonAction" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #ff1943;" text="SIGN UP" textFill="WHITE" />
    <JFXButton layoutX="255.0" layoutY="200.0" mnemonicParsing="false" onAction="#signInButtonAction" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #1070af;" text="SIGN IN" textFill="WHITE" />
    <Separator layoutX="208.0" layoutY="295.0" prefWidth="200.0" />
-   <JFXButton layoutX="255.0" layoutY="318.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #1070af;" text="SIGN IN" textFill="WHITE" />
+   <JFXButton layoutX="255.0" layoutY="318.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #1070af;" text="SIGN IN" textFill="WHITE" >
+      <graphic>
+         <FontIcon iconLiteral="fab-facebook-square:22:white">
+
+         </FontIcon>
+      </graphic>
+   </JFXButton>
 </AnchorPane>

@@ -10,11 +10,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
-import main.java.connections.ClinicDataAccessor;
-import main.java.connections.SelectedClinic;
-import main.java.helper.Helper;
-import main.java.pane.PaneController;
-import main.java.requirements.Clinic;
+import main.java.requirements.*;
+import main.java.helper.*;
+import main.java.connections.*;
+import main.java.pane.*;
 
 import java.io.IOException;
 import java.net.URL;

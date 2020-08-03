@@ -12,9 +12,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
-import main.java.LimitedTextField;
-import main.java.connections.Login;
-import main.java.helper.Helper;
+import main.java.*;
+import main.java.connections.*;
+import main.java.helper.*;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -41,18 +41,18 @@ public class controller implements Initializable {
     Pane progressPane;
     @FXML
     public void signIn(){
-        Service<Boolean> service=new Service<Boolean>() {
+        Service<Boolean> service= new Service<>() {
             @Override
             protected Task<Boolean> createTask() {
-                return new Task<Boolean>() {
+                return new Task<>() {
                     @Override
                     protected Boolean call() {
-                        Login login=new Login();
-                        boolean loginSuccess=false;
+                        Login login = new Login();
+                        boolean loginSuccess = false;
                         try {
-                            loginSuccess=login.loginSuccess(usernameField.getText(), passwordField.getText(),r1.isSelected());
-                        }catch (SQLException e){
-                            System.out.println("Exception in method (SignIn) in class (loginController)"+e.getMessage());
+                            loginSuccess = login.loginSuccess(usernameField.getText(), passwordField.getText(), r1.isSelected());
+                        } catch (SQLException e) {
+                            System.out.println("Exception in method (SignIn) in class (loginController)" + e.getMessage());
                         }
                         return loginSuccess;
                     }

@@ -4,7 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.Pane;
-import main.java.connections.CurrentUser;
+import main.java.connections.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
