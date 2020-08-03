@@ -1,17 +1,19 @@
 package main.java.requirements;
 
 import java.time.LocalTime;
+import java.util.Date;
 
 public class Appointment {
-    LocalTime time;
-    LocalTime duration;
+    Date time;
+    int duration;
     String locationOfTeeth;
     String description;
+    int totalPrice;
 
-    public void setTime(LocalTime t){
+    public void setTime(java.sql.Date t){
         time=t;
     }
-    public void setDuration(LocalTime d){
+    public void setDuration(int d){
         duration=d;
     }
     public void setLocationOfTeeth(String l){
@@ -20,10 +22,10 @@ public class Appointment {
     public void setDescription(String s){
         description=s;
     }
-    public LocalTime getTime(){
+    public Date getTime(){
         return time;
     }
-    public LocalTime getDuration(){
+    public int getDuration(){
         return duration;
     }
     public String getLocationOfTeeth(){
@@ -33,4 +35,7 @@ public class Appointment {
         return description;
     }
 
+    public void setTotal(int totalPrice) {
+        this.totalPrice=totalPrice;
+    }
 }

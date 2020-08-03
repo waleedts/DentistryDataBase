@@ -33,14 +33,6 @@ public class controller implements Initializable {
         try {
             ClinicDataAccessor dataAccessor=new ClinicDataAccessor();
             List<Clinic> clinics=dataAccessor.getClinicList();
-            list.setOnMouseClicked((e)->{
-                try {
-                    SelectedClinic.setClinic(dataAccessor.getClinic(list.getSelectionModel().getSelectedItem().getId()));
-                    Helper.changeScene("Second_Page_GUI.fxml",b1);
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                }
-            });
             for (Clinic c: clinics) {
                 list.getItems().add(createPane(c));
             }
@@ -55,9 +47,7 @@ public class controller implements Initializable {
         withNumbConroller controller=loader.getController();
         controller.setName(clinic.getName());
         controller.setPhone(clinic.getPhoneNumber());
-        controller.setDate(clinic.getDate()+" "+clinic.getTime());
-        controller.setDes(clinic.getDes());
-        controller.setPrice(clinic.getPrice());
+
         return pane;
     }
     public void account(){

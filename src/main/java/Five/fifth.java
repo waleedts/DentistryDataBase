@@ -18,7 +18,7 @@ public class fifth extends Application {
     public void start(Stage primaryStage) {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fifth_Page_GUI.fxml")));
-            Scene scene = new Scene(root, 600, 400);
+            Scene scene = new Scene(root, 1200, 600);
             primaryStage.setScene(scene);
             primaryStage.show();
         }catch (Exception e){

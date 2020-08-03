@@ -15,19 +15,16 @@ public class Clinic {
     private String type;
     private Image profilePicture;
     private Doctor doctor;
-    private String date;
-    private String time;
-    private String des;
-    private String price;
-    public void setDoctor(Doctor doctor){
-        this.doctor=doctor;
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 
     public Doctor getDoctor() {
         return doctor;
     }
 
-    public Clinic(int id, String name, String phoneNumber, String address, String type, int balance){
+    public Clinic(int id, String name, String phoneNumber, String address, String type, int balance) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -36,60 +33,61 @@ public class Clinic {
         this.type = type;
 //        this.profilePicture = profilePicture;
     }
-    public void setName(String n){
-        name =n;
+
+    public void setName(String n) {
+        name = n;
     }
-    public void setPhoneNumber(String p){
-        phoneNumber=p;
+
+    public void setPhoneNumber(String p) {
+        phoneNumber = p;
     }
-    public void setAddress(String address){
-        this.address=address;
+
+    public void setAddress(String address) {
+        this.address = address;
     }
-    public String getAddress(){
+
+    public String getAddress() {
         return address;
     }
-    public void setId(int i){
-        id=i;
+
+    public void setId(int i) {
+        id = i;
     }
-    public void setBalance(int r){
-        balance=r;
+
+    public void setBalance(int r) {
+        balance = r;
     }
-    public void setType(String t){ type=t; }
-    public void setProfilePicture(Image e){
-        profilePicture=e;
+
+    public void setType(String t) {
+        type = t;
     }
-    public void setDate(String n){ date =n; }
-    public void setTime(String n){ time=n; }
-    public void setDes(String n){ des=n; }
-    public void setPrice(String t){ price=t; }
-    public String getName(){
+
+    public void setProfilePicture(Image e) {
+        profilePicture = e;
+    }
+
+    public String getName() {
         return name;
     }
-    public String getPhoneNumber(){
+
+    public String getPhoneNumber() {
         return phoneNumber;
     }
-    public String getType(){
+
+    public String getType() {
         return type;
     }
-    public int getId(){
+
+    public int getId() {
         return id;
     }
-    public int getBalance(){
+
+    public int getBalance() {
         return balance;
     }
-    public Image getProfilePicture(){
-        return  profilePicture;
+
+    public Image getProfilePicture() {
+        return profilePicture;
     }
-    public String getDate(){
-        return date;
-    }
-    public String getTime(){
-        return time;
-    }
-    public String getDes(){
-        return des;
-    }
-    public String getPrice(){
-        return price;
-    }
+
 }

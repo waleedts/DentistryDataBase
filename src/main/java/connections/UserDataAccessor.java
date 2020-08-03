@@ -27,7 +27,7 @@ public class UserDataAccessor extends DataAccessor{
     public User getUser(String username) throws SQLException {
         try (
                 Statement stmnt = connection.createStatement();
-                ResultSet rs = stmnt.executeQuery("select * from \"USER\" where USER_NAME="+username+"")
+                ResultSet rs = stmnt.executeQuery("select * from \"USER\" where USER_NAME='"+username+"'")
         ){
             return getUser(username,rs);
         }

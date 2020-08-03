@@ -20,7 +20,7 @@ public class Main extends Application {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("mainGUI.fxml")));
             // System.out.println(getClass().getResource("/main.java.first_page/First_Page_GUI.fxml"));
-            Scene scene = new Scene(root, 400, 400);
+            Scene scene = new Scene(root, 1200, 600);
             primaryStage.setScene(scene);
             primaryStage.show();
         }catch (Exception e){

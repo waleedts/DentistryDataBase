@@ -3,6 +3,7 @@ package main.java.Five;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.svg.SVGGlyph;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -22,7 +23,7 @@ import java.util.ResourceBundle;
 
 public class controller implements Initializable {
     @FXML
-    JFXButton b1;
+    SVGGlyph b1;
     @FXML
     JFXButton b2;
     @FXML
@@ -65,7 +66,7 @@ public class controller implements Initializable {
         service.setOnSucceeded(workerStateEvent -> {
             boolean loginSuccess = service.getValue();
             if (loginSuccess) {
-                Helper.changeScene("Six_Page_GUI.fxml",b1);
+                Helper.changeScene("First_Page_GUI.fxml",b2);
             } else {
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error signing in!");
@@ -75,10 +76,6 @@ public class controller implements Initializable {
         });
         service.setOnFailed(workerStateEvent -> service.restart());
     }
-    @FXML
-    public void reurnBack(){
-        Helper.changeScene("mainGUI.fxml",b1);
-    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         r1.setSelected(true);
@@ -86,6 +83,9 @@ public class controller implements Initializable {
         progressIndicator=new ProgressIndicator();
         progressIndicator.setVisible(false);
         progressPane.setVisible(false);
+//        b1.setOnMouseClicked(e->{
+//            Helper.changeScene("mainGUI.fxml",b2);
+//        });
     }
 }
 

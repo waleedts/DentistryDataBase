@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="507.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <JFXTextArea  fx:id="t" prefHeight="81.0" prefWidth="507.0" style="-fx-background-color: #ffffff;" unFocusColor="WHITE" />
-      <ImageView fitHeight="306.0" fitWidth="508.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Photo.png" />
-         </image>
-      </ImageView>
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="507.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <JFXTextArea fx:id="t" prefHeight="104.0" prefWidth="507.0" style="-fx-background-color: #ffffff;" unFocusColor="WHITE" />
+   <ImageView fitHeight="306.0" fitWidth="508.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@Photo.png" />
+   </ImageView>
 </Pane>
