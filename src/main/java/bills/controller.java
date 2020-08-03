@@ -1,19 +1,16 @@
-package main.java.first_page;
+package main.java.bills;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.effects.JFXDepthManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Rectangle;
 import main.java.connections.ClinicDataAccessor;
 import main.java.connections.SelectedClinic;
 import main.java.helper.Helper;
 import main.java.pane.PaneController;
+import main.java.paneWithNumb.withNumbConroller;
 import main.java.requirements.Clinic;
 
 import java.io.IOException;
@@ -23,21 +20,13 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-
 public class controller implements Initializable {
-    JFXDepthManager depthManager;
     @FXML
-    JFXListView <Pane>list;
-    Image profileImg;
-    @FXML
-    JFXTextField search;
-    @FXML
-    Rectangle rec;
-    String Temp=null;
-    @FXML
-    JFXButton accountInfoBtn;
+    JFXButton b1;
     @FXML
     JFXButton b2;
+    @FXML
+    JFXListView<Pane> list;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         list.setDepth(3);
@@ -47,7 +36,7 @@ public class controller implements Initializable {
             list.setOnMouseClicked((e)->{
                 try {
                     SelectedClinic.setClinic(dataAccessor.getClinic(list.getSelectionModel().getSelectedItem().getId()));
-                    Helper.changeScene("Second_Page_GUI.fxml",accountInfoBtn);
+                    Helper.changeScene("Second_Page_GUI.fxml",b1);
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
@@ -59,19 +48,22 @@ public class controller implements Initializable {
             e.printStackTrace();
         }
     }
+
     Pane createPane(Clinic clinic) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        Pane pane=loader.load(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Pane.fxml")));
-        PaneController controller=loader.getController();
-        controller.setDentist(clinic.getDoctor().getFirstName()+" "+clinic.getDoctor().getLastName());
-        controller.setAddress(clinic.getAddress());
-        controller.setImgV(null);
+        Pane pane = loader.load(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("withNumb.fxml")));
+        withNumbConroller controller=loader.getController();
         controller.setName(clinic.getName());
         controller.setPhone(clinic.getPhoneNumber());
-        pane.setId(Integer.toString(clinic.getId()));
+        controller.setDate(clinic.getDate()+" "+clinic.getTime());
+        controller.setDes(clinic.getDes());
+        controller.setPrice(clinic.getPrice());
         return pane;
     }
-    public void bill(){
-        Helper.changeScene("Bills_GUI.fxml",b2);
+    public void account(){
+        Helper.changeScene("accountInfo_GUI.fxml",b1);
+    }
+    public void clinic(){
+        Helper.changeScene("First_Page_GUI.fxml",b2);
     }
 }
