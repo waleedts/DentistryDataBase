@@ -13,7 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
@@ -22,12 +21,10 @@ import main.java.connections.CurrentUser;
 import main.java.connections.Login;
 import main.java.helper.Helper;
 import main.java.requirements.User;
-
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.sql.SQLException;
 import java.time.Instant;
 import java.time.ZoneId;
@@ -53,15 +50,13 @@ public class Controller implements Initializable {
     private AnchorPane aa;
     @FXML
     ProgressIndicator progressIndicator;
-    private final Desktop desktop = Desktop.getDesktop();
-
     public Controller(){
         t=new ToggleGroup();
         doctorPatient=new ToggleGroup();
 
     }
 
-    BufferedImage image;
+    byte[] image;
     public void toUpload(){
         Platform.runLater(() -> {
                 final FileChooser d = new FileChooser();
@@ -69,11 +64,10 @@ public class Controller implements Initializable {
                 File file = d.showOpenDialog(s);
                 if (file != null) {
                     try {
-                        image= ImageIO.read(file);
+                        image = Files.readAllBytes(file.toPath());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
                 }
         });
     }

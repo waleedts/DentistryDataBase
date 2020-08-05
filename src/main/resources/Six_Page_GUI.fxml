@@ -4,7 +4,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import org.kordamp.ikonli.javafx.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.DocPatReg">
     <Pane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070af;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -28,9 +27,14 @@
                 <Font name="System Bold Italic" size="14.0" />
             </font>
         </Label>
-        <Pane fx:id="doctorShadow" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black; -fx-opacity: 40%;" />
+        <Pane fx:id="doctorShadow" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black; -fx-opacity: 40%;" visible="false" />
+      <Label layoutX="213.0" layoutY="467.0" prefHeight="25.0" prefWidth="174.0" text="Can't See Your Clinic?" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="227.0" layoutY="503.0" onAction="#goToAddClinic" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #FF1943;" text="Add Clinic" textFill="WHITE" />
     </Pane>
-    <FontIcon iconLiteral="fas-arrow-left:24:white" layoutX="20" layoutY="30" onMouseClicked="#goBack" />
           <Label layoutX="753.0" layoutY="113.0" prefHeight="27.0" prefWidth="241.0" text="Registration For Patient's">
               <font>
                 <Font name="System Bold Italic" size="18.0" />
@@ -49,7 +53,7 @@
                 <Font name="System Bold" size="13.0" />
               </font>
           </Label>
-          <JFXButton fx:id="patientBtn" onMouseClicked="#registerPat" layoutX="809.0" layoutY="462.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #1070AF;" text="Register" textFill="WHITE" />
+          <JFXButton fx:id="patientBtn" layoutX="809.0" layoutY="462.0" onMouseClicked="#registerPat" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #1070AF;" text="Register" textFill="WHITE" />
 
     <Pane fx:id="patientShadow" layoutX="302.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black; -fx-opacity: 40%;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
 

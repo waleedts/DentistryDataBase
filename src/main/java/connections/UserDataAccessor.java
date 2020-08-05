@@ -1,31 +1,16 @@
 package main.java.connections;
 
-import javafx.embed.swing.SwingFXUtils;
-import javafx.scene.image.Image;
 import main.java.requirements.User;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
+import java.util.Base64;
 
 public class UserDataAccessor extends DataAccessor{
     protected User getUser(String username, ResultSet rs) throws SQLException {
         rs.next();
         User user =new User(rs.getString("first_name"),rs.getString("last_name"),username);
-        Blob blob=rs.getBlob("profile_pic");
-        BufferedImage image=null;
-        try {
-            if(blob!=null) {
-                image=ImageIO.read(blob.getBinaryStream());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        String clob=rs.getString("profile_pic");
+        byte[]image= Base64.getDecoder().decode(clob);
         char c=0;
         String s=rs.getString("gender");
         if(s!=null)
@@ -41,16 +26,16 @@ public class UserDataAccessor extends DataAccessor{
             return getUser(username,rs);
         }
     }
-    protected void setUser(User user) throws IOException, SQLException {
+    protected void setUser(User user) throws  SQLException {
         try(
                 PreparedStatement stmnt = connection.prepareStatement("insert into \"USER\" (FIRST_NAME,LAST_NAME,BIRTH_DATE,PROFILE_PIC,USER_NAME,PASSWORD,ADDRESS,PHONE_NUMBER,GENDER) values " +
                         "((?),(?),(?),(?),(?),(?),(?),(?),(?))")
 
                 ){
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ImageIO.write( user.getProfilePic(), "jpg", baos );
-            byte[] imageInByte = baos.toByteArray();
-            stmnt.setBytes(4,imageInByte);
+            byte[] imageInByte = user.getProfilePic();
+            String st=Base64.getEncoder().encodeToString(
+                    imageInByte);
+            stmnt.setString(4,st);
             stmnt.setString(1, user.getFirstName());
             stmnt.setString(2, user.getLastName());
             stmnt.setDate(3, (Date) user.getBirthDate());
@@ -60,8 +45,6 @@ public class UserDataAccessor extends DataAccessor{
             stmnt.setString(8,user.getPhoneNumber());
             stmnt.setString(9,String.valueOf(user.getGender()));
             stmnt.execute();
-            baos.flush();
-            baos.close();
         }
     }
 

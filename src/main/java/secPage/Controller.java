@@ -6,22 +6,23 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.effects.JFXDepthManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import main.java.connections.ClinicDataAccessor;
+import main.java.connections.SelectedClinic;
 import main.java.helper.Helper;
+import main.java.requirements.Clinic;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-    JFXDepthManager depthManager;
     @FXML
     JFXListView<Pane> postsList;
-    Image doctorImage;
-    Image clinicImage;
     @FXML
     JFXButton bookBtn;
     @FXML
@@ -30,6 +31,14 @@ public class Controller implements Initializable {
     Circle clinicImageCircle;
     @FXML
     Rectangle rec;
+    @FXML
+    Label clinicLabel;
+    @FXML
+    Label addressLabel;
+    @FXML
+    Label phoneLabel;
+    @FXML
+    Label dentistLabel;
     String temp ="230x230-avatar-dummy-profile-pic.jpg";
     String tempPhoto ="Photo.png";
     @Override
@@ -38,10 +47,15 @@ public class Controller implements Initializable {
 //        clinicImage =new Image(temp);
 //        doctorImageCircle.setFill(new ImagePattern(doctorImage));
 //        clinicImageCircle.setFill(new ImagePattern(clinicImage));
+        bookBtn.setOnMouseClicked(e-> Helper.changeScene("Booking_Page.fxml",bookBtn));
         for(int i=0;i<10;i++){
             postsList.getItems().add(create());
         }
+        Clinic clinic=SelectedClinic.getClinic();
 
+        clinicLabel.setText(clinic.getName());
+        addressLabel.setText(clinic.getAddress());
+        dentistLabel.setText("Dr."+clinic.getDoctor().getFirstName()+" "+clinic.getDoctor().getLastName());
     }
     String dummyText="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibu";
     Pane create(){

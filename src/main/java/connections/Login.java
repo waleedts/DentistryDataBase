@@ -51,7 +51,7 @@ public class Login{
             }
         }
     }
-    public boolean signUp(String firstName, String LastName, String address, String username, String password, String phoneNumber, char gender, Date date, BufferedImage image, boolean isDoctor)  throws SQLException {
+    public boolean signUp(String firstName, String LastName, String address, String username, String password, String phoneNumber, char gender, Date date, byte[] image, boolean isDoctor)  throws SQLException {
         try (
                 PreparedStatement stmnt = connection.prepareStatement("select * from \"USER\" where USER_NAME='"+username+"'");
                 ResultSet rs = stmnt.executeQuery()

@@ -18,12 +18,11 @@ public class sec extends Application {
     public void start(Stage primaryStage) {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Second_Page_GUI.fxml")));
-            Scene scene = new Scene(root, 400, 400);
+            Scene scene = new Scene(root, 1200, 600);
             primaryStage.setScene(scene);
             primaryStage.show();
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-
 }

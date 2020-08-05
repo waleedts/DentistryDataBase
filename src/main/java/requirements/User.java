@@ -1,7 +1,5 @@
 package main.java.requirements;
 
-import javafx.scene.image.Image;
-
 import java.awt.image.BufferedImage;
 import java.util.Date;
 
@@ -27,8 +25,8 @@ public class User {
     private String address;
     private String firstName;
     private String lastName;
-    private BufferedImage profilePic;
-    public void setProfilePic(BufferedImage profilePic) {
+    private byte[] profilePic;
+    public void setProfilePic(byte[] profilePic) {
         this.profilePic=profilePic;
     }
     public void setUsername(String n) {
@@ -44,7 +42,7 @@ public class User {
     public void setGender(char gender){
         this.gender=gender;
     }
-    public void setPersonalInfo(String address, String phoneNumber, char gender, Date birthDate, BufferedImage profilePic){
+    public void setPersonalInfo(String address, String phoneNumber, char gender, Date birthDate, byte[] profilePic){
         this.gender=gender;
         this.phoneNumber=phoneNumber;
         this.address=address;
@@ -88,7 +86,7 @@ public class User {
     public Date getBirthDate(){
         return birthDate;
     }
-    public BufferedImage getProfilePic(){
+    public byte[] getProfilePic(){
         return profilePic;
     }
 

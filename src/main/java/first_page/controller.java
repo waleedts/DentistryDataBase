@@ -22,6 +22,7 @@ import main.java.connections.*;
 import main.java.pane.*;
 
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -47,9 +48,9 @@ public class controller implements Initializable {
     JFXButton b2;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        BufferedImage img =CurrentUser.getCurrentUser().getProfilePic();
-//        rec.setFill(new ImagePattern( SwingFXUtils.toFXImage(img,null)));//Todo : fix blob with data base
-        System.out.println(rec.getFill());
+
+        Image image=new Image(new ByteArrayInputStream(CurrentUser.getCurrentUser().getProfilePic()));
+        rec.setFill(new ImagePattern(image));
         list.setDepth(3);
         try {
             ClinicDataAccessor dataAccessor=new ClinicDataAccessor();

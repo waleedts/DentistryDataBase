@@ -83,7 +83,7 @@ public class DocPatReg implements Initializable {
             Helper.changeScene("First_Page_GUI.fxml", patientBtn);
         }
     }
-    public void goBack(){
-        Helper.changeScene("Fourth_Page_GUI.fxml",patientBtn);
+    public void goToAddClinic(){
+        Helper.changeScene("",patientBtn);
     }
 }
