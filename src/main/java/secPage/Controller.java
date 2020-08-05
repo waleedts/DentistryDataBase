@@ -1,5 +1,6 @@
 package main.java.secPage;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.effects.JFXDepthManager;
@@ -10,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import main.java.helper.Helper;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +22,8 @@ public class Controller implements Initializable {
     JFXListView<Pane> postsList;
     Image doctorImage;
     Image clinicImage;
+    @FXML
+    JFXButton bookBtn;
     @FXML
     Circle doctorImageCircle;
     @FXML
@@ -34,9 +38,6 @@ public class Controller implements Initializable {
 //        clinicImage =new Image(temp);
 //        doctorImageCircle.setFill(new ImagePattern(doctorImage));
 //        clinicImageCircle.setFill(new ImagePattern(clinicImage));
-        postsList.setOnMouseClicked((e)->{
-            //TODO: add a mouse click
-        });
         for(int i=0;i<10;i++){
             postsList.getItems().add(create());
         }
@@ -52,5 +53,8 @@ public class Controller implements Initializable {
         pane.getChildren().add(postBody);
         pane.getChildren().add(new ImageView(image));
         return pane;
+    }
+    public void goBack(){
+        Helper.changeScene("First_Page_GUI.fxml",bookBtn);
     }
 }

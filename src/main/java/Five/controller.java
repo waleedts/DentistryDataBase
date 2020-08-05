@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.svg.SVGGlyph;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -16,6 +17,7 @@ import javafx.scene.layout.Pane;
 import main.java.*;
 import main.java.connections.*;
 import main.java.helper.*;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -23,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class controller implements Initializable {
     @FXML
-    SVGGlyph b1;
+    FontIcon b1;
     @FXML
     JFXButton b2;
     @FXML
@@ -76,6 +78,11 @@ public class controller implements Initializable {
         });
         service.setOnFailed(workerStateEvent -> service.restart());
     }
+    public void goBack(Event e){
+        if(e.getSource()==b1)
+            Helper.changeScene("MainGUI.fxml",b2);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         r1.setSelected(true);

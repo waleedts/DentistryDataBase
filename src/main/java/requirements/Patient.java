@@ -26,4 +26,13 @@ public class Patient extends User{
     public Patient(String firstName,String lastName,String userName){
         super(firstName,lastName,userName);
     }
+    public Patient(User user){
+        super(user);
+    }
+    public Patient(Patient patient){
+        super(patient);
+        this.allergies=patient.allergies;
+        this.bloodType=patient.bloodType;
+        this.cost=patient.cost;
+    }
 }

@@ -16,7 +16,6 @@
    <JFXButton layoutX="535.0" layoutY="380.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #1070af;" text="SIGN IN" textFill="WHITE">
       <graphic>
          <FontIcon iconLiteral="fab-facebook-square:22:white">
-
          </FontIcon>
       </graphic>
    </JFXButton>

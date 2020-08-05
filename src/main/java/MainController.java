@@ -25,31 +25,14 @@ public class MainController {
     }
 
     @FXML
-    public void login() {
-
-        Service<Boolean> service= new Service<>() {
-            @Override
-            protected Task<Boolean> createTask() {
-                return new Task<>() {
-                    @Override
-                    protected Boolean call() {
-                        Login login = new Login();
-                        return login.facebookLogin();
-                    }
-                };
-            }
-        };
-        service.start();
-        service.setOnSucceeded(workerStateEvent -> {
-            boolean loginSuccess = service.getValue();
-            if (loginSuccess) {
-                Helper.changeScene("Fourth_Page_GUI.fxml",b1);
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error signing in!");
-                alert.showAndWait();
-
-            }
-        });
+    public void login()  {
+        Login login = new Login();
+        try {
+            login.facebookLogin(b1);
+        }catch (IllegalStateException e){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Error login in!");
+                alert.show();
+        }
     }
 }

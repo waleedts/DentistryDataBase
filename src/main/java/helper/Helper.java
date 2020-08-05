@@ -14,7 +14,7 @@ public class Helper {
         Stage stage =(Stage) btn.getScene().getWindow();
         try {
             Parent ro = FXMLLoader.load(Objects.requireNonNull(Helper.class.getClassLoader().getResource(path)));
-            Scene scene = new Scene(ro, 1000, 400);
+            Scene scene = new Scene(ro, 1200, 600);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

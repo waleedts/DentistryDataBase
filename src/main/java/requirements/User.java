@@ -2,6 +2,7 @@ package main.java.requirements;
 
 import javafx.scene.image.Image;
 
+import java.awt.image.BufferedImage;
 import java.util.Date;
 
 public class User {
@@ -10,6 +11,12 @@ public class User {
         this.firstName=firstName;
         this.lastName=lastName;
         this.username = username;
+    }
+
+    public User(User user){
+        this(user.getFirstName(),user.getLastName(),user.getUsername());
+        this.setPersonalInfo(user.getAddress(),user.getPhoneNumber(), user.getGender(), user.getBirthDate(), user.getProfilePic());
+        this.setPassword(user.password);
     }
     public User(){}
     private String username;
@@ -20,14 +27,14 @@ public class User {
     private String address;
     private String firstName;
     private String lastName;
-    private Image profilePic;
-    public void setProfilePic(Image profilePic) {
+    private BufferedImage profilePic;
+    public void setProfilePic(BufferedImage profilePic) {
         this.profilePic=profilePic;
     }
     public void setUsername(String n) {
         username = n;
     }
-    public void setPassWord(String p) {
+    public void setPassword(String p) {
         password = p;
     }
     public void setPhoneNumber(String phoneNumber){
@@ -37,7 +44,7 @@ public class User {
     public void setGender(char gender){
         this.gender=gender;
     }
-    public void setPersonalInfo(String address,String phoneNumber,char gender,Date birthDate,Image profilePic){
+    public void setPersonalInfo(String address, String phoneNumber, char gender, Date birthDate, BufferedImage profilePic){
         this.gender=gender;
         this.phoneNumber=phoneNumber;
         this.address=address;
@@ -60,7 +67,7 @@ public class User {
     public String getUsername(){
         return username;
     }
-    public String getPassWord(){
+    public String getPassword(){
         return password;
     }
     public char getGender(){
@@ -81,7 +88,7 @@ public class User {
     public Date getBirthDate(){
         return birthDate;
     }
-    public Image getProfilePic(){
+    public BufferedImage getProfilePic(){
         return profilePic;
     }
 

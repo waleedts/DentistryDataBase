@@ -30,6 +30,7 @@ public class controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         list.setDepth(3);
+        list.setMouseTransparent(true);
         try {
             ClinicDataAccessor dataAccessor=new ClinicDataAccessor();
             List<Clinic> clinics=dataAccessor.getClinicList();

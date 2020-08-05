@@ -3,6 +3,11 @@ package main.java.requirements;
 public class Doctor extends User{
     private int salary;
     private int clinicId;
+
+    public int getClinicId() {
+        return clinicId;
+    }
+
     public void setSalary(int salary){
         this.salary=salary;
     }
@@ -16,7 +21,11 @@ public class Doctor extends User{
         super(firstName,lastName,userName);
     }
     public Doctor(User user){
-        super(user.getFirstName(),user.getLastName(),user.getUsername());
-        user.setPersonalInfo(user.getAddress(),user.getPhoneNumber(), user.getGender(), user.getBirthDate(), user.getProfilePic());
+        super(user);
+    }
+    public Doctor(Doctor doctor){
+        super(doctor);
+        this.salary= doctor.salary;
+        this.clinicId= doctor.clinicId;
     }
 }

@@ -1,5 +1,6 @@
 package main.java.connections;
 
+import com.jfoenix.controls.JFXButton;
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.Parameter;
@@ -9,6 +10,8 @@ import com.restfb.scope.ScopeBuilder;
 import com.sun.javafx.application.PlatformImpl;
 import javafx.application.Platform;
 import javafx.scene.image.Image;
+import javafx.stage.Modality;
+import main.java.helper.Helper;
 import main.java.requirements.User;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
@@ -17,6 +20,8 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,7 +41,6 @@ public class Login{
         ){
             if(rs.next())
             {
-                System.out.println(passwordEncoder.encode(password));
                 boolean matches =passwordEncoder.matches(password,rs.getString("password"));
                 if (matches) {
                     CurrentUser.setCurrentUser(username, isDoctor);
@@ -47,20 +51,18 @@ public class Login{
             }
         }
     }
-    public boolean signUp(String firstName, String LastName, String address, String username, String password, String phoneNumber, char gender,Date date, Image image, boolean isDoctor)  throws SQLException {
+    public boolean signUp(String firstName, String LastName, String address, String username, String password, String phoneNumber, char gender, Date date, BufferedImage image, boolean isDoctor)  throws SQLException {
         try (
-                PreparedStatement stmnt = connection.prepareStatement("select * from \"USER\" where USER_NAME="+username+"");
+                PreparedStatement stmnt = connection.prepareStatement("select * from \"USER\" where USER_NAME='"+username+"'");
                 ResultSet rs = stmnt.executeQuery()
         ){
-            System.out.println("im innn");
             if(rs.next()){
                 return false;
             }
             User user=new User(firstName,LastName,username);
             user.setPersonalInfo(address,phoneNumber,gender,date,image);
-            user.setPassWord(passwordEncoder.encode(password));
+            user.setPassword(passwordEncoder.encode(password));
             CurrentUser.setCurrentUser(user,isDoctor);
-            System.out.println("im ouuuut");
             return true;
         }
     }
@@ -78,19 +80,32 @@ public class Login{
 
     }
     private  final String SUCCESS_URL = "https://www.facebook.com/connect/login_success.html";
-    void  saveUserData(String token){
+    void  saveUserData(String token,JFXButton button){
         FacebookClient facebookClient =new DefaultFacebookClient(token,Version.LATEST);
         com.restfb.types.User user = facebookClient.fetchObject("me", com.restfb.types.User.class, Parameter.with("fields", "picture,location,email,birthday,gender"));
         System.out.println(user.getLocation()+"\n"+user.getEmail()+"\n"+user.getBirthday()+"\n"+user.getGender());
         try (
                 PreparedStatement stmnt = connection.prepareStatement("select * from \"USER\" where USER_NAME='" +user.getEmail()+"'");
                 ResultSet rs = stmnt.executeQuery()
+
         ){
             if(rs.next()){
-                CurrentUser.setCurrentUser(user.getEmail(),false);
+                try(
+                        PreparedStatement docState=connection.prepareStatement("select doctor_user_name from doctor where doctor_user_name='"+user.getEmail()+"'");
+                        ResultSet r = docState.executeQuery()
+                ){
+                    CurrentUser.setCurrentUser(user.getEmail(),r.next());
+                }
             }else {
-                //Todo:implement signUp
-                System.out.println("I have not seen you before");
+            User user1=new User(user.getFirstName(), user.getLastName(), user.getEmail());
+            if(user.getGender()!=null){
+                user1.setGender(user.getGender().charAt(0));
+            }
+            user1.setBirthDate(user.getBirthdayAsDate());
+            if(user.getLocation()!=null)
+                user1.setAddress(user.getLocation().getName());
+            CurrentUser.setCurrentUser(user1,false);
+            Helper.changeScene("Fourth_Page_GUI.fxml",button);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -98,11 +113,12 @@ public class Login{
     }
     boolean loginSucceeded=false;
     private String appId;
-    public  boolean facebookLogin(){
-        PlatformImpl.runAndWait(()->{
+    public  void facebookLogin(JFXButton button) {
             Stage stage = new Stage();
             WebView webView = new WebView();
             WebEngine webEngine = webView.getEngine();
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(button.getScene().getWindow());
             // create the scene
             stage.setTitle("Facebook Login Example");
             // use quite a wide window to handle cookies popup nicely
@@ -113,11 +129,11 @@ public class Login{
             scope.addPermission(FacebookPermissions.USER_GENDER);
             scope.addPermission(FacebookPermissions.USER_BIRTHDAY);
             scope.addPermission(FacebookPermissions.USER_LOCATION);
-            System.out.println(scope.toString());
             // obtain Facebook access token by loading login page
             DefaultFacebookClient facebookClient = new DefaultFacebookClient(Version.VERSION_7_0);
             String loginDialogUrl = facebookClient.getLoginDialogUrl(appId, SUCCESS_URL, scope);
             webEngine.load(loginDialogUrl + "&display=popup&response_type=token");
+            final boolean[] listen = {true};
             webEngine.locationProperty().addListener((property, oldValue, newValue) -> {
                 if (newValue.startsWith(SUCCESS_URL)) {
                     // extract access token
@@ -125,16 +141,20 @@ public class Login{
                     int codeOffset = newValue.indexOf("token=");
 
                     String []token = newValue.substring(codeOffset + "token=".length()).split("&");
-                    saveUserData(token[0]);
+                    saveUserData(token[0],button);
                     stage.close();
                     loginSucceeded=true;
+                    listen[0] =false;
                 } else if ("https://www.facebook.com/dialog/close".equals(newValue)) {
-                    throw new IllegalStateException("dialog closed");
+                    listen[0] =false;
                 }
             });
-
-        });
-        return loginSucceeded;
+            new Thread(()->{
+                while (true)
+                    if(!loginSucceeded&&!listen[0]){
+                        throw new IllegalStateException("Login Failed");
+                    }
+            });
     }
 
 }

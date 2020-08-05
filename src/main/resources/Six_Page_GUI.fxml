@@ -4,80 +4,53 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import org.kordamp.ikonli.javafx.*?>
 
-<?import org.kordamp.ikonli.javafx.FontIcon?>
-<AnchorPane prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.DocPatReg">
-    <Pane prefHeight="462.0" prefWidth="301.0" style="-fx-background-color: #1070af;">
-        <Label layoutX="37.0" layoutY="41.0" text="Registration For Doctor's" textFill="WHITE">
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.DocPatReg">
+    <Pane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070af;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label layoutX="187.0" layoutY="61.0" text="Registration For Doctor's" textFill="WHITE">
             <font>
-                <Font name="System Bold Italic" size="18.0"/>
+                <Font name="System Bold Italic" size="18.0" />
             </font>
         </Label>
-        <JFXTextField layoutX="37.0" layoutY="160.0" prefHeight="25.0" prefWidth="199.0"
-                      style="-fx-background-color: #FFFFFF;" unFocusColor="#1070af"/>
-        <Label layoutX="37.0" layoutY="129.0" prefHeight="17.0" prefWidth="60.0" text="Salary" textFill="WHITE">
+        <JFXTextField fx:id="salaryField" layoutX="161.0" layoutY="192.0" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #FFFFFF;" unFocusColor="#1070af" />
+        <Label layoutX="159.0" layoutY="167.0" prefHeight="17.0" prefWidth="60.0" text="Salary" textFill="WHITE">
             <font>
-                <Font name="System Bold" size="16.0"/>
+                <Font name="System Bold" size="16.0" />
             </font>
         </Label>
-        <JFXButton layoutX="75.0" layoutY="393.0" prefHeight="25.0" prefWidth="133.0"
-                   style="-fx-background-color: #FF1943;" text="Button" textFill="WHITE"/>
-        <JFXButton    textFill="WHITE">
-            <graphic>
-                <FontIcon iconLiteral="fas-arrow-left"/>
-            </graphic>
-        </JFXButton>
-        <MenuButton layoutX="39.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="177.0"
-                    style="-fx-background-color: #ffffff;" text="MenuButton">
-            <items>
-                <MenuItem mnemonicParsing="false" text="Action 1"/>
-                <MenuItem mnemonicParsing="false" text="Action 2"/>
-            </items>
-        </MenuButton>
-        <Label layoutX="37.0" layoutY="242.0" text="Clinic Name" textFill="WHITE">
+        <JFXButton fx:id="doctorBtn" layoutX="225.0" layoutY="413.0" onAction="#registerDoc" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #FF1943;" text="Register" textFill="WHITE" />
+        <JFXComboBox fx:id="clinicChooser" layoutX="161.0" layoutY="306.0" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #ffffff;">
+
+        </JFXComboBox>
+        <Label layoutX="161.0" layoutY="280.0" text="Clinic Name" textFill="WHITE">
             <font>
-                <Font name="System Bold Italic" size="14.0"/>
+                <Font name="System Bold Italic" size="14.0" />
             </font>
         </Label>
-        <Pane fx:id="doctorShadow" layoutX="-8.0" layoutY="-4.0" prefHeight="466.5" prefWidth="310.0"
-              style="-fx-background-color: black; -fx-opacity: 40%;"/>
+        <Pane fx:id="doctorShadow" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black; -fx-opacity: 40%;" />
     </Pane>
-    <Label layoutX="333.0" layoutY="43.0" prefHeight="27.0" prefWidth="241.0" text="Registration For Patient's">
-        <font>
-          <Font name="System Bold Italic" size="18.0"/>
-        </font>
-    </Label>
-    <MenuButton layoutX="349.0" layoutY="162.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0"
-                style="-fx-background-color: #ffffff;" text="Choose...">
-      <items>
-          <MenuItem mnemonicParsing="false" text="A+"/>
-          <MenuItem mnemonicParsing="false" text="A-"/>
-          <MenuItem mnemonicParsing="false" text="B+"/>
-          <MenuItem mnemonicParsing="false" text="B-"/>
-          <MenuItem mnemonicParsing="false" text="O+"/>
-          <MenuItem mnemonicParsing="false" text="O-"/>
-          <MenuItem mnemonicParsing="false" text="AB+"/>
-          <MenuItem mnemonicParsing="false" text="AB-"/>
-      </items>
-        <font>
-          <Font name="System Bold Italic" size="13.0"/>
-        </font>
-    </MenuButton>
-    <Label layoutX="349.0" layoutY="137.0" prefHeight="17.0" prefWidth="82.0" text="Blood Type">
-        <font>
-          <Font name="System Bold Italic" size="13.0"/>
-        </font>
-    </Label>
-    <JFXTextField layoutX="349.0" layoutY="306.0" prefHeight="27.0" prefWidth="210.0" style="-fx-border-color: #000000;"
-                  unFocusColor="WHITE"/>
-    <Label layoutX="349.0" layoutY="279.0" prefHeight="17.0" prefWidth="106.0" text="Allergies">
-        <font>
-          <Font name="System Bold" size="13.0"/>
-        </font>
-    </Label>
-    <JFXButton fx:id="patientBtn" layoutX="389.0" layoutY="392.0" prefHeight="25.0" prefWidth="133.0"
-               style="-fx-background-color: #1070AF;" text="Button" textFill="WHITE"/>
-    <Pane fx:id="patientShadow" layoutX="302.0" prefHeight="462.0" prefWidth="302.0"
-          style="-fx-background-color: black; -fx-opacity: 40%;"/>
+    <FontIcon iconLiteral="fas-arrow-left:24:white" layoutX="20" layoutY="30" onMouseClicked="#goBack" />
+          <Label layoutX="753.0" layoutY="113.0" prefHeight="27.0" prefWidth="241.0" text="Registration For Patient's">
+              <font>
+                <Font name="System Bold Italic" size="18.0" />
+              </font>
+          </Label>
+          <JFXComboBox fx:id="bloodChooser" layoutX="768.0" layoutY="255.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #ffffff;">
+          </JFXComboBox>
+          <Label layoutX="768.0" layoutY="230.0" prefHeight="17.0" prefWidth="82.0" text="Blood Type">
+              <font>
+                <Font name="System Bold Italic" size="13.0" />
+              </font>
+          </Label>
+          <JFXTextField fx:id="allergiesField" layoutX="768.0" layoutY="341.0" prefHeight="27.0" prefWidth="210.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
+          <Label layoutX="768.0" layoutY="321.0" prefHeight="17.0" prefWidth="106.0" text="Allergies">
+              <font>
+                <Font name="System Bold" size="13.0" />
+              </font>
+          </Label>
+          <JFXButton fx:id="patientBtn" onMouseClicked="#registerPat" layoutX="809.0" layoutY="462.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #1070AF;" text="Register" textFill="WHITE" />
+
+    <Pane fx:id="patientShadow" layoutX="302.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black; -fx-opacity: 40%;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+
 </AnchorPane>

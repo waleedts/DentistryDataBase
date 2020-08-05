@@ -1,10 +1,15 @@
 package main.java.connections;
 
+import com.sun.mail.iap.ByteArray;
+import javafx.embed.swing.SwingFXUtils;
 import main.java.requirements.Doctor;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.*;
 
 public class DoctorDataAccessor extends UserDataAccessor{
     public Doctor getDoctor(String username) throws SQLException {
@@ -20,7 +25,16 @@ public class DoctorDataAccessor extends UserDataAccessor{
     }
 
 
-    public void setDoctor(){
-
+    public void setDoctor(Doctor doctor) throws SQLException {
+        try (
+                PreparedStatement stmnt = connection.prepareStatement("insert into doctor (salary,doctor_user_name) values ((?),(?))")
+        ){
+                setUser(doctor);
+                stmnt.setInt(1,doctor.getSalary());
+                stmnt.setInt(2,doctor.getClinicId());
+                stmnt.execute();
+            } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

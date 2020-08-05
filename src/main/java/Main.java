@@ -22,6 +22,7 @@ public class Main extends Application {
             // System.out.println(getClass().getResource("/main.java.first_page/First_Page_GUI.fxml"));
             Scene scene = new Scene(root, 1200, 600);
             primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
             primaryStage.show();
         }catch (Exception e){
             e.printStackTrace();

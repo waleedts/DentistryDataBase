@@ -16,17 +16,21 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import main.java.connections.CurrentUser;
 import main.java.connections.Login;
 import main.java.helper.Helper;
+import main.java.requirements.User;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -34,15 +38,13 @@ public class Controller implements Initializable {
     @FXML
     JFXTextField firstNameField,lastNameField,userField,passField,addressField,phoneField;
     @FXML
-    JFXButton b1,b2,b3;
+    JFXButton b2,b3;
     @FXML
     JFXRadioButton r1,r2,r3;
     @FXML
     ToggleGroup t,doctorPatient;
     @FXML
     JFXRadioButton doctorRadio;
-    int depth = 5;
-    private StackPane parentContainer;
     @FXML
     JFXDatePicker birthDate;
     @FXML
@@ -51,7 +53,7 @@ public class Controller implements Initializable {
     private AnchorPane aa;
     @FXML
     ProgressIndicator progressIndicator;
-    private Desktop desktop = Desktop.getDesktop();
+    private final Desktop desktop = Desktop.getDesktop();
 
     public Controller(){
         t=new ToggleGroup();
@@ -59,20 +61,20 @@ public class Controller implements Initializable {
 
     }
 
-    Image image;
+    BufferedImage image;
     public void toUpload(){
         Platform.runLater(() -> {
-            try {
                 final FileChooser d = new FileChooser();
                 Stage s = (Stage) aa.getScene().getWindow();
                 File file = d.showOpenDialog(s);
                 if (file != null) {
-                    desktop.open(file);
-                    image= new Image(file.toURI().toString());
+                    try {
+                        image= ImageIO.read(file);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         });
     }
     Date date=null;
@@ -85,24 +87,28 @@ public class Controller implements Initializable {
         }else{
             gender='n';
         }
-
-
-        if(birthDate.getValue()!=null){
-            date=java.sql.Date.valueOf(birthDate.getValue());
+        Alert alrt;
+        if(birthDate.getValue()==null||firstNameField.getText()==null||lastNameField.getText()==null||addressField.getText()==null||userField.getText()==null||passField.getText()==null||phoneField.getText()==null||image==null) {
+            alrt = new Alert(Alert.AlertType.ERROR);
+            alrt.setTitle("Error Signing Up!");
+            alrt.setContentText("The fields must not be empty!");
+            alrt.showAndWait();
+            return;
         }
-        Service<Boolean> service=new Service<Boolean>() {
+        date=java.sql.Date.valueOf(birthDate.getValue());
+        Service<Boolean> service= new Service<>() {
             @Override
             protected Task<Boolean> createTask() {
-                return new Task<Boolean>() {
+                return new Task<>() {
                     @Override
                     protected Boolean call() {
-                        boolean loginSuccess=false;
-                        Login login=new Login();
+                        boolean loginSuccess = false;
+                        Login login = new Login();
                         try {
                             System.out.println("out");
-                             loginSuccess=login.signUp(firstNameField.getText(),lastNameField.getText(),addressField.getText(),userField.getText(),passField.getText(),phoneField.getText(),gender,date,image, doctorRadio.isSelected());
-                        }catch (SQLException e){
-                            System.out.println("Exception in method (SignIn) in class (loginController)"+e.getMessage());
+                            loginSuccess = login.signUp(firstNameField.getText(), lastNameField.getText(), addressField.getText(), userField.getText(), passField.getText(), phoneField.getText(), gender, date, image, doctorRadio.isSelected());
+                        } catch (SQLException e) {
+                            System.out.println("Exception in method (SignUpAction) in class (FourthController)" + e.getMessage());
                         }
                         return loginSuccess;
                     }
@@ -114,19 +120,18 @@ public class Controller implements Initializable {
         service.setOnSucceeded(workerStateEvent -> {
             boolean loginSuccess = service.getValue();
             if (loginSuccess) {
-                Helper.changeScene("First_Page_GUI.fxml",b1);
+                Helper.changeScene("Six_Page_GUI.fxml",b2);
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error signing in!");
-                alert.setContentText("The username password combination does not match!");
+                alert.setTitle("Signup Error!");
+                alert.setContentText("Error in Signup process!");
                 alert.showAndWait();
             }
         });
-        // FIXME: 7/25/2020 ix:print statements are a miss
         service.setOnFailed(workerStateEvent -> service.restart());
     }
-    public void returnBack(){
-        Helper.changeScene("mainGUI.fxml",b1);
+    public void goBack(){
+        Helper.changeScene("mainGUI.fxml",b2);
     }
 
     @Override
@@ -137,5 +142,18 @@ public class Controller implements Initializable {
         doctorRadio.setSelected(true);
         progressIndicator.setVisible(false);
         r1.setSelected(true);
+        User user=CurrentUser.getCurrentUser();
+        if(user!=null){
+            firstNameField.setText(user.getFirstName());
+            lastNameField.setText(user.getLastName());
+            userField.setText(user.getUsername());
+            passField.setText(user.getPassword());
+            phoneField.setText(user.getPhoneNumber());
+            birthDate.setValue(Instant.ofEpochMilli(user.getBirthDate().getTime())
+                    .atZone(ZoneId.systemDefault())
+                    .toLocalDate());
+            addressField.setText(user.getAddress());
+            CurrentUser.deleteCurrentUser();
+        }
     }
 }

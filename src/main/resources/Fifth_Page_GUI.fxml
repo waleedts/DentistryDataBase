@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import main.java.LimitedTextField?>
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Five.controller">
-   <Pane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070af;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-<!--   <SVGGlyph fx:id="b1" layoutY="2.0" prefHeight="53.0" prefWidth="124.0">-->
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import main.java.*?>
+<?import org.kordamp.ikonli.javafx.*?>
 
-<!--         <FontIcon iconLiteral="fas-arrow-left:22:white" />-->
-<!--   </SVGGlyph>-->
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Five.controller">
+   <Pane onMouseClicked="#goBack" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070af;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <FontIcon fx:id="b1" iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" onMouseClicked="#goBack" />
 
       <Rectangle arcHeight="90.0" arcWidth="70.0" fill="WHITE" height="163.0" layoutX="229.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" width="143.0" />
       <Label layoutX="229.0" layoutY="397.0" prefHeight="17.0" prefWidth="143.0" text="Welcome Back" textFill="WHITE">
@@ -28,8 +25,8 @@
       </ImageView>
    </Pane>
    <Pane layoutX="297.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <LimitedTextField fx:id="usernameField" maxLength="100" focusColor="WHITE" layoutX="158.0" layoutY="190.0" prefHeight="27.0" prefWidth="284.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" unFocusColor="WHITE" />
-      <LimitedTextField fx:id="passwordField" maxLength="100" focusColor="WHITE" layoutX="160.0" layoutY="262.0" prefHeight="27.0" prefWidth="284.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" unFocusColor="WHITE" />
+      <LimitedTextField fx:id="usernameField" focusColor="WHITE" layoutX="158.0" layoutY="190.0" maxLength="100" prefHeight="27.0" prefWidth="284.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" unFocusColor="WHITE" />
+      <LimitedTextField fx:id="passwordField" focusColor="WHITE" layoutX="160.0" layoutY="262.0" maxLength="100" prefHeight="27.0" prefWidth="284.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" unFocusColor="WHITE" />
       <Label layoutX="158.0" layoutY="173.0" text="User Name">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -46,12 +43,12 @@
             <ToggleGroup fx:id="t" />
          </toggleGroup>
          <selectedColor>
-            <Color blue="0.686274528503418" green="0.43921568989753723" red="0.062745101749897" />
+            <Color red="0.062745101749897" green="0.43921568989753723" blue="0.686274528503418" />
          </selectedColor>
       </JFXRadioButton>
       <JFXRadioButton fx:id="r2" layoutX="341.0" layoutY="329.0" style="-fx-background-color: #FFFFFF;" text="Patient" toggleGroup="$t">
          <selectedColor>
-            <Color blue="0.686274528503418" green="0.43921568989753723" red="0.062745101749897" />
+            <Color red="0.062745101749897" green="0.43921568989753723" blue="0.686274528503418" />
          </selectedColor></JFXRadioButton>
    </Pane>
    <Pane fx:id="progressPane" layoutX="294.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" visible="false" AnchorPane.rightAnchor="0.0">
