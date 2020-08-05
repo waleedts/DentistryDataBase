@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Tree" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Tree"
+			  columnWidth="535" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables">
 		<![CDATA[IkFQUE9JTlRNRU5UIiBBUyAsMTE4LDEwOCwwMTBhMWM1MC01NTU2LTQ0YTktOWQyMS1jZTQ4YmNk
@@ -21,28 +22,27 @@ ZjlkYTM7]]>
 	</style>
 	<queryString language="SQL">
 		<![CDATA[SELECT sum( PRICE) AS total_price,
-	"APPOINTMENT"."ID",
-	"APPOINTMENT"."DURATION",
-	"APPOINTMENT"."PATIENT_USERNAME",
-	"CLINIC"."NAME",
-	"CLINIC"."PHONE_NUMBER",
-	"DOCTOR"."DOCTOR_USER_NAME"
+       "APPOINTMENT"."ID",
+       "APPOINTMENT"."PATIENT_USERNAME",
+       "CLINIC"."NAME",
+       "CLINIC"."PHONE_NUMBER",
+       "DOCTOR"."DOCTOR_USER_NAME"
 FROM "APPOINTMENT",
-	"CLINIC",
-	"DOCTOR",
-	"SERVICES",
-	"PATIENT"
-WHERE 
-	 "APPOINTMENT"."ID" = "SERVICES"."APPOINTMENT_ID" 
-	 AND "APPOINTMENT"."PATIENT_USERNAME" = "PATIENT"."PATIENT_USER_NAME" 
-	 AND "APPOINTMENT"."DURATION" = "SERVICES"."DURATION" 
-GROUP BY 
-	"APPOINTMENT"."ID",
-	"APPOINTMENT"."DURATION",
-	"APPOINTMENT"."PATIENT_USERNAME",
-	"CLINIC"."NAME",
-	"CLINIC"."PHONE_NUMBER",
-	"DOCTOR"."DOCTOR_USER_NAME"]]>
+     "CLINIC",
+     "DOCTOR",
+     "SERVICES",
+     "PATIENT"
+WHERE
+        "APPOINTMENT"."ID" = "SERVICES"."APPOINTMENT_ID"
+  AND "APPOINTMENT"."PATIENT_USERNAME" = "PATIENT"."PATIENT_USER_NAME"
+  AND "APPOINTMENT"."ID" = "SERVICES"."DURATION"
+GROUP BY
+    "APPOINTMENT"."ID",
+    "APPOINTMENT"."ID",
+    "APPOINTMENT"."PATIENT_USERNAME",
+    "CLINIC"."NAME",
+    "CLINIC"."PHONE_NUMBER",
+    "DOCTOR"."DOCTOR_USER_NAME"]]>
 	</queryString>
 	<field name="TOTAL_PRICE" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="TOTAL_PRICE"/>
@@ -50,19 +50,19 @@ GROUP BY
 	<field name="ID" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="ID"/>
 	</field>
-	<field name="DURATION" class="java.lang.String">
+	<field name="DURATION">
 		<property name="com.jaspersoft.studio.field.label" value="DURATION"/>
 	</field>
-	<field name="PATIENT_USERNAME" class="java.lang.String">
+	<field name="PATIENT_USERNAME">
 		<property name="com.jaspersoft.studio.field.label" value="PATIENT_USERNAME"/>
 	</field>
-	<field name="NAME" class="java.lang.String">
+	<field name="NAME">
 		<property name="com.jaspersoft.studio.field.label" value="NAME"/>
 	</field>
-	<field name="PHONE_NUMBER" class="java.lang.String">
+	<field name="PHONE_NUMBER">
 		<property name="com.jaspersoft.studio.field.label" value="PHONE_NUMBER"/>
 	</field>
-	<field name="DOCTOR_USER_NAME" class="java.lang.String">
+	<field name="DOCTOR_USER_NAME">
 		<property name="com.jaspersoft.studio.field.label" value="DOCTOR_USER_NAME"/>
 	</field>
 	<group name="Group1">
