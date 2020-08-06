@@ -2,21 +2,20 @@ package main.java;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import main.java.connections.ClinicDataAccessor;
 import main.java.connections.CurrentUser;
 import main.java.connections.DoctorDataAccessor;
 import main.java.connections.PatientDataAccessor;
 import main.java.helper.Helper;
+import main.java.requirements.Clinic;
 import main.java.requirements.Doctor;
 import main.java.requirements.Patient;
-
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -37,7 +36,7 @@ public class DocPatReg implements Initializable {
     @FXML
     LimitedTextField allergiesField;
     @FXML
-    JFXComboBox<String> clinicChooser;
+    JFXComboBox<Clinic> clinicChooser;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         String[] st ={"A+","A-","B+","B-","AB+","AB-","O+","O-"};
@@ -47,6 +46,13 @@ public class DocPatReg implements Initializable {
             doctorShadow.setVisible(false);
         }else{
             patientShadow.setVisible(false);
+        }
+        ClinicDataAccessor dataAccessor=new ClinicDataAccessor();
+        try {
+            clinicChooser.setItems(FXCollections
+                    .observableArrayList(dataAccessor.getUnusedClinics()));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
     public void registerDoc(Event event) throws SQLException {
@@ -64,11 +70,11 @@ public class DocPatReg implements Initializable {
             }
             Doctor doctor = new Doctor(CurrentUser.getCurrentUser());
             doctor.setSalary(i);
-//        Todo:implement
-//        doctor.setClinicId(clinicChooser.getId());
+            doctor.setClinicId(clinicChooser.getValue().getId());
             CurrentUser.setCurrentUser(doctor, true);
             DoctorDataAccessor dataAccessor = new DoctorDataAccessor();
             dataAccessor.setDoctor(doctor);
+            Helper.changeScene("Bills_GUI.fxml",patientBtn);
         }
     }
     public void registerPat(Event event){
@@ -85,6 +91,6 @@ public class DocPatReg implements Initializable {
         }
     }
     public void goToAddClinic(){
-        Helper.changeScene("",patientBtn);
+        Helper.changeScene("clinicReg_GUI.fxml",patientBtn);
     }
 }

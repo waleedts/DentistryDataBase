@@ -15,6 +15,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import main.java.connections.ClinicDataAccessor;
 import main.java.connections.CurrentUser;
+import main.java.connections.Login;
 import main.java.connections.SelectedClinic;
 import main.java.helper.Helper;
 import main.java.pane.PaneController;
@@ -34,7 +35,7 @@ public class controller implements Initializable {
     @FXML
     JFXListView <Pane>list;
     @FXML
-    JFXTextField searchBtn;
+    JFXTextField searchField;
     @FXML
     Rectangle rec;
     @FXML
@@ -43,6 +44,7 @@ public class controller implements Initializable {
     JFXButton b2;
     @FXML
     MenuButton filterBtn;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -60,19 +62,19 @@ public class controller implements Initializable {
                 panes.add(createPane(c,dataAccessor));
             }
             FilteredList<Pane> clinicFilteredList=new FilteredList<>(FXCollections.observableList(panes), e->true);
-            searchBtn.textProperty().addListener(
+            searchField.textProperty().addListener(
                     (observable, oldValue, newValue) -> clinicFilteredList.setPredicate(pane ->{
+
+                        //Todo:implement filter button
+                        if(newValue == null || newValue.isEmpty()){
+                            return true;
+                        }
                         Clinic clinic= null ;
                         try {
                             clinic = new ClinicDataAccessor().getClinic(pane.getId());
                         } catch (SQLException throwables) {
                             throwables.printStackTrace();
                         }
-                        //Todo:implement filter button
-                        if(newValue == null || newValue.isEmpty()){
-                            return true;
-                        }
-
                         String lowerCaseFilter = newValue.toLowerCase();
                         assert clinic != null;
                         if(clinic.getDoctor().getFirstName().toLowerCase().contains(lowerCaseFilter)){
@@ -95,8 +97,8 @@ public class controller implements Initializable {
         pane.setId(Integer.toString(clinic.getId()));
         pane.setOnMouseClicked((e)->{
             try {
-                Helper.changeScene("Second_Page_GUI.fxml",accountInfoBtn);
                 SelectedClinic.setClinic(dataAccessor.getClinic(list.getSelectionModel().getSelectedItem().getId()));
+                Helper.changeScene("Second_Page_GUI.fxml",accountInfoBtn);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -105,12 +107,18 @@ public class controller implements Initializable {
         PaneController controller=loader.getController();
         controller.setDentist(clinic.getDoctor().getFirstName()+" "+clinic.getDoctor().getLastName());
         controller.setAddress(clinic.getAddress());
-        controller.setImgV(null);
+        controller.setImgV(new Image(new ByteArrayInputStream(clinic.getProfilePicture())));
         controller.setName(clinic.getName());
         controller.setPhone(clinic.getPhoneNumber());
+        controller.setType(clinic.getType());
         return pane;
     }
     public void bill(){
         Helper.changeScene("Bills_GUI.fxml",b2);
+    }
+    public void signOut(){
+        Login login=new Login();
+        login.signOut();
+        Helper.changeScene("mainGUI.fxml",b2);
     }
 }

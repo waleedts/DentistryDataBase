@@ -6,12 +6,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.Pane;
-import main.java.connections.ClinicDataAccessor;
-import main.java.connections.SelectedClinic;
+import main.java.connections.*;
 import main.java.helper.Helper;
-import main.java.pane.PaneController;
 import main.java.paneWithNumb.withNumbConroller;
-import main.java.requirements.Clinic;
+import main.java.requirements.Appointment;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,17 +22,20 @@ public class controller implements Initializable {
     @FXML
     JFXButton b1;
     @FXML
-    JFXButton b2;
+    JFXButton b2,accountInfoBtn;
     @FXML
     JFXListView<Pane> list;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         list.setDepth(3);
         list.setMouseTransparent(true);
+        if(CurrentUser.isDoctor()){
+            b2.setText("Create Post");
+        }
         try {
-            ClinicDataAccessor dataAccessor=new ClinicDataAccessor();
-            List<Clinic> clinics=dataAccessor.getClinicList();
-            for (Clinic c: clinics) {
+            AppointmentDataAccessor dataAccessor=new AppointmentDataAccessor();
+            List<Appointment> clinics=dataAccessor.getAppointmentList(CurrentUser.getCurrentUser().getUsername());
+            for (Appointment c: clinics) {
                 list.getItems().add(createPane(c));
             }
         }catch (IOException | SQLException e){
@@ -42,19 +43,29 @@ public class controller implements Initializable {
         }
     }
 
-    Pane createPane(Clinic clinic) throws IOException {
+    Pane createPane(Appointment appointment) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane pane = loader.load(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("withNumb.fxml")));
         withNumbConroller controller=loader.getController();
-        controller.setName(clinic.getName());
-        controller.setPhone(clinic.getPhoneNumber());
-
+        controller.setName(appointment.getClinicName());
+        controller.setPhone(appointment.getClinicNumber());
+        controller.setPrice(Integer.toString(appointment.getTotalPrice()));
         return pane;
     }
     public void account(){
         Helper.changeScene("accountInfo_GUI.fxml",b1);
     }
     public void clinic(){
-        Helper.changeScene("First_Page_GUI.fxml",b2);
+        if(CurrentUser.isDoctor()){
+            Helper.changeScene("CP_GUI.fxml",b1);
+        }else{
+            Helper.changeScene("First_Page_GUI.fxml",b2);
+        }
+    }
+    public void signOut(){
+        Login login=new Login();
+        login.signOut();
+        Helper.changeScene("mainGUI.fxml",b2);
     }
 }
+

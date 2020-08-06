@@ -4,19 +4,23 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.effects.JFXDepthManager;
+import com.jfoenix.utils.JFXUtilities;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import main.java.connections.ClinicDataAccessor;
+import main.java.connections.CurrentUser;
 import main.java.connections.SelectedClinic;
 import main.java.helper.Helper;
 import main.java.requirements.Clinic;
 
+import java.io.ByteArrayInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -26,33 +30,23 @@ public class Controller implements Initializable {
     @FXML
     JFXButton bookBtn;
     @FXML
-    Circle doctorImageCircle;
+    Circle doctorImageCircle,clinicImageCircle;
+
     @FXML
-    Circle clinicImageCircle;
-    @FXML
-    Rectangle rec;
-    @FXML
-    Label clinicLabel;
-    @FXML
-    Label addressLabel;
-    @FXML
-    Label phoneLabel;
-    @FXML
-    Label dentistLabel;
+    Label clinicLabel,addressLabel,phoneLabel,dentistLabel;
     String temp ="230x230-avatar-dummy-profile-pic.jpg";
     String tempPhoto ="Photo.png";
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        doctorImage =new Image(temp);
-//        clinicImage =new Image(temp);
-//        doctorImageCircle.setFill(new ImagePattern(doctorImage));
-//        clinicImageCircle.setFill(new ImagePattern(clinicImage));
+
         bookBtn.setOnMouseClicked(e-> Helper.changeScene("booking_GUI.fxml",bookBtn));
         for(int i=0;i<10;i++){
             postsList.getItems().add(create());
         }
         Clinic clinic=SelectedClinic.getClinic();
-
+        doctorImageCircle.setFill(new ImagePattern(new Image(new ByteArrayInputStream(clinic.getDoctor().getProfilePic()))));
+        clinicImageCircle.setFill(new ImagePattern(new Image(new ByteArrayInputStream(clinic.getProfilePicture()))));
+        phoneLabel.setText(clinic.getPhoneNumber());
         clinicLabel.setText(clinic.getName());
         addressLabel.setText(clinic.getAddress());
         dentistLabel.setText("Dr."+clinic.getDoctor().getFirstName()+" "+clinic.getDoctor().getLastName());

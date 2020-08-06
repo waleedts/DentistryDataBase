@@ -83,7 +83,6 @@ public class Login{
     void  saveUserData(String token,JFXButton button){
         FacebookClient facebookClient =new DefaultFacebookClient(token,Version.LATEST);
         com.restfb.types.User user = facebookClient.fetchObject("me", com.restfb.types.User.class, Parameter.with("fields", "picture,location,email,birthday,gender"));
-        System.out.println(user.getLocation()+"\n"+user.getEmail()+"\n"+user.getBirthday()+"\n"+user.getGender());
         try (
                 PreparedStatement stmnt = connection.prepareStatement("select * from \"USER\" where USER_NAME='" +user.getEmail()+"'");
                 ResultSet rs = stmnt.executeQuery()
@@ -95,6 +94,7 @@ public class Login{
                         ResultSet r = docState.executeQuery()
                 ){
                     CurrentUser.setCurrentUser(user.getEmail(),r.next());
+                    Helper.changeScene("First_Page_GUI.fxml",button);
                 }
             }else {
             User user1=new User(user.getFirstName(), user.getLastName(), user.getEmail());
@@ -155,6 +155,9 @@ public class Login{
                         throw new IllegalStateException("Login Failed");
                     }
             });
+    }
+    public void signOut(){
+        CurrentUser.deleteCurrentUser();
     }
 
 }

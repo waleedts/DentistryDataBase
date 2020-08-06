@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
-<?import com.jfoenix.controls.JFXScrollPane?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
-<SplitPane dividerPositions="0.31969949916527546" prefHeight="600" prefWidth="1200" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.first_page.controller">
+<SplitPane dividerPositions="0.31969949916527546" prefHeight="600" prefWidth="1200" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.accountInfo.controller">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #1070AF;">
         <Rectangle fx:id="rec" arcHeight="75.0" arcWidth="75.0" fill="WHITE" height="114.0" layoutX="105.0" layoutY="54.0" pickOnBounds="true" stroke="BLACK" strokeType="INSIDE" width="95.0" />
-        <JFXButton fx:id="accountInfoBtn" alignment="CENTER" buttonType="RAISED" layoutX="86.0" layoutY="246.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="133.0" style="-fx-background-color: #1070AF;" text="Account Info" textAlignment="CENTER" />
+        <JFXButton fx:id="clinicsBtn" alignment="CENTER" buttonType="RAISED" layoutX="86.0" layoutY="246.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="133.0" style="-fx-background-color: #1070AF;" text="Clinics List" textAlignment="CENTER" />
         <!--      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />-->
         <JFXButton fx:id="b2" alignment="CENTER" buttonType="RAISED" layoutX="96.0" layoutY="309.0" mnemonicParsing="false" onAction="#bill" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #1070AF;" text="Bills" textAlignment="CENTER" />
         <!--      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />-->
-        <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="113.0" layoutY="373.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1070AF;" text="Sign Out" textAlignment="CENTER" />
+        <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="113.0" layoutY="373.0" mnemonicParsing="false" onAction="#signOut" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1070AF;" text="Sign Out" textAlignment="CENTER" />
     </AnchorPane>
-    <SplitPane dividerPositions="0.10862299465240642" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+    <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="65.0" prefWidth="915.0" style="-fx-background-color: #1077BB;">
             <JFXTextField fx:id="searchBtn" layoutX="117.0" layoutY="18.0" prefHeight="26.0" prefWidth="556.0" promptText="🔍" style="-fx-background-color: white;" />
             <JFXButton layoutX="734.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #1077BB;" text="🔍" textFill="WHITE" />
@@ -30,10 +25,12 @@
                 </items>
             </MenuButton>
         </AnchorPane>
-        <JFXScrollPane prefHeight="357.0" prefWidth="446.0">
-            <children>
-                <JFXListView fx:id="list" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="915.0" style="-fx-background-color: white;" />
-            </children>
-        </JFXScrollPane>
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="84.0" layoutY="46.0" prefHeight="17.0" prefWidth="147.0" text="Label" />
+            <Label layoutX="84.0" layoutY="126.0" prefHeight="17.0" prefWidth="147.0" text="Label" />
+         </children>
+      </Pane>
+
     </SplitPane>
 </SplitPane>

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.createPost.controller">
-   <children>
-      <Pane prefHeight="200.0" prefWidth="1200.0" style="-fx-background-color: #1070af;">
-         <children>
-            <Circle fill="WHITE" layoutX="594.0" layoutY="100.0" radius="81.0" stroke="BLACK" strokeType="INSIDE" />
-            <ImageView fitHeight="133.0" fitWidth="126.0" layoutX="542.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@project.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <ImageView fx:id="i" fitHeight="239.0" fitWidth="317.0" layoutX="835.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" />
-      <JFXButton fx:id="uploadPic" layoutX="675.0" layoutY="332.0" onAction="#toUpload" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #ff1943;" text="UPLOAD" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </JFXButton>
-      <Label layoutX="675.0" layoutY="300.0" prefHeight="25.0" prefWidth="103.0" text="UPlOAD PIC:">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="Post" layoutX="557.0" layoutY="505.0" onAction="#post" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #1070af;" text="POST" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </JFXButton>
-      <TextArea fx:id="t" layoutX="29.0" layoutY="213.0" prefHeight="168.0" prefWidth="489.0" promptText="Whats on your mind?" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" />
-   </children>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.java.createPost.controller">
+   <Pane prefHeight="200.0" prefWidth="1200.0" style="-fx-background-color: #1070af;">
+      <Circle fill="WHITE" layoutX="594.0" layoutY="100.0" radius="81.0" stroke="BLACK" strokeType="INSIDE"/>
+      <ImageView fitHeight="133.0" fitWidth="126.0" layoutX="542.0" layoutY="34.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@project.png"/>
+      </ImageView>
+   </Pane>
+   <ImageView fx:id="i" fitHeight="239.0" fitWidth="317.0" layoutX="835.0" layoutY="219.0" pickOnBounds="true"
+              preserveRatio="true"/>
+   <JFXButton fx:id="uploadPic" layoutX="675.0" layoutY="332.0" onAction="#toUpload" prefHeight="25.0" prefWidth="126.0"
+              style="-fx-background-color: #ff1943;" text="UPLOAD" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="12.0"/>
+      </font>
+   </JFXButton>
+   <Label layoutX="675.0" layoutY="300.0" prefHeight="25.0" prefWidth="103.0" text="UPlOAD PIC:">
+      <font>
+         <Font name="System Bold" size="16.0"/>
+      </font>
+   </Label>
+   <JFXButton fx:id="Post" layoutX="557.0" layoutY="505.0" onAction="#post" prefHeight="25.0" prefWidth="150.0"
+              style="-fx-background-color: #1070af;" text="POST" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="12.0"/>
+      </font>
+   </JFXButton>
+   <TextArea fx:id="t" layoutX="29.0" layoutY="213.0" prefHeight="168.0" prefWidth="489.0"
+             promptText="Whats on your mind?" style="-fx-background-color: #ffffff; -fx-border-color: #000000;"/>
 </AnchorPane>

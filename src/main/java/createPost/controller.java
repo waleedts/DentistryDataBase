@@ -1,22 +1,21 @@
 package main.java.createPost;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextArea;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import main.java.PostDataAccesor;
+import main.java.connections.PostDataAccessor;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.sql.SQLException;
 
 public class controller {
     @FXML
@@ -27,8 +26,6 @@ public class controller {
     ImageView i;
     @FXML
     TextArea t;
-
-    main.java.PostDataAccesor p;
     byte[] image;
     public void toUpload(){
         Platform.runLater(() -> {
@@ -47,7 +44,11 @@ public class controller {
     }
     String l = t.getText();
     public void post(){
-        new PostDataAccesor().setPost(image,l);
+        try {
+            new PostDataAccessor().setPost(image,l);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 
     }
 }
