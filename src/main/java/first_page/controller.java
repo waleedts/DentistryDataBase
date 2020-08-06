@@ -3,61 +3,87 @@ package main.java.first_page;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.effects.JFXDepthManager;
-import javafx.embed.swing.SwingFXUtils;
+import javafx.collections.FXCollections;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
+import javafx.scene.control.MenuButton;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
-import main.java.requirements.*;
-import main.java.helper.*;
-import main.java.connections.*;
-import main.java.pane.*;
+import main.java.connections.ClinicDataAccessor;
+import main.java.connections.CurrentUser;
+import main.java.connections.SelectedClinic;
+import main.java.helper.Helper;
+import main.java.pane.PaneController;
+import main.java.requirements.Clinic;
 
-import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 
 public class controller implements Initializable {
-    JFXDepthManager depthManager;
     @FXML
     JFXListView <Pane>list;
-    InputStream profileImg;
     @FXML
-    JFXTextField search;
+    JFXTextField searchBtn;
     @FXML
     Rectangle rec;
-    String Temp=null;
     @FXML
     JFXButton accountInfoBtn;
     @FXML
     JFXButton b2;
+    @FXML
+    MenuButton filterBtn;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         Image image=new Image(new ByteArrayInputStream(CurrentUser.getCurrentUser().getProfilePic()));
         rec.setFill(new ImagePattern(image));
         list.setDepth(3);
+        search();
+    }
+    public void search(){
         try {
             ClinicDataAccessor dataAccessor=new ClinicDataAccessor();
             List<Clinic> clinics=dataAccessor.getClinicList();
+            List<Pane> panes=new ArrayList<>();
             for (Clinic c: clinics) {
-                list.getItems().add(createPane(c,dataAccessor));
+                panes.add(createPane(c,dataAccessor));
             }
+            FilteredList<Pane> clinicFilteredList=new FilteredList<>(FXCollections.observableList(panes), e->true);
+            searchBtn.textProperty().addListener(
+                    (observable, oldValue, newValue) -> clinicFilteredList.setPredicate(pane ->{
+                        Clinic clinic= null ;
+                        try {
+                            clinic = new ClinicDataAccessor().getClinic(pane.getId());
+                        } catch (SQLException throwables) {
+                            throwables.printStackTrace();
+                        }
+                        //Todo:implement filter button
+                        if(newValue == null || newValue.isEmpty()){
+                            return true;
+                        }
+
+                        String lowerCaseFilter = newValue.toLowerCase();
+                        assert clinic != null;
+                        if(clinic.getDoctor().getFirstName().toLowerCase().contains(lowerCaseFilter)){
+                            return true; //filter matches first name
+                        }else {
+                            return clinic.getDoctor().getLastName().toLowerCase().contains(lowerCaseFilter);
+                        }
+                    })
+            );
+            list.setItems(clinicFilteredList);
+
         }catch (IOException | SQLException e){
             e.printStackTrace();
         }

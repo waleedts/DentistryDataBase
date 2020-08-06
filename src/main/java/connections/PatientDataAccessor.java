@@ -31,7 +31,7 @@ public class PatientDataAccessor extends UserDataAccessor{
             stmnt.setInt(3,patient.getCost());
             stmnt.setString(4,patient.getUsername());
             stmnt.execute();
-        } catch (IOException | SQLException e) {
+        } catch ( SQLException e) {
             e.printStackTrace();
         }
     }

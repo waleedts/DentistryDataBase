@@ -21,7 +21,7 @@
     </AnchorPane>
     <SplitPane dividerPositions="0.10862299465240642" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="65.0" prefWidth="915.0" style="-fx-background-color: #1077BB;">
-            <JFXTextField fx:id="search" layoutX="117.0" layoutY="18.0" prefHeight="26.0" prefWidth="556.0" promptText="🔍" style="-fx-background-color: white;" />
+            <JFXTextField fx:id="searchBtn" layoutX="117.0" layoutY="18.0" prefHeight="26.0" prefWidth="556.0" promptText="🔍" style="-fx-background-color: white;" />
             <JFXButton layoutX="734.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #1077BB;" text="🔍" textFill="WHITE" />
             <MenuButton layoutX="815.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #1077BB; -fx-mark-color: white;" text="All" textFill="WHITE">
                 <items>

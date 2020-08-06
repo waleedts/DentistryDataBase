@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
-<?import com.jfoenix.controls.JFXScrollPane?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
 <SplitPane dividerPositions="0.31969949916527546" prefHeight="600" prefWidth="1200" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.first_page.controller">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #1070AF;">
@@ -21,12 +16,13 @@
     </AnchorPane>
     <SplitPane dividerPositions="0.10862299465240642" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="65.0" prefWidth="915.0" style="-fx-background-color: #1077BB;">
-            <JFXTextField fx:id="search" layoutX="117.0" layoutY="18.0" prefHeight="26.0" prefWidth="556.0" promptText="🔍" style="-fx-background-color: white;" />
+            <JFXTextField fx:id="searchField" layoutX="117.0" layoutY="18.0" onAction="#search" prefHeight="26.0" prefWidth="556.0" promptText="🔍" style="-fx-background-color: white;" />
             <JFXButton layoutX="734.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #1077BB;" text="🔍" textFill="WHITE" />
-            <MenuButton layoutX="815.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #1077BB; -fx-mark-color: white;" text="All" textFill="WHITE">
+            <MenuButton fx:id="filterBtn" layoutX="815.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #1077BB; -fx-mark-color: white;" text="All" textFill="WHITE">
                 <items>
-                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                    <MenuItem mnemonicParsing="false" text="Doctor Name" />
+                    <MenuItem mnemonicParsing="false" text="Clinic Name" />
+               <MenuItem mnemonicParsing="false" text="Clinic Address" />
                 </items>
             </MenuButton>
         </AnchorPane>
