@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import main.java.LimitedTextField;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +14,8 @@ import java.nio.file.Files;
 public class Controller {
     @FXML
     private AnchorPane aa;
+    @FXML
+    LimitedTextField clinicName,clinicAddress,clinicType,clinicPN;
 
 
     byte[] image;

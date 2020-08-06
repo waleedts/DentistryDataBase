@@ -18,7 +18,7 @@
          <Image url="@project.png" />
       </ImageView>
       <Label layoutX="170.0" layoutY="247.0" text="User Name" textFill="WHITE" />
-      <JFXTextField fx:id="userField" focusColor="WHITE" layoutX="170.0" layoutY="264.0" prefHeight="27.0" prefWidth="247.0" unFocusColor="WHITE" />
+      <LimitedTextField fx:id="userField" focusColor="WHITE" layoutX="170.0" layoutY="264.0" maxLength="100" prefHeight="27.0" prefWidth="247.0" unFocusColor="WHITE"  />
       <Label layoutX="170.0" layoutY="310.0" text="Password" textFill="WHITE" />
       <JFXRadioButton fx:id="doctorRadio" layoutX="302.0" layoutY="375.0" text="Doctor" textFill="WHITE" toggleGroup="$doctorPatient">
          <toggleGroup>
@@ -39,7 +39,7 @@
             <Color red="1.0" green="1.0" blue="1.0" />
          </unSelectedColor>
       </JFXRadioButton>
-      <LimitedPasswordField fx:id="passField" focusColor="WHITE" layoutX="170.0" layoutY="327.0" prefHeight="27.0" prefWidth="247.0" unFocusColor="WHITE" />
+      <LimitedPasswordField fx:id="passField" focusColor="WHITE" layoutX="170.0" layoutY="327.0" maxLength="100" prefHeight="27.0" prefWidth="247.0" unFocusColor="WHITE" />
       <JFXButton fx:id="b2" layoutX="233.0" layoutY="447.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FF1194;" text="SIGN UP" textFill="WHITE" />
       <FontIcon iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" onMouseClicked="#goBack" />
 

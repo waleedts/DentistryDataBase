@@ -18,6 +18,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import main.java.LimitedPasswordField;
+import main.java.LimitedTextField;
 import main.java.connections.CurrentUser;
 import main.java.connections.Login;
 import main.java.helper.Helper;
@@ -34,7 +35,7 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     @FXML
-    JFXTextField firstNameField,lastNameField,userField,addressField,phoneField;
+    LimitedTextField firstNameField,lastNameField,userField,addressField,phoneField;
     @FXML
     LimitedPasswordField passField;
     @FXML

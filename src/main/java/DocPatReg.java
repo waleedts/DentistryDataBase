@@ -8,6 +8,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import main.java.connections.CurrentUser;
 import main.java.connections.DoctorDataAccessor;
@@ -30,11 +31,11 @@ public class DocPatReg implements Initializable {
     @FXML
     JFXButton doctorBtn;
     @FXML
-    JFXTextField salaryField;
+    LimitedTextField salaryField;
     @FXML
     JFXComboBox<String> bloodChooser;
     @FXML
-    JFXTextField allergiesField;
+    LimitedTextField allergiesField;
     @FXML
     JFXComboBox<String> clinicChooser;
     @Override

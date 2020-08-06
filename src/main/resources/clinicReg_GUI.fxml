@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.shape.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.clinicReg.Controller">
+<?import main.java.LimitedTextField?>
+<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.clinicReg.Controller">
    <children>
       <Pane layoutY="-1.0" prefHeight="179.0" prefWidth="1200.0" style="-fx-background-color: #1070af;">
          <children>
@@ -33,10 +31,10 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <JFXTextField focusColor="BLACK" layoutX="288.0" layoutY="272.0" prefHeight="27.0" prefWidth="176.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
-      <JFXTextField focusColor="BLACK" layoutX="787.0" layoutY="353.0" prefHeight="27.0" prefWidth="176.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
-      <JFXTextField focusColor="BLACK" layoutX="683.0" layoutY="267.0" prefHeight="27.0" prefWidth="176.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
-      <JFXTextField focusColor="BLACK" layoutX="299.0" layoutY="353.0" prefHeight="27.0" prefWidth="176.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
+      <LimitedTextField fx:id="clinicName" focusColor="BLACK" maxLength="100" layoutX="280.0" layoutY="273.0" prefHeight="27.0" prefWidth="214.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
+      <LimitedTextField fx:id="clinicPN" focusColor="BLACK" layoutX="787.0" maxLength="10"  layoutY="353.0" prefHeight="27.0" prefWidth="214.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
+      <LimitedTextField fx:id="clinicType" focusColor="BLACK" layoutX="683.0" layoutY="267.0" maxLength="30" prefHeight="27.0" prefWidth="214.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
+      <LimitedTextField fx:id="clinicAddress" focusColor="BLACK" layoutX="299.0" layoutY="353.0" maxLength="100" prefHeight="27.0" prefWidth="214.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
       <Label layoutX="620.0" layoutY="266.0" prefHeight="30.0" prefWidth="57.0" text="Type:">
          <font>
             <Font name="System Bold" size="20.0" />
