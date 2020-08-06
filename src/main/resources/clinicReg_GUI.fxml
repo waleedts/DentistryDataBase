@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.clinicReg.Controller">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="179.0" prefWidth="1200.0" style="-fx-background-color: #1070af;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1943" height="179.0" layoutX="156.0" stroke="#ff1943" strokeType="INSIDE" width="47.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1943" height="133.0" layoutX="212.0" layoutY="46.0" stroke="#ff1943" strokeType="INSIDE" width="47.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1943" height="86.0" layoutX="268.0" layoutY="93.0" stroke="#ff1943" strokeType="INSIDE" width="47.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1943" height="86.0" layoutX="926.0" layoutY="93.0" stroke="#ff1943" strokeType="INSIDE" width="47.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1943" height="133.0" layoutX="984.0" layoutY="46.0" stroke="#ff1943" strokeType="INSIDE" width="47.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1943" height="179.0" layoutX="1045.0" stroke="#ff1943" strokeType="INSIDE" width="47.0" />
+            <Circle fill="WHITE" layoutX="600.0" layoutY="90.0" radius="79.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="122.0" fitWidth="111.0" layoutX="552.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@project.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="213.0" layoutY="271.0" prefHeight="30.0" prefWidth="79.0" text="Name:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField focusColor="BLACK" layoutX="288.0" layoutY="272.0" prefHeight="27.0" prefWidth="176.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
+      <JFXTextField focusColor="BLACK" layoutX="787.0" layoutY="353.0" prefHeight="27.0" prefWidth="176.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
+      <JFXTextField focusColor="BLACK" layoutX="683.0" layoutY="267.0" prefHeight="27.0" prefWidth="176.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
+      <JFXTextField focusColor="BLACK" layoutX="299.0" layoutY="353.0" prefHeight="27.0" prefWidth="176.0" style="-fx-border-color: #000000;" unFocusColor="WHITE" />
+      <Label layoutX="620.0" layoutY="266.0" prefHeight="30.0" prefWidth="57.0" text="Type:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="626.0" layoutY="351.0" prefHeight="30.0" prefWidth="161.0" text="Phone Number:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="213.0" layoutY="351.0" prefHeight="30.0" prefWidth="88.0" text="Address:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="237.0" layoutY="448.0" prefHeight="30.0" prefWidth="150.0" text="Profile Picture:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="b1" layoutX="387.0" layoutY="447.0" onAction="#toUpload" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #1070af;" text="UPLOAD" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="488.0" layoutY="532.0" prefHeight="25.0" prefWidth="161.0" style="-fx-background-color: #ff1943;" text="Registration" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
