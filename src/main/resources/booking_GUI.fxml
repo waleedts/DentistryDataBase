@@ -5,17 +5,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.booking.controller">
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.booking.controller">
    <Label layoutX="36.0" layoutY="22.0" prefHeight="40.0" prefWidth="160.0" text="Our Services:">
       <font>
          <Font name="System Bold Italic" size="22.0" />
       </font>
    </Label>
-   <JFXCheckBox onAction="#handle" fx:id="c3" checkedColor="BLACK" layoutX="355.0" layoutY="108.0" text="Protective  Filling " unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c1" checkedColor="BLACK" layoutX="56.0" layoutY="108.0"  prefHeight="18.0" prefWidth="149.0" text="Root amputationon" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c2" checkedColor="BLACK" layoutX="217.0" layoutY="108.0" prefHeight="18.0" prefWidth="125.0" text="Space Maintainer" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c5" checkedColor="BLACK" layoutX="202.0" layoutY="172.0" text="Wisidom Tooth Removal" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c4" checkedColor="BLACK" layoutX="59.0" layoutY="172.0" prefHeight="18.0" prefWidth="114.0" text="Normal Rmoval" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c3" checkedColor="BLACK" layoutX="355.0" layoutY="108.0" onAction="#handle" text="Protective  Filling " unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c1" checkedColor="BLACK" layoutX="56.0" layoutY="108.0" onAction="#handle" prefHeight="18.0" prefWidth="149.0" text="Root amputationon" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c2" checkedColor="BLACK" layoutX="217.0" layoutY="108.0" onAction="#handle" prefHeight="18.0" prefWidth="125.0" text="Space Maintainer" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c5" checkedColor="BLACK" layoutX="202.0" layoutY="172.0" onAction="#handle" text="Wisdom Tooth Removal" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c4" checkedColor="BLACK" layoutX="59.0" layoutY="172.0" onAction="#handle" prefHeight="18.0" prefWidth="114.0" text="Normal Removal" unCheckedColor="BLACK" />
    <Label layoutX="50.0" layoutY="62.0" prefHeight="40.0" prefWidth="160.0" text="1- For Kids:">
       <font>
          <Font name="System Bold Italic" size="18.0" />
@@ -26,14 +26,14 @@
          <Font name="System Bold Italic" size="18.0" />
       </font>
    </Label>
-   <JFXCheckBox onAction="#handle" fx:id="c6" checkedColor="BLACK" layoutX="378.0" layoutY="172.0" text="Surgical  Removal" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c7" checkedColor="BLACK" layoutX="59.0" layoutY="237.0" text="Silver Filling" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c9" checkedColor="BLACK" layoutX="58.0" layoutY="315.0" text="Normal Polishing" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c8" checkedColor="BLACK" layoutX="196.0" layoutY="237.0" text="Cosmatic Filling" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c10" checkedColor="BLACK" layoutX="187.0" layoutY="315.0" text="Teeh Whitening" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c11" checkedColor="BLACK" layoutX="323.0" layoutY="315.0" text="Plague Removal" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c12" checkedColor="BLACK" layoutX="58.0" layoutY="385.0" text="Front Teeth with cosmatic" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c13" checkedColor="BLACK" layoutX="244.0" layoutY="385.0" text="Back Teeth with cosmatic" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c6" checkedColor="BLACK" layoutX="378.0" layoutY="172.0" onAction="#handle" text="Surgical  Removal" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c7" checkedColor="BLACK" layoutX="59.0" layoutY="237.0" onAction="#handle" text="Silver Filling" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c9" checkedColor="BLACK" layoutX="58.0" layoutY="315.0" onAction="#handle" text="Normal Polishing" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c8" checkedColor="BLACK" layoutX="196.0" layoutY="237.0" onAction="#handle" text="Cosmetic Filling" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c10" checkedColor="BLACK" layoutX="187.0" layoutY="315.0" onAction="#handle" text="Teeth Whitening" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c11" checkedColor="BLACK" layoutX="323.0" layoutY="315.0" onAction="#handle" text="Plague Removal" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c12" checkedColor="BLACK" layoutX="58.0" layoutY="385.0" onAction="#handle" text="Front Teeth with cosmetic" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c13" checkedColor="BLACK" layoutX="244.0" layoutY="385.0" onAction="#handle" text="Back Teeth with cosmetic" unCheckedColor="BLACK" />
    <Label layoutX="48.0" layoutY="197.0" prefHeight="40.0" prefWidth="182.0" text="3- Teeth Filling:">
       <font>
          <Font name="System Bold Italic" size="18.0" />
@@ -49,8 +49,8 @@
          <Font name="System Bold Italic" size="18.0" />
       </font>
    </Label>
-   <JFXCheckBox onAction="#handle" fx:id="c15" checkedColor="BLACK" layoutX="582.0" layoutY="385.0" text="Teeth building with screw" unCheckedColor="BLACK" />
-   <JFXCheckBox onAction="#handle" fx:id="c14" checkedColor="BLACK" layoutX="415.0" layoutY="385.0" text="Back Teeth with silver" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c15" checkedColor="BLACK" layoutX="582.0" layoutY="385.0" onAction="#handle" text="Teeth building with screw" unCheckedColor="BLACK" />
+   <JFXCheckBox fx:id="c14" checkedColor="BLACK" layoutX="415.0" layoutY="385.0" onAction="#handle" text="Back Teeth with silver" unCheckedColor="BLACK" />
    <Pane layoutY="430.0" prefHeight="200.0" prefWidth="1200.0" style="-fx-background-color: #1070af;">
       <Label layoutX="406.0" layoutY="34.0" text="Price:" textFill="WHITE">
          <font>

@@ -35,7 +35,7 @@ public class controller implements Initializable {
     @FXML
     ToggleGroup t;
     @FXML
-    LimitedTextField passwordField;
+    LimitedPasswordField passwordField;
     @FXML
     JFXTextField usernameField;
     @FXML

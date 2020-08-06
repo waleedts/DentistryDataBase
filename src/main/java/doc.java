@@ -1,5 +1,4 @@
-package main.java.first_page;
-
+package main.java;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
-public class mm extends Application {
+public class doc extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -18,8 +17,8 @@ public class mm extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("First_Page_GUI.fxml")));
-            Scene scene = new Scene(root, 1200, 600);
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Six_Page_GUI.fxml")));
+            Scene scene = new Scene(root, 600, 462);
             primaryStage.setScene(scene);
             primaryStage.show();
         }catch (Exception e){
