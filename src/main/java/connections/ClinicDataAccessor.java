@@ -1,5 +1,6 @@
 package main.java.connections;
 
+import javafx.collections.ObservableList;
 import main.java.requirements.Clinic;
 import main.java.requirements.Doctor;
 

@@ -47,7 +47,7 @@ public class Controller implements Initializable {
 //        clinicImage =new Image(temp);
 //        doctorImageCircle.setFill(new ImagePattern(doctorImage));
 //        clinicImageCircle.setFill(new ImagePattern(clinicImage));
-        bookBtn.setOnMouseClicked(e-> Helper.changeScene("Booking_Page.fxml",bookBtn));
+        bookBtn.setOnMouseClicked(e-> Helper.changeScene("booking_GUI.fxml",bookBtn));
         for(int i=0;i<10;i++){
             postsList.getItems().add(create());
         }

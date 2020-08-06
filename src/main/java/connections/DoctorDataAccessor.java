@@ -33,8 +33,6 @@ public class DoctorDataAccessor extends UserDataAccessor{
                 stmnt.setInt(1,doctor.getSalary());
                 stmnt.setInt(2,doctor.getClinicId());
                 stmnt.execute();
-            } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }
