@@ -2,10 +2,12 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<SplitPane dividerPositions="0.31969949916527546" prefHeight="600" prefWidth="1200" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.first_page.controller">
+<SplitPane dividerPositions="0.31969949916527546" prefHeight="600" prefWidth="1200" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.first_page.controller">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #1070AF;">
         <Rectangle fx:id="rec" arcHeight="75.0" arcWidth="75.0" fill="WHITE" height="114.0" layoutX="105.0" layoutY="54.0" pickOnBounds="true" stroke="BLACK" strokeType="INSIDE" width="95.0" />
         <JFXButton fx:id="accountInfoBtn" alignment="CENTER" buttonType="RAISED" layoutX="86.0" layoutY="246.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="133.0" style="-fx-background-color: #1070AF;" text="Account Info" textAlignment="CENTER" />
@@ -13,18 +15,20 @@
         <JFXButton fx:id="b2" alignment="CENTER" buttonType="RAISED" layoutX="96.0" layoutY="309.0" mnemonicParsing="false" onAction="#bill" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #1070AF;" text="Bills" textAlignment="CENTER" />
         <!--      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />-->
         <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="113.0" layoutY="373.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1070AF;" text="Sign Out" textAlignment="CENTER" />
+      <ImageView fitHeight="107.0" fitWidth="90.0" layoutX="110.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@project.png" />
+         </image></ImageView>
     </AnchorPane>
     <SplitPane dividerPositions="0.10862299465240642" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="65.0" prefWidth="915.0" style="-fx-background-color: #1077BB;">
-            <JFXTextField fx:id="searchField" layoutX="117.0" layoutY="18.0" onAction="#search" prefHeight="26.0" prefWidth="556.0" promptText="🔍" style="-fx-background-color: white;" />
-            <JFXButton layoutX="734.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #1077BB;" text="🔍" textFill="WHITE" />
-            <MenuButton fx:id="filterBtn" layoutX="815.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #1077BB; -fx-mark-color: white;" text="All" textFill="WHITE">
-                <items>
-                    <MenuItem mnemonicParsing="false" text="Doctor Name" />
-                    <MenuItem mnemonicParsing="false" text="Clinic Name" />
-               <MenuItem mnemonicParsing="false" text="Clinic Address" />
-                </items>
-            </MenuButton>
+         <children>
+            <Label layoutX="342.0" layoutY="11.0" prefHeight="30.0" prefWidth="388.0" text="W.W Dentistry Service" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
         </AnchorPane>
         <JFXScrollPane prefHeight="357.0" prefWidth="446.0">
             <children>
