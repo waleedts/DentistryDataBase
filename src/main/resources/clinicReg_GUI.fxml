@@ -21,6 +21,7 @@
       <ImageView fitHeight="122.0" fitWidth="111.0" layoutX="552.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <Image url="@project.png" />
       </ImageView>
+      <FontIcon iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" onMouseClicked="#goBack" />
    </Pane>
    <Label layoutX="213.0" layoutY="271.0" prefHeight="30.0" prefWidth="79.0" text="Name:">
       <font>

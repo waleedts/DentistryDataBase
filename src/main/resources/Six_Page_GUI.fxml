@@ -35,6 +35,7 @@
         </Label>
         <JFXButton layoutX="227.0" layoutY="503.0" onAction="#goToAddClinic" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #FF1943;" text="Add Clinic" textFill="WHITE" />
         <Pane fx:id="doctorShadow" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black; -fx-opacity: 40%;" />
+        <FontIcon iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" onMouseClicked="#goBack" />
     </Pane>
     <Label layoutX="753.0" layoutY="113.0" prefHeight="27.0" prefWidth="241.0" text="Registration For Patient's">
         <font>
