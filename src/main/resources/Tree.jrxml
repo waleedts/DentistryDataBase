@@ -20,29 +20,10 @@ ZjlkYTM7]]>
 			<style mode="Opaque" backcolor="#F0EFEF"/>
 		</conditionalStyle>
 	</style>
+	<parameter name="appointmentID" class="java.lang.String"></parameter>
+
 	<queryString language="SQL">
-		<![CDATA[SELECT sum( PRICE) AS total_price,
-       "APPOINTMENT"."ID",
-       "APPOINTMENT"."PATIENT_USERNAME",
-       "CLINIC"."NAME",
-       "CLINIC"."PHONE_NUMBER",
-       "DOCTOR"."DOCTOR_USER_NAME"
-FROM "APPOINTMENT",
-     "CLINIC",
-     "DOCTOR",
-     "SERVICES",
-     "PATIENT"
-WHERE
-        "APPOINTMENT"."ID" = "SERVICES"."APPOINTMENT_ID"
-  AND "APPOINTMENT"."PATIENT_USERNAME" = "PATIENT"."PATIENT_USER_NAME"
-  AND "APPOINTMENT"."ID" = "SERVICES"."DURATION"
-GROUP BY
-    "APPOINTMENT"."ID",
-    "APPOINTMENT"."ID",
-    "APPOINTMENT"."PATIENT_USERNAME",
-    "CLINIC"."NAME",
-    "CLINIC"."PHONE_NUMBER",
-    "DOCTOR"."DOCTOR_USER_NAME"]]>
+		<![CDATA[select ID,C2.name,c2.PHONE_NUMBER,start_time,sum(Duration) as Duration,sum(s.Price) as TOTAL_PRICE from Appointment inner join CLINIC C2 on C2.ID = Appointment.CLINIC_ID  inner join CONAS C2 on APPOINTMENT.ID = C2.APPOINTMENT_ID inner join SERVICES S on C2.SERVICES_ID = S.ID where Appointment.id=$P{appointmentID} group by C2.name,c2.PHONE_NUMBER,start_time,APPOINTMENT.ID]]>
 	</queryString>
 	<field name="TOTAL_PRICE" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="TOTAL_PRICE"/>

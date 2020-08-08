@@ -13,7 +13,7 @@ public class Clinic {
     private int id;
     private int balance;
     private String type;
-    private Image profilePicture;
+    private byte[] profilePicture;
     private Doctor doctor;
 
     public void setDoctor(Doctor doctor) {
@@ -24,14 +24,14 @@ public class Clinic {
         return doctor;
     }
 
-    public Clinic(int id, String name, String phoneNumber, String address, String type, int balance) {
+    public Clinic(int id, String name, String phoneNumber, String address, String type, int balance,byte[] profilePicture) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.id = id;
         this.balance = balance;
         this.type = type;
-//        this.profilePicture = profilePicture;
+        this.profilePicture = profilePicture;
     }
 
     public void setName(String n) {
@@ -62,7 +62,7 @@ public class Clinic {
         type = t;
     }
 
-    public void setProfilePicture(Image e) {
+    public void setProfilePicture(byte[] e) {
         profilePicture = e;
     }
 
@@ -78,6 +78,11 @@ public class Clinic {
         return type;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     public int getId() {
         return id;
     }
@@ -86,7 +91,7 @@ public class Clinic {
         return balance;
     }
 
-    public Image getProfilePicture() {
+    public byte[] getProfilePicture() {
         return profilePicture;
     }
 

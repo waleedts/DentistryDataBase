@@ -27,6 +27,10 @@ public class PaneController {
         this.name.setText(name);
 
     }
+    public void setType(String type) {
+        this.type.setText(type);
+
+    }
 
     public void setDentist(String dentist) {
         this.dentist.setText(dentist);

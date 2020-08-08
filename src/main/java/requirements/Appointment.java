@@ -6,9 +6,34 @@ import java.util.Date;
 public class Appointment {
     Date time;
     int duration;
-    String locationOfTeeth;
-    String description;
     int totalPrice;
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    String clinicName;
+
+    public String getClinicNumber() {
+        return clinicNumber;
+    }
+
+    public void setClinicNumber(String clinicNumber) {
+        this.clinicNumber = clinicNumber;
+    }
+
+    String clinicNumber;
+    public String getClinicName() {
+        return clinicName;
+    }
+
+    public void setClinicName(String clinicName) {
+        this.clinicName = clinicName;
+    }
 
     public void setTime(java.sql.Date t){
         time=t;
@@ -16,23 +41,11 @@ public class Appointment {
     public void setDuration(int d){
         duration=d;
     }
-    public void setLocationOfTeeth(String l){
-        locationOfTeeth=l;
-    }
-    public void setDescription(String s){
-        description=s;
-    }
     public Date getTime(){
         return time;
     }
     public int getDuration(){
         return duration;
-    }
-    public String getLocationOfTeeth(){
-        return locationOfTeeth;
-    }
-    public String getDescription(){
-        return description;
     }
 
     public void setTotal(int totalPrice) {

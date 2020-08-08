@@ -14,7 +14,7 @@
         <!--      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />-->
         <JFXButton fx:id="b2" alignment="CENTER" buttonType="RAISED" layoutX="96.0" layoutY="309.0" mnemonicParsing="false" onAction="#bill" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #1070AF;" text="Bills" textAlignment="CENTER" />
         <!--      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />-->
-        <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="113.0" layoutY="373.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1070AF;" text="Sign Out" textAlignment="CENTER" />
+        <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="113.0" layoutY="373.0" mnemonicParsing="false" onAction="#signOut" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1070AF;" text="Sign Out" textAlignment="CENTER" />
       <ImageView fitHeight="107.0" fitWidth="90.0" layoutX="110.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@project.png" />

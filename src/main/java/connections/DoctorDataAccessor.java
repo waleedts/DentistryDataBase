@@ -27,11 +27,12 @@ public class DoctorDataAccessor extends UserDataAccessor{
 
     public void setDoctor(Doctor doctor) throws SQLException {
         try (
-                PreparedStatement stmnt = connection.prepareStatement("insert into doctor (salary,doctor_user_name) values ((?),(?))")
+                PreparedStatement stmnt = connection.prepareStatement("insert into doctor (salary,doctor_user_name,clinic_id) values ((?),(?),(?))")
         ){
                 setUser(doctor);
                 stmnt.setInt(1,doctor.getSalary());
-                stmnt.setInt(2,doctor.getClinicId());
+                stmnt.setString(2,doctor.getUsername());
+                stmnt.setInt(3,doctor.getClinicId());
                 stmnt.execute();
         }
     }
