@@ -72,10 +72,17 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <JFXButton layoutX="538.0" layoutY="120.0" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: #ff1943;" text="Book Now!" textFill="WHITE">
+      <JFXButton fx:id="b" layoutX="538.0" layoutY="120.0" onAction="#bookAppointment" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: #ff1943;" text="Book Now!" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
    </Pane>
+   <JFXDatePicker fx:id="jDate" defaultColor="#1070af" layoutX="778.0" layoutY="167.0" prefHeight="28.0" prefWidth="200.0" />
+   <JFXTimePicker fx:id="jTime" defaultColor="#1070af" layoutX="778.0" layoutY="206.0" prefHeight="40.0" prefWidth="200.0" />
+   <Label layoutX="744.0" layoutY="88.0" prefHeight="40.0" prefWidth="268.0" text="Select A date and Time:">
+      <font>
+         <Font name="System Bold Italic" size="22.0" />
+      </font>
+   </Label>
 </AnchorPane>
