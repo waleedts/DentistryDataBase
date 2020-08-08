@@ -85,4 +85,6 @@
          <Font name="System Bold Italic" size="22.0" />
       </font>
    </Label>
+   <FontIcon iconLiteral="fas-arrow-left:22:black" layoutX="10.0" layoutY="27.0" onMouseClicked="#goBack" />
+
 </AnchorPane>
