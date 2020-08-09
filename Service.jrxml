@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Service" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2ef9ffc8-e25c-4cd0-a0ca-93f6557803d6">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DentistDataBase"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select count(appointment_id)as count,services_id as id from conas group by services_id]]>
+	</queryString>
+	<field name="COUNT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="COUNT"/>
+	</field>
+	<field name="ID" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="452" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="7" width="430" height="64" uuid="e89e93ca-99f7-40bb-b9da-fa257c206961"/>
+				<textElement>
+					<font fontName="Times News Roman" size="40" isBold="true"/>
+				</textElement>
+				<text><![CDATA[W.W Dentistry Service]]></text>
+			</staticText>
+			<image>
+				<reportElement x="20" y="0" width="60" height="79" uuid="26899bd8-1712-4413-8ae2-57f4ae02f2a6"/>
+				<imageExpression><![CDATA["project.png"]]></imageExpression>
+			</image>
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="160" width="552" height="292" uuid="94285d92-dde6-4f3d-accc-e636e562023e"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["SERIES 1"+""]]></seriesExpression>
+						<categoryExpression><![CDATA[0]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ID}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="282" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
