@@ -15,6 +15,10 @@
 		</conditionalStyle>
 	</style>
 	<parameter name="ID" class="java.math.BigDecimal"/>
+	<parameter name="DOCTOR_USER_NAME" class="java.lang.String"/>
+	<parameter name="NAME" class="java.lang.String"/>
+	<parameter name="PHONE_NUMBER" class="java.lang.String"/>
+	<parameter name="COLUMN_8" class="java.math.BigDecimal"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT sum( services.duration) AS total_duration,
 	sum( PRICE) AS total_Price,
@@ -36,6 +40,10 @@ WHERE
 	 AND "APPOINTMENT"."PATIENT_USERNAME" = "PATIENT"."PATIENT_USER_NAME" 
 	 AND "CONAS"."SERVICES_ID" = "SERVICES"."ID" 
 	 AND ID=$P{ID}
+	 AND DOCTOR_USER_NAME=$P{DOCTOR_USER_NAME}
+	 AND PHONE_NUMBER=$P{PHONE_NUMBER}
+     AND NAME=$P{NAME}
+     AND COLUMN_8=$P{COLUMN_8}
 GROUP BY "APPOINTMENT"."ID",
 	"APPOINTMENT"."PATIENT_USERNAME",
 	"CLINIC"."NAME",
