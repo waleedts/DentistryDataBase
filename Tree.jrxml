@@ -15,6 +15,10 @@
 		</conditionalStyle>
 	</style>
 	<parameter name="ID" class="java.math.BigDecimal"/>
+	<parameter name="DOCTOR_USER_NAME" class="java.lang.String"/>
+	<parameter name="NAME" class="java.lang.String"/>
+	<parameter name="PHONE_NUMBER" class="java.lang.String"/>
+	<parameter name="COLUMN_8" class="java.math.BigDecimal"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT sum( services.duration) AS total_duration,
 	sum( PRICE) AS total_Price,
@@ -36,6 +40,10 @@ WHERE
 	 AND "APPOINTMENT"."PATIENT_USERNAME" = "PATIENT"."PATIENT_USER_NAME" 
 	 AND "CONAS"."SERVICES_ID" = "SERVICES"."ID" 
 	 AND ID=$P{ID}
+	 AND DOCTOR_USER_NAME=$P{DOCTOR_USER_NAME}
+	 AND PHONE_NUMBER=$P{PHONE_NUMBER}
+     AND NAME=$P{NAME}
+     AND COLUMN_8=$P{COLUMN_8}
 GROUP BY "APPOINTMENT"."ID",
 	"APPOINTMENT"."PATIENT_USERNAME",
 	"CLINIC"."NAME",
@@ -77,20 +85,6 @@ GROUP BY "APPOINTMENT"."ID",
 			<band height="31">
 				<frame>
 					<reportElement mode="Opaque" x="0" y="7" width="555" height="24" forecolor="#B89F7D" backcolor="#FF1943" uuid="d8de62c1-c7b7-4da8-8c69-000abeaa2cc0"/>
-					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-						<reportElement style="SubTitle" isPrintRepeatedValues="false" x="155" y="1" width="80" height="23" forecolor="#FFFFFF" uuid="25f707ae-9ac7-48d3-b45f-b14ee85fae9a"/>
-						<textElement>
-							<font isBold="false"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
-					</textField>
-					<textField isBlankWhenNull="true">
-						<reportElement positionType="Float" x="405" y="0" width="135" height="24" forecolor="#FFFFFF" uuid="4f894c7b-ac0a-463e-9e33-7d2560baa292"/>
-						<textElement>
-							<font fontName="Times New Roman" size="16" isBold="false"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{COLUMN_8}]]></textFieldExpression>
-					</textField>
 					<staticText>
 						<reportElement style="Column header" positionType="Float" x="-1" y="2" width="150" height="20" forecolor="#FFFFFF" uuid="89d76221-cd63-4cf3-9ed6-3d564ee45678"/>
 						<textElement textAlignment="Left">
@@ -105,6 +99,20 @@ GROUP BY "APPOINTMENT"."ID",
 						</textElement>
 						<text><![CDATA[SERVICE_ID:]]></text>
 					</staticText>
+					<textField isBlankWhenNull="false">
+						<reportElement x="150" y="0" width="110" height="22" forecolor="#FFFFFF" uuid="bd594169-f752-41cd-986b-e9fdea3fed08"/>
+						<textElement textAlignment="Left">
+							<font fontName="Times News Roman" size="16" isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{ID}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="404" y="0" width="135" height="24" forecolor="#FFFFFF" uuid="b4b78ee5-a8bd-42fb-b80c-e82bacf7e026"/>
+						<textElement>
+							<font fontName="Times New Roman" size="16"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{COLUMN_8}]]></textFieldExpression>
+					</textField>
 				</frame>
 			</band>
 		</groupHeader>
@@ -151,7 +159,7 @@ GROUP BY "APPOINTMENT"."ID",
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="141" splitType="Stretch">
+		<band height="154" splitType="Stretch">
 			<staticText>
 				<reportElement style="Title" x="120" y="40" width="435" height="63" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
 				<textElement>
@@ -197,13 +205,6 @@ GROUP BY "APPOINTMENT"."ID",
 				</textElement>
 				<text><![CDATA[CLINIC_NAME:]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Detail" positionType="Float" x="100" y="50" width="190" height="20" forecolor="#1070AF" uuid="a9038b95-a25a-4c15-8aba-aaaf1ba32bac"/>
-				<textElement>
-					<font size="14" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement style="Column header" positionType="Float" x="0" y="90" width="180" height="20" forecolor="#000000" uuid="7cdf9d43-48ee-409b-b99b-99b865524a26"/>
 				<textElement textAlignment="Left">
@@ -211,13 +212,6 @@ GROUP BY "APPOINTMENT"."ID",
 				</textElement>
 				<text><![CDATA[CLINIC_PHONE_NUMBER:]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Detail" positionType="Float" x="170" y="90" width="150" height="19" forecolor="#1070AF" uuid="6cd2ab39-d65d-45d1-9aab-a56a8880f8d0"/>
-				<textElement>
-					<font size="14" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{PHONE_NUMBER}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement style="Column header" positionType="Float" x="0" y="18" width="160" height="20" forecolor="#000000" uuid="395586e9-9f9e-4c90-9603-8c2c70aee330"/>
 				<textElement textAlignment="Left">
@@ -225,13 +219,6 @@ GROUP BY "APPOINTMENT"."ID",
 				</textElement>
 				<text><![CDATA[DOCTOR_USER_NAME:]]></text>
 			</staticText>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Detail" positionType="Float" x="160" y="18" width="130" height="20" forecolor="#1070AF" uuid="a2fbb879-b3fc-4325-95b7-b85e847e7fdb"/>
-				<textElement>
-					<font size="14" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{DOCTOR_USER_NAME}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement style="Column header" positionType="Float" x="290" y="18" width="120" height="20" forecolor="#000000" uuid="a24ab1c4-def3-496e-9bd2-415e3a10a3be"/>
 				<textElement textAlignment="Left">
@@ -245,6 +232,27 @@ GROUP BY "APPOINTMENT"."ID",
 					<font size="14" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{COLUMN_9}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="18" width="130" height="20" forecolor="#1070AF" uuid="c5faa60d-4fe2-4b70-9094-6c6ba160c34a"/>
+				<textElement>
+					<font fontName="Times News Romn" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DOCTOR_USER_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="50" width="189" height="20" forecolor="#1070AF" uuid="63873483-eae8-4b5a-9232-05a8e50d4262"/>
+				<textElement>
+					<font fontName="Times News Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="91" width="150" height="19" forecolor="#1070AF" uuid="b2e36129-cc39-401b-9577-f4c77367c3f5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PHONE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
