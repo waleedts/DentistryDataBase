@@ -9,7 +9,6 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import main.java.*?>
-<?import org.kordamp.ikonli.javafx.*?>
 
 <AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Four.Controller">
    <Pane fx:id="p" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070AF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -18,7 +17,7 @@
          <Image url="@project.png" />
       </ImageView>
       <Label layoutX="170.0" layoutY="247.0" text="User Name" textFill="WHITE" />
-      <LimitedTextField fx:id="userField" focusColor="WHITE" layoutX="170.0" layoutY="264.0" maxLength="100" prefHeight="27.0" prefWidth="247.0" unFocusColor="WHITE"  />
+      <LimitedTextField fx:id="userField" focusColor="WHITE" layoutX="170.0" layoutY="264.0" maxLength="100" prefHeight="27.0" prefWidth="247.0" unFocusColor="WHITE" />
       <Label layoutX="170.0" layoutY="310.0" text="Password" textFill="WHITE" />
       <JFXRadioButton fx:id="doctorRadio" layoutX="302.0" layoutY="375.0" text="Doctor" textFill="WHITE" toggleGroup="$doctorPatient">
          <toggleGroup>
@@ -40,7 +39,7 @@
          </unSelectedColor>
       </JFXRadioButton>
       <LimitedPasswordField fx:id="passField" focusColor="WHITE" layoutX="170.0" layoutY="327.0" maxLength="100" prefHeight="27.0" prefWidth="247.0" unFocusColor="WHITE" />
-      <JFXButton fx:id="b2" layoutX="233.0" layoutY="447.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FF1194;" text="SIGN UP" textFill="WHITE" />
+      <JFXButton fx:id="b2" layoutX="233.0" layoutY="447.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FF1493;" text="SIGN UP" textFill="WHITE" />
       <FontIcon iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" onMouseClicked="#goBack" />
 
       <ProgressIndicator fx:id="progressIndicator" layoutX="266.0" layoutY="486.0" style="-fx-accent:white" />
