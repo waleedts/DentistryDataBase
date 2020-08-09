@@ -7,10 +7,6 @@ public class DataAccessor {
     protected Connection connection;
 
     protected DataAccessor(){
-        try {
             connection=Connector.getConnection();
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
     }
 }

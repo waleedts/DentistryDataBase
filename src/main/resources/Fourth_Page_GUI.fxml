@@ -10,7 +10,8 @@
 <?import javafx.scene.text.*?>
 <?import main.java.*?>
 
-<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Four.Controller">
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Four.Controller">
    <Pane fx:id="p" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070AF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Rectangle arcHeight="90.0" arcWidth="70.0" fill="WHITE" height="156.0" layoutX="215.0" layoutY="51.0" stroke="BLACK" strokeType="INSIDE" width="155.0" />
       <ImageView fitHeight="141.0" fitWidth="120.0" layoutX="237.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
@@ -41,8 +42,7 @@
       <LimitedPasswordField fx:id="passField" focusColor="WHITE" layoutX="170.0" layoutY="327.0" maxLength="100" prefHeight="27.0" prefWidth="247.0" unFocusColor="WHITE" />
       <JFXButton fx:id="b2" layoutX="233.0" layoutY="447.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FF1493;" text="SIGN UP" textFill="WHITE" />
       <FontIcon iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" onMouseClicked="#goBack" />
-
-      <ProgressIndicator fx:id="progressIndicator" layoutX="266.0" layoutY="486.0" style="-fx-accent:white" />
+      <JFXSpinner fx:id="progressIndicator" layoutX="266.0" layoutY="486.0" />
    </Pane>
    <Label layoutX="689.0" layoutY="80.0" prefHeight="18.0" prefWidth="75.0" text="First Name">
       <font>
@@ -119,4 +119,5 @@
          </LinearGradient>
       </defaultColor>
    </JFXDatePicker>
+   <ImageView fx:id="view" fitHeight="38.0" fitWidth="59.0" layoutX="1026.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true" />
 </AnchorPane>

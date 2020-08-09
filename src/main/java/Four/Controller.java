@@ -13,6 +13,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
@@ -23,6 +25,8 @@ import main.java.connections.CurrentUser;
 import main.java.connections.Login;
 import main.java.helper.Helper;
 import main.java.requirements.User;
+
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -51,6 +55,8 @@ public class Controller implements Initializable {
     @FXML
     Pane p;
     @FXML
+    ImageView view;
+    @FXML
     private AnchorPane aa;
     @FXML
     ProgressIndicator progressIndicator;
@@ -69,6 +75,7 @@ public class Controller implements Initializable {
                 if (file != null) {
                     try {
                         image = Files.readAllBytes(file.toPath());
+                        view.setImage(new Image(new ByteArrayInputStream(image)));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

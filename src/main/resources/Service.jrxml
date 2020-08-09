@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Service" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2ef9ffc8-e25c-4cd0-a0ca-93f6557803d6">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Service" topMargin="20" bottomMargin="20" uuid="2ef9ffc8-e25c-4cd0-a0ca-93f6557803d6">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DentistDataBase"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<queryString>
-		<![CDATA[select count(appointment_id)as count,services_id as id from conas group by services_id]]>
+		<![CDATA[select SERVICES.NAME,count(SERVICES.NAME) as count from
+				SERVICES inner join CONAS C2 on SERVICES.ID = C2.SERVICES_ID
+				inner join APPOINTMENT A2 on C2.APPOINTMENT_ID = A2.ID
+				inner join CLINIC C3 on A2.CLINIC_ID = C3.ID where CLINIC_ID='22' group by SERVICES.NAME]]>
 	</queryString>
-	<field name="COUNT" class="java.lang.String">
+	<field name="COUNT" class="java.lang.Number">
 		<property name="com.jaspersoft.studio.field.label" value="COUNT"/>
 	</field>
-	<field name="ID" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+	<field name="NAME">
+		<property name="com.jaspersoft.studio.field.label" value="SERVICES.NAME"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -20,7 +23,7 @@
 			<staticText>
 				<reportElement x="100" y="7" width="430" height="64" uuid="e89e93ca-99f7-40bb-b9da-fa257c206961"/>
 				<textElement>
-					<font fontName="Times News Roman" size="40" isBold="true"/>
+					<font fontName="Times New Roman" size="40" isBold="true"/>
 				</textElement>
 				<text><![CDATA[W.W Dentistry Service]]></text>
 			</staticText>
@@ -37,16 +40,16 @@
 				</chart>
 				<categoryDataset>
 					<categorySeries>
-						<seriesExpression><![CDATA["SERIES 1"+""]]></seriesExpression>
-						<categoryExpression><![CDATA[0]]></categoryExpression>
-						<valueExpression><![CDATA[$F{ID}]]></valueExpression>
+						<seriesExpression><![CDATA["SERVICES"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{COUNT}]]></valueExpression>
 					</categorySeries>
 				</categoryDataset>
 				<barPlot>
 					<plot/>
 					<itemLabel/>
-					<categoryAxisFormat>
-						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					<categoryAxisFormat labelRotation="90" >
+						<axisFormat labelColor="#000000"  tickLabelColor="#000000" axisLineColor="#000000"/>
 					</categoryAxisFormat>
 					<valueAxisFormat>
 						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>

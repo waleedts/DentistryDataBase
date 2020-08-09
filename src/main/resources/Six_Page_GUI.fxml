@@ -4,9 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import main.java.*?>
-
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.DocPatReg">
+<?import main.java.LimitedTextField?>
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.DocPatReg">
     <Pane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070af;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <Label layoutX="187.0" layoutY="61.0" text="Registration For Doctor's" textFill="WHITE">
             <font>
@@ -35,7 +34,6 @@
         </Label>
         <JFXButton layoutX="227.0" layoutY="503.0" onAction="#goToAddClinic" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #FF1493;" text="Add Clinic" textFill="WHITE" />
         <Pane fx:id="doctorShadow" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black; -fx-opacity: 40%;" />
-        <FontIcon iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" onMouseClicked="#goBack" />
     </Pane>
     <Label layoutX="753.0" layoutY="113.0" prefHeight="27.0" prefWidth="241.0" text="Registration For Patient's">
         <font>

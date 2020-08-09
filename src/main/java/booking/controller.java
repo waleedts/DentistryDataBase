@@ -11,18 +11,16 @@ import javafx.scene.control.Label;
 import main.java.JasperHandler;
 import main.java.connections.*;
 import main.java.helper.Helper;
-import main.java.requirements.Appointment;
 import main.java.requirements.Services;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Handler;
 
 public class controller implements Initializable {
     List<Services> servicesList;
@@ -36,17 +34,19 @@ public class controller implements Initializable {
     JFXTimePicker jTime;
     @FXML
     JFXButton b;
+    @FXML
+    FontIcon goBackBtn;
     public void bookAppointment(Event event){
         AppointmentDataAccessor dataAccessor=new AppointmentDataAccessor();
         ConasDataAccessor conasDataAccessor=new ConasDataAccessor();
-
+        goBackBtn.setOnMouseClicked(e->Helper.changeScene("Second_Page_GUI.fxml",b));
         LocalDateTime dateTime=jTime.getValue().atDate(jDate.getValue());
         Date date=Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
         try {
             dataAccessor.setAppointment(date, CurrentUser.getCurrentUser().getUsername(), SelectedClinic.getClinic().getId());
             int id=dataAccessor.getAppointment(date, CurrentUser.getCurrentUser().getUsername(), SelectedClinic.getClinic().getId());
             conasDataAccessor.setConnections(arr,id);
-
+        new Thread(()->{
             JasperHandler handler=new JasperHandler();
             handler.makeReport(id);
             while (!handler.isFinished()){
@@ -57,6 +57,7 @@ public class controller implements Initializable {
                 }
             }
             Helper.changeScene("First_Page_GUI.fxml", (JFXButton) event.getSource());
+        }).start();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -64,6 +65,7 @@ public class controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ServicesDataAccessor dataAccessor =new ServicesDataAccessor();
+
         try {
             servicesList=dataAccessor.getServicesList();
         } catch (SQLException throwables) {
@@ -140,8 +142,5 @@ public class controller implements Initializable {
         }
         l1.setText(Integer.toString(total));
         l2.setText(Integer.toString(duration));
-    }
-    public void goBack(){
-        Helper.changeScene("Second_Page_GUI.fxml",b);
     }
 }

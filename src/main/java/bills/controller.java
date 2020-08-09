@@ -5,12 +5,16 @@ import com.jfoenix.controls.JFXListView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import main.java.connections.*;
 import main.java.helper.Helper;
 import main.java.paneWithNumb.withNumbConroller;
 import main.java.requirements.Appointment;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -20,22 +24,25 @@ import java.util.ResourceBundle;
 
 public class controller implements Initializable {
     @FXML
-    JFXButton b1;
-    @FXML
-    JFXButton b2,accountInfoBtn;
+    JFXButton b2;
     @FXML
     JFXListView<Pane> list;
+    @FXML
+    Rectangle rec;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         list.setDepth(3);
-        list.setMouseTransparent(true);
-        if(CurrentUser.isDoctor()){
-            b2.setText("Create Post");
-        }
+        rec.setFill(new ImagePattern(new Image(new ByteArrayInputStream(CurrentUser.getCurrentUser().getProfilePic()))));
         try {
             AppointmentDataAccessor dataAccessor=new AppointmentDataAccessor();
-            List<Appointment> clinics=dataAccessor.getAppointmentList(CurrentUser.getCurrentUser().getUsername());
-            for (Appointment c: clinics) {
+            List<Appointment> appointments;
+            if(CurrentUser.isDoctor()){
+                b2.setText("Create Post");
+                appointments=dataAccessor.getAppointmentList(CurrentUser.getCurrentUser().getUsername(),true);
+            }else{
+                appointments=dataAccessor.getAppointmentList(CurrentUser.getCurrentUser().getUsername(),false);
+            }
+            for (Appointment c: appointments) {
                 list.getItems().add(createPane(c));
             }
         }catch (IOException | SQLException e){
@@ -52,12 +59,10 @@ public class controller implements Initializable {
         controller.setPrice(Integer.toString(appointment.getTotalPrice()));
         return pane;
     }
-    public void account(){
-        Helper.changeScene("accountInfo_GUI.fxml",b1);
-    }
+
     public void clinic(){
         if(CurrentUser.isDoctor()){
-            Helper.changeScene("CP_GUI.fxml",b1);
+            Helper.changeScene("CP_GUI.fxml",b2);
         }else{
             Helper.changeScene("First_Page_GUI.fxml",b2);
         }

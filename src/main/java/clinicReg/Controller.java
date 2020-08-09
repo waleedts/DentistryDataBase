@@ -59,7 +59,7 @@ public class Controller {
         }
     }
     public void goBack(){
-        Helper.changeScene("Sex_Page_GUI.fxml",regBtn);
+        Helper.changeScene("Six_Page_GUI.fxml",regBtn);
     }
 
 }

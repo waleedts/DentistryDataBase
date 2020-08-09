@@ -38,8 +38,7 @@ public class controller implements Initializable {
     JFXTextField searchField;
     @FXML
     Rectangle rec;
-    @FXML
-    JFXButton accountInfoBtn;
+
     @FXML
     JFXButton b2;
     @FXML
@@ -61,30 +60,7 @@ public class controller implements Initializable {
             for (Clinic c: clinics) {
                 panes.add(createPane(c,dataAccessor));
             }
-            FilteredList<Pane> clinicFilteredList=new FilteredList<>(FXCollections.observableList(panes), e->true);
-            searchField.textProperty().addListener(
-                    (observable, oldValue, newValue) -> clinicFilteredList.setPredicate(pane ->{
-
-                        //Todo:implement filter button
-                        if(newValue == null || newValue.isEmpty()){
-                            return true;
-                        }
-                        Clinic clinic= null ;
-                        try {
-                            clinic = new ClinicDataAccessor().getClinic(pane.getId());
-                        } catch (SQLException throwables) {
-                            throwables.printStackTrace();
-                        }
-                        String lowerCaseFilter = newValue.toLowerCase();
-                        assert clinic != null;
-                        if(clinic.getDoctor().getFirstName().toLowerCase().contains(lowerCaseFilter)){
-                            return true; //filter matches first name
-                        }else {
-                            return clinic.getDoctor().getLastName().toLowerCase().contains(lowerCaseFilter);
-                        }
-                    })
-            );
-            list.setItems(clinicFilteredList);
+            list.setItems(FXCollections.observableList(panes));
 
         }catch (IOException | SQLException e){
             e.printStackTrace();
@@ -98,7 +74,7 @@ public class controller implements Initializable {
         pane.setOnMouseClicked((e)->{
             try {
                 SelectedClinic.setClinic(dataAccessor.getClinic(list.getSelectionModel().getSelectedItem().getId()));
-                Helper.changeScene("Second_Page_GUI.fxml",accountInfoBtn);
+                Helper.changeScene("Second_Page_GUI.fxml",b2);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

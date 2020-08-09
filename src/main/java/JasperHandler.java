@@ -18,15 +18,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JasperHandler extends DataAccessor {
-
+    public static void main(String[] args) {
+        JasperHandler handler=new JasperHandler();
+        handler.makeReport(0);
+    }
     public void makeReport(int x) {
         try {
-            InputStream in = new FileInputStream(new File("src/main/resources/Tree.jrxml"));
+            InputStream in = new FileInputStream(new File("src/main/resources/Service.jrxml"));
             JasperDesign design = JRXmlLoader.load(in);
             JasperReport report = JasperCompileManager.compileReport(design);
-            HashMap map=new HashMap();
-            map.put("appointmentID",x);
-            JasperPrint print = JasperFillManager.fillReport(report, map, connection);
+//            HashMap map=new HashMap();
+//            map.put("appointmentID",x);
+            JasperPrint print = JasperFillManager.fillReport(report, null, connection);
             JFrame frame = new JFrame("Report");
             frame.getContentPane().add(new JRViewer(print));
             frame.pack();

@@ -3,6 +3,7 @@ package main.java.createPost;
 import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,8 +16,10 @@ import main.java.helper.Helper;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 public class controller {
     @FXML
@@ -43,16 +46,15 @@ public class controller {
             }
         });
     }
-    String l = t.getText();
     public void post(){
         try {
-            new PostDataAccessor().setPost(image,l);
+            new PostDataAccessor().setPost(image,t.getText());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
     }
     public void goBack(){
-        Helper.changeScene("accountInfo_GUI.fxml",uploadPic);
+        Helper.changeScene("Bills_GUI.fxml",uploadPic);
     }
 }

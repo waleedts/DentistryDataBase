@@ -68,7 +68,11 @@ public class controller implements Initializable {
         service.setOnSucceeded(workerStateEvent -> {
             boolean loginSuccess = service.getValue();
             if (loginSuccess) {
-                Helper.changeScene("First_Page_GUI.fxml",b2);
+                if(CurrentUser.isDoctor()){
+                    Helper.changeScene("Bills_GUI.fxml",b2);
+                }else{
+                    Helper.changeScene("First_Page_GUI.fxml",b2);
+                }
             } else {
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error signing in!");
@@ -87,7 +91,6 @@ public class controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         r1.setSelected(true);
         t = new ToggleGroup();
-        progressIndicator=new ProgressIndicator();
         progressIndicator.setVisible(false);
         progressPane.setVisible(false);
 //        b1.setOnMouseClicked(e->{

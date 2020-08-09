@@ -11,10 +11,18 @@ import java.util.Date;
 import java.util.List;
 
 public class AppointmentDataAccessor extends DataAccessor {
-    public List<Appointment> getAppointmentList(String username) throws SQLException {
+    public List<Appointment> getAppointmentList(String username ,boolean doc) throws SQLException {
+        String sqlStat;
+        if(doc){
+            sqlStat="select C2.name,c2.PHONE_NUMBER,start_time,sum(Duration) as Duration,sum(s.Price) as total from Appointment inner join CLINIC C2 on C2.ID = Appointment.CLINIC_ID  inner join DOCTOR D on APPOINTMENT.CLINIC_ID = D.CLINIC_ID inner join CONAS C2 on APPOINTMENT.ID = C2.APPOINTMENT_ID inner join SERVICES S on C2.SERVICES_ID = S.ID where D.DOCTOR_USER_NAME='"+username+"' group by C2.name,c2.PHONE_NUMBER,start_time,APPOINTMENT.ID";
+        }else{
+            sqlStat="select C2.name,c2.PHONE_NUMBER,start_time,sum(Duration) as Duration,sum(s.Price) as total from Appointment inner join CLINIC C2 on C2.ID = Appointment.CLINIC_ID  inner join CONAS C2 on APPOINTMENT.ID = C2.APPOINTMENT_ID inner join SERVICES S on C2.SERVICES_ID = S.ID where Appointment.Patient_UserName='" + username + "' group by C2.name,c2.PHONE_NUMBER,start_time,APPOINTMENT.ID";
+        }
         try (
-                Statement stmnt = connection.createStatement();
-                ResultSet rs = stmnt.executeQuery("select C2.name,c2.PHONE_NUMBER,start_time,sum(Duration) as Duration,sum(s.Price) as total from Appointment inner join CLINIC C2 on C2.ID = Appointment.CLINIC_ID  inner join CONAS C2 on APPOINTMENT.ID = C2.APPOINTMENT_ID inner join SERVICES S on C2.SERVICES_ID = S.ID where Appointment.Patient_UserName='"+username+"' group by C2.name,c2.PHONE_NUMBER,start_time,APPOINTMENT.ID")
+
+            Statement stmnt = connection.createStatement();
+            ResultSet rs = stmnt.executeQuery(sqlStat)
+
         ){
             List<Appointment> appointmentList=new ArrayList<>();
             while(rs.next()){
@@ -31,7 +39,7 @@ public class AppointmentDataAccessor extends DataAccessor {
     }
     public void setAppointment(Date start_time,String patient_username,int clinic_ID) throws SQLException {
         try (
-                PreparedStatement stmnt = connection.prepareStatement("insert into Appointment (start_time, patient_username, clinic_id) values ((?),(?),(?)) ");
+                PreparedStatement stmnt = connection.prepareStatement("insert into Appointment (start_time, patient_username, clinic_id) values ((?),(?),(?)) ")
         ){
             stmnt.setDate(1, new java.sql.Date(start_time.getTime() ));
             stmnt.setString(2,patient_username);
@@ -41,7 +49,7 @@ public class AppointmentDataAccessor extends DataAccessor {
     }
     public int getAppointment(Date start_time,String patient_username,int clinic_ID) throws SQLException {
         try (
-                PreparedStatement stmnt = connection.prepareStatement("select ID from Appointment where START_TIME=(?) and PATIENT_USERNAME=(?) and CLINIC_ID=(?)");
+                PreparedStatement stmnt = connection.prepareStatement("select ID from Appointment where START_TIME=(?) and PATIENT_USERNAME=(?) and CLINIC_ID=(?)")
         ){
             stmnt.setDate(1, new java.sql.Date(start_time.getTime()));
             stmnt.setString(2,patient_username);

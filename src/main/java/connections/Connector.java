@@ -2,6 +2,7 @@ package main.java.connections;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import javafx.scene.control.Alert;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -40,8 +41,17 @@ public class Connector {
 
         ds = new HikariDataSource(config);
     }
-    public static Connection getConnection() throws SQLException {
-        return ds.getConnection();
+    public static Connection getConnection() {
+        Connection connection=null;
+        try {
+            connection= ds.getConnection();
+
+        }catch (SQLException e){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Connection Time Out!");
+            alert.show();
+        }
+        return connection;
     }
     private Connector(){}
 }

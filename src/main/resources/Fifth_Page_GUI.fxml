@@ -9,6 +9,7 @@
 <?import javafx.scene.text.*?>
 <?import main.java.*?>
 
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 <AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Five.controller">
    <Pane onMouseClicked="#goBack" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070af;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <FontIcon fx:id="b1" iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" onMouseClicked="#goBack" />
@@ -51,7 +52,7 @@
          </selectedColor></JFXRadioButton>
    </Pane>
    <Pane fx:id="progressPane" layoutX="294.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" visible="false" AnchorPane.rightAnchor="0.0">
-      <ProgressIndicator fx:id="progressIndicator" layoutX="274.0" layoutY="274.0" />
+      <JFXSpinner fx:id="progressIndicator" layoutX="274.0" layoutY="274.0"/>
    </Pane>
 
 </AnchorPane>

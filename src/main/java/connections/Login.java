@@ -74,7 +74,7 @@ public class Login{
             prop.load(input);
             connection=Connector.getConnection();
             appId =prop.getProperty("fb.appId");
-        } catch (IOException | SQLException e) {
+        } catch (IOException  e) {
             e.printStackTrace();
         }
 
