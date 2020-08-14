@@ -110,7 +110,6 @@ public class Controller implements Initializable {
                         boolean loginSuccess = false;
                         Login login = new Login();
                         try {
-                            System.out.println("out");
                             loginSuccess = login.signUp(firstNameField.getText(), lastNameField.getText(), addressField.getText(), userField.getText(), passField.getText(), phoneField.getText(), gender, date, image, doctorRadio.isSelected());
                         } catch (SQLException e) {
                             System.out.println("Exception in method (SignUpAction) in class (FourthController)" + e.getMessage());

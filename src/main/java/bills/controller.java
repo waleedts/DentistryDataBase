@@ -9,22 +9,25 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import main.java.JasperHandler;
 import main.java.connections.*;
 import main.java.helper.Helper;
-import main.java.paneWithNumb.withNumbConroller;
+import main.java.paneWithNumb.withNumbConrtoller;
 import main.java.requirements.Appointment;
+import main.java.requirements.Doctor;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class controller implements Initializable {
     @FXML
-    JFXButton b2;
+    JFXButton b2,reportBtn;
     @FXML
     JFXListView<Pane> list;
     @FXML
@@ -38,6 +41,13 @@ public class controller implements Initializable {
             List<Appointment> appointments;
             if(CurrentUser.isDoctor()){
                 b2.setText("Create Post");
+                reportBtn.setVisible(true);
+                reportBtn.setOnMouseClicked(e->{
+                    HashMap<String ,Object> map=new HashMap<>();
+                    Doctor doctor=(Doctor)CurrentUser.getCurrentUser();
+                    map.put("clinicID",doctor.getClinicId());
+                    new JasperHandler().makeReport(map,false);
+                });
                 appointments=dataAccessor.getAppointmentList(CurrentUser.getCurrentUser().getUsername(),true);
             }else{
                 appointments=dataAccessor.getAppointmentList(CurrentUser.getCurrentUser().getUsername(),false);
@@ -53,9 +63,19 @@ public class controller implements Initializable {
     Pane createPane(Appointment appointment) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane pane = loader.load(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("withNumb.fxml")));
-        withNumbConroller controller=loader.getController();
-        controller.setName(appointment.getClinicName());
-        controller.setPhone(appointment.getClinicNumber());
+        withNumbConrtoller controller=loader.getController();
+        controller.setDate(appointment.getTime().toString());
+        controller.setDuration(Integer.toString(appointment.getDuration()));
+        if(!CurrentUser.isDoctor()) {
+            controller.setDoctor();
+            controller.setName(appointment.getClinicName());
+            controller.setPhone(appointment.getClinicNumber());
+        }else {
+            controller.setAllergies(appointment.getPatientAllergies());
+            controller.setBloodType(appointment.getPatientBloodType());
+            controller.setName(appointment.getPatientName());
+            controller.setPhone(appointment.getPatientNumber());
+        }
         controller.setPrice(Integer.toString(appointment.getTotalPrice()));
         return pane;
     }

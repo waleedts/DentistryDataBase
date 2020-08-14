@@ -14,7 +14,7 @@ public class AppointmentDataAccessor extends DataAccessor {
     public List<Appointment> getAppointmentList(String username ,boolean doc) throws SQLException {
         String sqlStat;
         if(doc){
-            sqlStat="select C2.name,c2.PHONE_NUMBER,start_time,sum(Duration) as Duration,sum(s.Price) as total from Appointment inner join CLINIC C2 on C2.ID = Appointment.CLINIC_ID  inner join DOCTOR D on APPOINTMENT.CLINIC_ID = D.CLINIC_ID inner join CONAS C2 on APPOINTMENT.ID = C2.APPOINTMENT_ID inner join SERVICES S on C2.SERVICES_ID = S.ID where D.DOCTOR_USER_NAME='"+username+"' group by C2.name,c2.PHONE_NUMBER,start_time,APPOINTMENT.ID";
+            sqlStat="select u.FIRST_NAME,u.LAST_NAME,u.PHONE_NUMBER,p.ALLERGIES,p.BLOOD_TYPE,start_time,sum(Duration) as Duration,sum(s.Price) as total from Appointment inner join CLINIC C2 on C2.ID = Appointment.CLINIC_ID  inner join DOCTOR D on APPOINTMENT.CLINIC_ID = D.CLINIC_ID inner join CONAS C2 on APPOINTMENT.ID = C2.APPOINTMENT_ID inner join SERVICES S on C2.SERVICES_ID = S.ID inner join PATIENT P on APPOINTMENT.PATIENT_USERNAME = P.PATIENT_USER_NAME inner join \"USER\" U on P.PATIENT_USER_NAME = U.USER_NAME where D.DOCTOR_USER_NAME='"+username+"' group by u.FIRST_NAME,u.LAST_NAME,u.PHONE_NUMBER,start_time,p.ALLERGIES,p.BLOOD_TYPE";
         }else{
             sqlStat="select C2.name,c2.PHONE_NUMBER,start_time,sum(Duration) as Duration,sum(s.Price) as total from Appointment inner join CLINIC C2 on C2.ID = Appointment.CLINIC_ID  inner join CONAS C2 on APPOINTMENT.ID = C2.APPOINTMENT_ID inner join SERVICES S on C2.SERVICES_ID = S.ID where Appointment.Patient_UserName='" + username + "' group by C2.name,c2.PHONE_NUMBER,start_time,APPOINTMENT.ID";
         }
@@ -30,8 +30,15 @@ public class AppointmentDataAccessor extends DataAccessor {
                 appointment.setTime(rs.getDate("Start_time"));
                 appointment.setDuration(rs.getInt("Duration"));
                 appointment.setTotal(rs.getInt("total"));
-                appointment.setClinicName(rs.getString(1));
-                appointment.setClinicNumber(rs.getString(2));
+                if(!doc){
+                    appointment.setClinicName(rs.getString(1));
+                    appointment.setClinicNumber(rs.getString(2));
+                }else {
+                    appointment.setPatientAllergies(rs.getString("ALLERGIES"));
+                    appointment.setPatientName(rs.getString("First_Name")+" "+rs.getString("Last_Name"));
+                    appointment.setPatientBloodType(rs.getString("blood_type"));
+                    appointment.setPatientNumber(rs.getString("Phone_number"));
+                }
                 appointmentList.add(appointment);
             }
             return appointmentList;

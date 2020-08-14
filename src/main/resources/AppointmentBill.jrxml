@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DDB" columnWidth="535" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
+	<property name="template.type" value="columnar"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DentistDataBase"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="appointmentID" class="java.lang.Integer"/>
+	<parameter name="TOTAL_PRI" class="java.lang.Integer"/>
+	<parameter name="TOTAL_DUR" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT sum( PRICE) AS Price,
+       "APPOINTMENT"."ID",
+       "APPOINTMENT"."PATIENT_USERNAME",
+       sum("SERVICES"."DURATION") AS TOTAL_DURATION,
+       "CLINIC"."NAME",
+       "CLINIC"."PHONE_NUMBER",
+       "DOCTOR"."DOCTOR_USER_NAME",
+       "SERVICES"."ID",
+       "SERVICES"."NAME"
+FROM
+    "CLINIC" inner join "DOCTOR"  on "CLINIC".ID = "DOCTOR".CLINIC_ID inner join "APPOINTMENT" on "CLINIC".ID = "APPOINTMENT".CLINIC_ID
+             inner join "CONAS" on "APPOINTMENT"."ID" = "CONAS"."APPOINTMENT_ID" inner join
+    "SERVICES"  on "CONAS"."SERVICES_ID" = "SERVICES"."ID"
+WHERE
+        "APPOINTMENT"."ID"=$P{appointmentID}
+GROUP BY "APPOINTMENT"."ID",
+    "APPOINTMENT"."PATIENT_USERNAME",
+    "CLINIC"."NAME",
+    "CLINIC"."PHONE_NUMBER",
+    "DOCTOR"."DOCTOR_USER_NAME",
+    "SERVICES"."ID",
+    "SERVICES"."NAME"]]>
+	</queryString>
+	<field name="TOTAL_DURATION" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="TOTAL_DURATION"/>
+	</field>
+	<field name="Price" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="Price"/>
+	</field>
+	<field name="ID" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+	</field>
+	<field name="PATIENT_USERNAME">
+		<property name="com.jaspersoft.studio.field.label" value="PATIENT_USERNAME"/>
+	</field>
+	<field name="NAME">
+		<property name="com.jaspersoft.studio.field.label" value="NAME"/>
+	</field>
+	<field name="PHONE_NUMBER" >
+		<property name="com.jaspersoft.studio.field.label" value="PHONE_NUMBER"/>
+	</field>
+	<field name="DOCTOR_USER_NAME">
+		<property name="com.jaspersoft.studio.field.label" value="DOCTOR_USER_NAME"/>
+	</field>
+	<field name="COLUMN_8" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+	</field>
+	<field name="COLUMN_9" >
+		<property name="com.jaspersoft.studio.field.label" value="SERVICE_NAME"/>
+	</field>
+
+
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{ID}]]></groupExpression>
+		<groupHeader>
+			<band height="31">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="7" width="555" height="24" forecolor="#B89F7D" backcolor="#FF1943" uuid="d8de62c1-c7b7-4da8-8c69-000abeaa2cc0"/>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement style="SubTitle" isPrintRepeatedValues="false" x="155" y="1" width="80" height="23" forecolor="#FFFFFF" uuid="25f707ae-9ac7-48d3-b45f-b14ee85fae9a"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement positionType="Float" x="405" y="0" width="135" height="24" forecolor="#FFFFFF" uuid="4f894c7b-ac0a-463e-9e33-7d2560baa292"/>
+						<textElement>
+							<font fontName="Times New Roman" size="16" isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{COLUMN_8}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement style="Column header" positionType="Float" x="-1" y="2" width="150" height="20" forecolor="#FFFFFF" uuid="89d76221-cd63-4cf3-9ed6-3d564ee45678"/>
+						<textElement textAlignment="Left">
+							<font isBold="false"/>
+						</textElement>
+						<text><![CDATA[APPOINTMENTS_ID:]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="Column header" positionType="Float" x="311" y="2" width="91" height="20" forecolor="#FFFFFF" uuid="0a67482b-a105-49f5-bb6e-312c7a4d091b"/>
+						<textElement textAlignment="Left">
+							<font isBold="false"/>
+						</textElement>
+						<text><![CDATA[SERVICE_ID:]]></text>
+					</staticText>
+				</frame>
+
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<group name="MYGroup2">
+		<groupExpression><![CDATA[$F{ID}]]></groupExpression>
+		<groupHeader>
+			<band height="45" splitType="Stretch">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="7" width="555" height="24" forecolor="#B89F7D" backcolor="#50c878" uuid="d8de62c1-c7b7-4da8-8c69-000abeaa2cc0"/>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="0" y="0" width="100" height="20" forecolor="#000000" uuid="b200b160-3996-4878-8a4b-1ab921a324f4"/>
+					<textElement textAlignment="Left">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[TOTAL_PRICE:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="100" y="0" width="190" height="20" forecolor="#1070AF" uuid="a9038b95-a25a-4c15-8aba-aaaf1ba32bac"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{TOTAL_PRI}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="280" y="0" width="150" height="20" forecolor="#000000" uuid="b200b160-3996-4878-8a4b-1ab921a324f4"/>
+					<textElement textAlignment="Left">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[TOTAL_DURATION:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="410" y="0" width="50" height="20" forecolor="#1070AF" uuid="a9038b95-a25a-4c15-8aba-aaaf1ba32bac"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{TOTAL_DUR}]]></textFieldExpression>
+				</textField>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+
+	<group name="MYGroup">
+		<groupExpression><![CDATA[$F{ID}]]></groupExpression>
+		<groupHeader>
+			<band height="70">
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="0" y="25" width="100" height="20" forecolor="#000000" uuid="b200b160-3996-4878-8a4b-1ab921a324f4"/>
+					<textElement textAlignment="Left">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[CLINIC_NAME:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="100" y="25" width="190" height="20" forecolor="#1070AF" uuid="a9038b95-a25a-4c15-8aba-aaaf1ba32bac"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="280" y="25" width="180" height="20" forecolor="#000000" uuid="7cdf9d43-48ee-409b-b99b-99b865524a26"/>
+					<textElement textAlignment="Left">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[CLINIC_PHONE:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="390" y="25" width="150" height="19" forecolor="#1070AF" uuid="6cd2ab39-d65d-45d1-9aab-a56a8880f8d0"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PHONE_NUMBER}]]></textFieldExpression>
+				</textField>
+
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="0" y="50" width="150" height="20" forecolor="#000000" uuid="5af6bdf3-07f9-4484-b280-e1663a0cfe7c"/>
+					<textElement textAlignment="Left">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[PATIENT_NAME:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="115" y="50" width="130" height="20" forecolor="#1070AF" uuid="ac29c119-3ebf-49ae-9f38-cccc05d0e121"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PATIENT_USERNAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="280" y="50" width="160" height="20" forecolor="#000000" uuid="395586e9-9f9e-4c90-9603-8c2c70aee330"/>
+					<textElement textAlignment="Left">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[DOCTOR_NAME:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="395" y="50" width="130" height="20" forecolor="#1070AF" uuid="a2fbb879-b3fc-4325-95b7-b85e847e7fdb"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DOCTOR_USER_NAME}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="69" width="551" height="1" uuid="5e41185f-9c90-45ca-839b-e28b308c1430"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{COLUMN_8}]]></groupExpression>
+		<groupHeader>
+			<band height="75">
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="0" y="25" width="100" height="20" forecolor="#000000" uuid="d76697d0-4308-4577-b6e9-82787337bb76"/>
+					<textElement textAlignment="Left">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Price:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="50" y="25" width="165" height="18" forecolor="#1070AF" uuid="9b38985d-ece5-4b6b-817f-a856edb5807f"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Price}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="280" y="25" width="132" height="20" forecolor="#000000" uuid="0e02575b-f939-4435-8563-06d96c3c1a9e"/>
+					<textElement textAlignment="Left">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[TOTAL_DURATION:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="420" y="25" width="133" height="18" forecolor="#1070AF" uuid="52285a05-b8c9-4427-b738-9f1f71598216"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TOTAL_DURATION}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="0" y="50" width="120" height="20" forecolor="#000000" uuid="a24ab1c4-def3-496e-9bd2-415e3a10a3be"/>
+					<textElement textAlignment="Left">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[SERVICE_NAME:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="120" y="50" width="145" height="12" forecolor="#1070AF" uuid="04bfe528-d18b-49be-824a-0392c1169d20"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{COLUMN_9}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="74" width="551" height="1" uuid="5e41185f-9c90-45ca-839b-e28b308c1430"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="120" y="40" width="435" height="63" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
+				<textElement>
+					<font size="40" isBold="false"/>
+				</textElement>
+				<text><![CDATA[W.W Dentistry Service]]></text>
+			</staticText>
+			<image>
+				<reportElement x="20" y="20" width="90" height="100" uuid="62bfa25d-4848-44d0-ad6a-03c6cddb1a74"/>
+				<imageExpression><![CDATA["project.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fab082df-3ca0-43ac-900e-4da3f8b5a45d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="13" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#FF1943" uuid="bfdca178-800d-445c-9a31-bb616a00e8ce"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="13" forecolor="#FFFFFF" uuid="2fba0f87-635e-476d-858f-d102b26146fe"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" mode="Transparent" x="433" y="0" width="80" height="13" forecolor="#FFFFFF" uuid="e454d23d-bcfc-4c79-a399-0ef520a3150a"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="0" width="197" height="13" forecolor="#FFFFFF" uuid="14d8de1e-8695-4078-a67f-0e69172574d5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

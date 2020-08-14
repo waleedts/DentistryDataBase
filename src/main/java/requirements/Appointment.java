@@ -7,6 +7,41 @@ public class Appointment {
     Date time;
     int duration;
     int totalPrice;
+    String patientName;
+    String patientBloodType;
+    String patientNumber;
+    String patientAllergies;
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+
+    public String getPatientBloodType() {
+        return patientBloodType;
+    }
+
+    public void setPatientBloodType(String patientBloodType) {
+        this.patientBloodType = patientBloodType;
+    }
+
+    public String getPatientNumber() {
+        return patientNumber;
+    }
+
+    public void setPatientNumber(String patientNumber) {
+        this.patientNumber = patientNumber;
+    }
+
+    public String getPatientAllergies() {
+        return patientAllergies;
+    }
+
+    public void setPatientAllergies(String patientAllergies) {
+        this.patientAllergies = patientAllergies;
+    }
 
     public int getTotalPrice() {
         return totalPrice;

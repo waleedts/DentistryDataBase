@@ -1,6 +1,5 @@
 package main.java;
 
-import main.java.connections.Connector;
 import main.java.connections.DataAccessor;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
@@ -12,41 +11,29 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.Map;
 
 public class JasperHandler extends DataAccessor {
-    public static void main(String[] args) {
-        JasperHandler handler=new JasperHandler();
-        handler.makeReport(0);
-    }
-    public void makeReport(int x) {
+    public void makeReport(Map<String,Object> map,boolean isAppointmentBill) {
         try {
-            InputStream in = new FileInputStream(new File("src/main/resources/Service.jrxml"));
+            String string;
+            if(isAppointmentBill){
+                string="AppointmentBill.jrxml";
+            }else{
+                string="Service.jrxml";
+            }
+            InputStream in = new FileInputStream(new File("src/main/resources/"+string));
             JasperDesign design = JRXmlLoader.load(in);
             JasperReport report = JasperCompileManager.compileReport(design);
-//            HashMap map=new HashMap();
-//            map.put("appointmentID",x);
-            JasperPrint print = JasperFillManager.fillReport(report, null, connection);
+
+            JasperPrint print = JasperFillManager.fillReport(report, map, connection);
             JFrame frame = new JFrame("Report");
             frame.getContentPane().add(new JRViewer(print));
             frame.pack();
             frame.setVisible(true);
-            frame.addWindowListener(new java.awt.event.WindowAdapter() {
-                @Override
-                public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                    isFinished=true;
-                }
-            });
         } catch (FileNotFoundException | JRException throwables) {
             throwables.printStackTrace();
         }
 
-    }
-    boolean isFinished=false;
-    public boolean isFinished(){
-        return isFinished;
     }
 }

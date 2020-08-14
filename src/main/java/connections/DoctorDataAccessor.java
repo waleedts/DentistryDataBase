@@ -1,14 +1,7 @@
 package main.java.connections;
 
-import com.sun.mail.iap.ByteArray;
-import javafx.embed.swing.SwingFXUtils;
-import main.java.requirements.Doctor;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
+import main.java.requirements.Doctor;
 import java.sql.*;
 
 public class DoctorDataAccessor extends UserDataAccessor{

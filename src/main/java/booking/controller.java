@@ -19,6 +19,7 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -36,6 +37,8 @@ public class controller implements Initializable {
     JFXButton b;
     @FXML
     FontIcon goBackBtn;
+    JasperHandler handler;
+
     public void bookAppointment(Event event){
         AppointmentDataAccessor dataAccessor=new AppointmentDataAccessor();
         ConasDataAccessor conasDataAccessor=new ConasDataAccessor();
@@ -47,17 +50,14 @@ public class controller implements Initializable {
             int id=dataAccessor.getAppointment(date, CurrentUser.getCurrentUser().getUsername(), SelectedClinic.getClinic().getId());
             conasDataAccessor.setConnections(arr,id);
         new Thread(()->{
-            JasperHandler handler=new JasperHandler();
-            handler.makeReport(id);
-            while (!handler.isFinished()){
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            Helper.changeScene("First_Page_GUI.fxml", (JFXButton) event.getSource());
+            handler=new JasperHandler();
+            HashMap<String ,Object> map=new HashMap<>();
+            map.put("appointmentID",id);
+            map.put("TOTAL_PRI",Integer.parseInt(l1.getText()));
+            map.put("TOTAL_DUR",Integer.parseInt(l2.getText()));
+            handler.makeReport(map,true);
         }).start();
+        Helper.changeScene("First_Page_GUI.fxml", (JFXButton) event.getSource());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

@@ -3,11 +3,12 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Service" topMargin="20" bottomMargin="20" uuid="2ef9ffc8-e25c-4cd0-a0ca-93f6557803d6">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DentistDataBase"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="clinicID"/>
 	<queryString>
 		<![CDATA[select SERVICES.NAME,count(SERVICES.NAME) as count from
 				SERVICES inner join CONAS C2 on SERVICES.ID = C2.SERVICES_ID
 				inner join APPOINTMENT A2 on C2.APPOINTMENT_ID = A2.ID
-				inner join CLINIC C3 on A2.CLINIC_ID = C3.ID where CLINIC_ID='22' group by SERVICES.NAME]]>
+				inner join CLINIC C3 on A2.CLINIC_ID = C3.ID where CLINIC_ID=$P{clinicID} group by SERVICES.NAME]]>
 	</queryString>
 	<field name="COUNT" class="java.lang.Number">
 		<property name="com.jaspersoft.studio.field.label" value="COUNT"/>
@@ -31,7 +32,7 @@
 				<reportElement x="20" y="0" width="60" height="79" uuid="26899bd8-1712-4413-8ae2-57f4ae02f2a6"/>
 				<imageExpression><![CDATA["project.png"]]></imageExpression>
 			</image>
-			<barChart>
+			<stackedBarChart>
 				<chart evaluationTime="Report">
 					<reportElement x="0" y="160" width="552" height="292" uuid="94285d92-dde6-4f3d-accc-e636e562023e"/>
 					<chartTitle/>
@@ -40,22 +41,22 @@
 				</chart>
 				<categoryDataset>
 					<categorySeries>
-						<seriesExpression><![CDATA["SERVICES"]]></seriesExpression>
+						<seriesExpression><![CDATA[$F{NAME}]]></seriesExpression>
 						<categoryExpression><![CDATA[$F{NAME}]]></categoryExpression>
 						<valueExpression><![CDATA[$F{COUNT}]]></valueExpression>
 					</categorySeries>
 				</categoryDataset>
-				<barPlot>
+				<barPlot isShowTickMarks="false" isShowLabels="false">
 					<plot/>
 					<itemLabel/>
-					<categoryAxisFormat labelRotation="90" >
-						<axisFormat labelColor="#000000"  tickLabelColor="#000000" axisLineColor="#000000"/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
 					</categoryAxisFormat>
 					<valueAxisFormat>
 						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
 					</valueAxisFormat>
 				</barPlot>
-			</barChart>
+			</stackedBarChart>
 		</band>
 	</title>
 	<pageHeader>

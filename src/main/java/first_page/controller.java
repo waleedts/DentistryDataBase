@@ -58,7 +58,7 @@ public class controller implements Initializable {
             List<Clinic> clinics=dataAccessor.getClinicList();
             List<Pane> panes=new ArrayList<>();
             for (Clinic c: clinics) {
-                panes.add(createPane(c,dataAccessor));
+                panes.add(createPane(c));
             }
             list.setItems(FXCollections.observableList(panes));
 
@@ -66,20 +66,15 @@ public class controller implements Initializable {
             e.printStackTrace();
         }
     }
-    Pane createPane(Clinic clinic,ClinicDataAccessor dataAccessor) throws IOException {
+    Pane createPane(Clinic clinic) throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         Pane pane=loader.load(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Pane.fxml")));
         pane.setId(Integer.toString(clinic.getId()));
         pane.setOnMouseClicked((e)->{
-            try {
-                SelectedClinic.setClinic(dataAccessor.getClinic(list.getSelectionModel().getSelectedItem().getId()));
-                Helper.changeScene("Second_Page_GUI.fxml",b2);
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
+            SelectedClinic.setClinic(clinic);
+            Helper.changeScene("Second_Page_GUI.fxml",b2);
         });
-        pane.setScaleZ(2);
         PaneController controller=loader.getController();
         controller.setDentist(clinic.getDoctor().getFirstName()+" "+clinic.getDoctor().getLastName());
         controller.setAddress(clinic.getAddress());

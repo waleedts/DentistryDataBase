@@ -6,12 +6,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import org.kordamp.ikonli.javafx.*?>
 
 <AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.createPost.controller">
@@ -39,5 +33,5 @@
       </font>
    </JFXButton>
    <TextArea fx:id="t" layoutX="29.0" layoutY="213.0" prefHeight="168.0" prefWidth="489.0" promptText="Whats on your mind?" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="239.0" layoutX="835.0" layoutY="219.0" stroke="BLACK" strokeType="INSIDE" width="317.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="239.0" layoutX="835.0" layoutY="219.0" stroke="BLACK" strokeType="INSIDE" width="317.0" />
 </AnchorPane>
