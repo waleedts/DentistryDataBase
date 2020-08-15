@@ -19,7 +19,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("mainGUI.fxml")));
-            // System.out.println(getClass().getResource("/main.java.first_page/First_Page_GUI.fxml"));
+            // System.out.println(getClass().getResource("/main.java.first_page/ClinicsList.fxml"));
             Scene scene = new Scene(root, 1200, 600);
             primaryStage.setScene(scene);
             primaryStage.setResizable(false);

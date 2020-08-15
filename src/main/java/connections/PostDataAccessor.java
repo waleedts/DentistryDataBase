@@ -1,10 +1,7 @@
 package main.java.connections;
 
-import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
-import main.java.connections.DataAccessor;
-import main.java.requirements.Doctor;
-import main.java.requirements.Post;
+import main.java.entities.Doctor;
+import main.java.entities.Post;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

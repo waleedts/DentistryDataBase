@@ -1,7 +1,7 @@
 package main.java.connections;
 
 
-import main.java.requirements.Doctor;
+import main.java.entities.Doctor;
 import java.sql.*;
 
 public class DoctorDataAccessor extends UserDataAccessor{

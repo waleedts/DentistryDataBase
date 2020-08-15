@@ -1,6 +1,6 @@
 package main.java.connections;
 
-import main.java.requirements.Appointment;
+import main.java.entities.Appointment;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

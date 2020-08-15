@@ -1,6 +1,6 @@
 package main.java.connections;
 
-import main.java.requirements.Services;
+import main.java.entities.Services;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

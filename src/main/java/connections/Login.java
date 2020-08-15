@@ -7,12 +7,9 @@ import com.restfb.Parameter;
 import com.restfb.Version;
 import com.restfb.scope.FacebookPermissions;
 import com.restfb.scope.ScopeBuilder;
-import com.sun.javafx.application.PlatformImpl;
-import javafx.application.Platform;
-import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import main.java.helper.Helper;
-import main.java.requirements.User;
+import main.java.entities.User;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -21,7 +18,6 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -94,7 +90,7 @@ public class Login{
                         ResultSet r = docState.executeQuery()
                 ){
                     CurrentUser.setCurrentUser(user.getEmail(),r.next());
-                    Helper.changeScene("First_Page_GUI.fxml",button);
+                    Helper.changeScene("ClinicsList.fxml",button);
                 }
             }else {
             User user1=new User(user.getFirstName(), user.getLastName(), user.getEmail());
@@ -105,7 +101,7 @@ public class Login{
             if(user.getLocation()!=null)
                 user1.setAddress(user.getLocation().getName());
             CurrentUser.setCurrentUser(user1,false);
-            Helper.changeScene("Fourth_Page_GUI.fxml",button);
+            Helper.changeScene("Reg.fxml",button);
             }
         } catch (SQLException e) {
             e.printStackTrace();

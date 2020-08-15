@@ -8,16 +8,14 @@
 
 <SplitPane dividerPositions="0.31969949916527546" prefHeight="600" prefWidth="1200"
            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="main.java.bills.controller">
+           fx:controller="main.java.controllers.BillsPage">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="600.0"
                 prefWidth="300.0" style="-fx-background-color: #1070AF;">
         <Rectangle fx:id="rec" arcHeight="75.0" arcWidth="75.0" fill="WHITE" height="114.0" layoutX="105.0"
                    layoutY="54.0" pickOnBounds="true" stroke="BLACK" strokeType="INSIDE" width="95.0"/>
-        <!--      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />-->
         <JFXButton fx:id="b2" alignment="CENTER" buttonType="RAISED" layoutX="96.0" layoutY="309.0"
                    mnemonicParsing="false" onAction="#clinic" prefHeight="26.0" prefWidth="113.0"
                    style="-fx-background-color: #1070AF;" text="Clinics" textAlignment="CENTER"/>
-        <!--      <Separator layoutX="21.0" layoutY="136.0" prefHeight="2.0" prefWidth="145.0" />-->
         <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="113.0" layoutY="373.0" mnemonicParsing="false"
                    onAction="#signOut" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1070AF;"
                    text="Sign Out" textAlignment="CENTER"/>

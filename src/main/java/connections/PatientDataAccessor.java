@@ -1,8 +1,7 @@
 package main.java.connections;
 
-import main.java.requirements.Patient;
+import main.java.entities.Patient;
 
-import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

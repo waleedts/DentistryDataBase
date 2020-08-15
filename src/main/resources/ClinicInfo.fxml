@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.ClinicInfoPage">
+   <Pane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #1070AF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <FontIcon iconLiteral="fas-arrow-left:22:white" layoutX="6.0" layoutY="24.0" onMouseClicked="#goBack" />
+      <Pane layoutX="98.0" layoutY="42.0" prefHeight="361.0" prefWidth="256.0" style="-fx-background-color: white;">
+         <Circle fx:id="clinicImageCircle" fill="WHITE" layoutX="129.0" layoutY="58.0" radius="38.0" stroke="BLACK" strokeType="INSIDE" />
+         <Label fx:id="clinicLabel" layoutX="91.0" layoutY="107.0" text="THE Clinic Name" />
+         <Separator layoutX="57.0" layoutY="134.0" prefHeight="2.0" prefWidth="145.0" />
+         <Label layoutX="57.0" layoutY="162.0" text="Address:" />
+         <Label fx:id="addressLabel" layoutX="115.0" layoutY="162.0" prefHeight="17.0" prefWidth="76.0" text="Label" />
+         <Label layoutX="57.0" layoutY="196.0" text="Phone:" />
+         <Label fx:id="phoneLabel" layoutX="101.0" layoutY="196.0" prefHeight="17.0" prefWidth="76.0" text="Label" />
+         <Circle fx:id="doctorImageCircle" fill="WHITE" layoutX="129.0" layoutY="284.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+         <Label layoutX="88.0" layoutY="309.0" text="Dentist in Charge:" />
+         <Label fx:id="dentistLabel" layoutX="88.0" layoutY="330.0" prefHeight="17.0" prefWidth="88.0" text="Label" />
+      </Pane>
+
+      <JFXButton fx:id="bookBtn" layoutX="153.0" layoutY="460.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="145.0" style="-fx-background-color: #FF1493;" text="BOOK NOW" textFill="WHITE" />
+   </Pane>
+   <JFXScrollPane layoutX="552.0" prefHeight="600.0" prefWidth="739.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <JFXListView fx:id="postsList" prefHeight="600.0" prefWidth="515.0" />
+      </children>
+   </JFXScrollPane>
+</AnchorPane>

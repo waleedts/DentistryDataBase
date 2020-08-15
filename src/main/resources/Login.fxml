@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import main.java.helper.LimitedPasswordField?>
+<?import main.java.helper.LimitedTextField?>
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.LoginPage">
+   <Pane  prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070af;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <FontIcon fx:id="b1" iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" />
+
+      <Rectangle arcHeight="90.0" arcWidth="70.0" fill="WHITE" height="163.0" layoutX="229.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" width="143.0" />
+      <Label layoutX="229.0" layoutY="397.0" prefHeight="17.0" prefWidth="143.0" text="Welcome Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="156.0" fitWidth="143.0" layoutX="239.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@project.png" />
+      </ImageView>
+   </Pane>
+   <Pane layoutX="297.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <LimitedTextField fx:id="usernameField" focusColor="WHITE" layoutX="158.0" layoutY="190.0" maxLength="100" prefHeight="27.0" prefWidth="284.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" unFocusColor="WHITE" />
+      <LimitedPasswordField fx:id="passwordField" focusColor="WHITE" layoutX="160.0" layoutY="262.0" maxLength="100" prefHeight="27.0" prefWidth="284.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" unFocusColor="WHITE" />
+      <Label layoutX="158.0" layoutY="173.0" text="User Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="160.0" layoutY="243.0" text="Password">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="b2" layoutX="249.0" layoutY="412.0" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #FF1493;" text="SIGN IN " textFill="WHITE" />
+      <JFXRadioButton fx:id="r1" layoutX="208.0" layoutY="329.0" style="-fx-background-color: #FFFFFF;" text="Doctor">
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleGroup" />
+         </toggleGroup>
+         <selectedColor>
+            <Color red="0.062745101749897" green="0.43921568989753723" blue="0.686274528503418" />
+         </selectedColor>
+      </JFXRadioButton>
+      <JFXRadioButton layoutX="341.0" layoutY="329.0" style="-fx-background-color: #FFFFFF;" text="Patient" toggleGroup="$toggleGroup">
+         <selectedColor>
+            <Color red="0.062745101749897" green="0.43921568989753723" blue="0.686274528503418" />
+         </selectedColor></JFXRadioButton>
+   </Pane>
+   <Pane fx:id="progressPane" layoutX="294.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" visible="false" AnchorPane.rightAnchor="0.0">
+      <JFXSpinner fx:id="progressIndicator" layoutX="274.0" layoutY="274.0"/>
+   </Pane>
+
+</AnchorPane>

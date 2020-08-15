@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import main.java.helper.LimitedTextField?>
+<?import main.java.helper.LimitedPasswordField?>
+<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.RegPage">
+   <Pane fx:id="p" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070AF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Rectangle arcHeight="90.0" arcWidth="70.0" fill="WHITE" height="156.0" layoutX="215.0" layoutY="51.0" stroke="BLACK" strokeType="INSIDE" width="155.0" />
+      <ImageView fitHeight="141.0" fitWidth="120.0" layoutX="237.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@project.png" />
+      </ImageView>
+      <Label layoutX="170.0" layoutY="247.0" text="User Name" textFill="WHITE" />
+      <LimitedTextField fx:id="userField" focusColor="WHITE" layoutX="170.0" layoutY="264.0" maxLength="100" prefHeight="27.0" prefWidth="247.0" unFocusColor="WHITE" />
+      <Label layoutX="170.0" layoutY="310.0" text="Password" textFill="WHITE" />
+      <JFXRadioButton fx:id="doctorRadio" layoutX="302.0" layoutY="375.0" text="Doctor" textFill="WHITE" toggleGroup="$doctorPatient">
+         <toggleGroup>
+            <ToggleGroup fx:id="doctorPatient" />
+         </toggleGroup>
+         <selectedColor>
+            <Color red="1.0" green="0.06666667014360428" blue="0.5803921818733215" />
+         </selectedColor>
+         <unSelectedColor>
+            <Color red="1.0" green="1.0" blue="1.0" />
+         </unSelectedColor>
+      </JFXRadioButton>
+      <JFXRadioButton layoutX="196.0" layoutY="375.0" text="Patient" textFill="WHITE" toggleGroup="$doctorPatient">
+         <selectedColor>
+            <Color red="1.0" green="0.06666667014360428" blue="0.5803921818733215" />
+         </selectedColor>
+         <unSelectedColor>
+            <Color red="1.0" green="1.0" blue="1.0" />
+         </unSelectedColor>
+      </JFXRadioButton>
+      <LimitedPasswordField fx:id="passField" focusColor="WHITE" layoutX="170.0" layoutY="327.0" maxLength="100" prefHeight="27.0" prefWidth="247.0" unFocusColor="WHITE" />
+      <JFXButton fx:id="b2" layoutX="233.0" layoutY="447.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FF1493;" text="SIGN UP" textFill="WHITE" />
+      <FontIcon iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" onMouseClicked="#goBack" />
+      <JFXSpinner fx:id="progressIndicator" layoutX="266.0" layoutY="486.0" />
+   </Pane>
+   <Label layoutX="689.0" layoutY="80.0" prefHeight="18.0" prefWidth="75.0" text="First Name">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+   <LimitedTextField fx:id="firstNameField" layoutX="688.0" layoutY="98.0" maxLength="100" prefHeight="26.0" prefWidth="382.0" unFocusColor="BLACK" />
+   <Label layoutX="689.0" layoutY="136.0" prefHeight="17.0" prefWidth="63.0" text="Last Name">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+   <LimitedTextField fx:id="lastNameField" layoutX="688.0" layoutY="154.0" maxLength="100" prefHeight="26.0" prefWidth="382.0" unFocusColor="BLACK" />
+   <Label layoutX="689.0" layoutY="198.0" prefHeight="17.0" prefWidth="63.0" text="Address">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+   <Label layoutX="689.0" layoutY="253.0" prefHeight="17.0" prefWidth="101.0" text="Phone Number">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+   <LimitedTextField fx:id="addressField" layoutX="688.0" layoutY="216.0" maxLength="100" prefHeight="26.0" prefWidth="382.0" unFocusColor="BLACK" />
+   <LimitedTextField fx:id="phoneField" layoutX="688.0" layoutY="271.0" maxLength="10" prefHeight="26.0" prefWidth="382.0" unFocusColor="BLACK" />
+   <Label layoutX="689.0" layoutY="322.0" prefHeight="17.0" prefWidth="93.0" text="Date Of Birth">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+
+   <JFXRadioButton fx:id="r1" layoutX="755.0" layoutY="396.0" mnemonicParsing="false" text="Male" toggleGroup="$toggle">
+      <selectedColor>
+         <Color red="0.062745101749897" green="0.43921568989753723" blue="0.686274528503418" />
+      </selectedColor>
+      <toggleGroup>
+         <ToggleGroup fx:id="toggle" />
+      </toggleGroup>
+   </JFXRadioButton>
+   <JFXRadioButton fx:id="r2" layoutX="865.0" layoutY="396.0" mnemonicParsing="false" text="Female" toggleGroup="$toggle">
+      <selectedColor>
+         <Color red="0.062745101749897" green="0.43921568989753723" blue="0.686274528503418" />
+      </selectedColor>
+   </JFXRadioButton>
+   <JFXRadioButton layoutX="982.0" layoutY="396.0" mnemonicParsing="false" text="Non-Binary" toggleGroup="$toggle">
+      <selectedColor>
+         <Color red="0.062745101749897" green="0.43921568989753723" blue="0.686274528503418" />
+      </selectedColor>
+   </JFXRadioButton>
+   <Label layoutX="797.0" layoutY="495.0" prefHeight="17.0" prefWidth="93.0" text="Profile Picture:">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+   <JFXButton fx:id="b3" layoutX="908.0" layoutY="490.0" mnemonicParsing="false" onAction="#toUpload" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #1070AF;" text="UPLOAD" textFill="WHITE" />
+   <JFXDatePicker fx:id="birthDate" layoutX="689.0" layoutY="347.0" prefHeight="28.0" prefWidth="418.0">
+      <effect>
+         <Glow level="0.5" />
+      </effect>
+      <defaultColor>
+         <LinearGradient startX="1.0" startY="0.023809523809523836">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="1.0" green="0.06666667014360428" blue="0.5803921818733215" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="0.9309999942779541" green="0.9446166753768921" blue="0.949999988079071" opacity="0.8695651888847351" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </defaultColor>
+   </JFXDatePicker>
+   <ImageView fx:id="view" fitHeight="38.0" fitWidth="59.0" layoutX="1026.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true" />
+</AnchorPane>

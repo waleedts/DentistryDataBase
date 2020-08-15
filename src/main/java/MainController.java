@@ -15,13 +15,13 @@ public class MainController {
     @FXML
     public void signInButtonAction(){
 
-        Helper.changeScene("Fifth_Page_GUI.fxml",b1);
+        Helper.changeScene("Login.fxml",b1);
     }
 
     @FXML
     public void signUpButtonAction(){
 
-        Helper.changeScene( "Fourth_Page_GUI.fxml",b1);
+        Helper.changeScene( "Reg.fxml",b1);
     }
 
     @FXML

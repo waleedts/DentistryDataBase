@@ -1,8 +1,7 @@
 package main.java.connections;
 
-import javafx.collections.ObservableList;
-import main.java.requirements.Clinic;
-import main.java.requirements.Doctor;
+import main.java.entities.Clinic;
+import main.java.entities.Doctor;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

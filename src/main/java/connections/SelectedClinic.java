@@ -1,6 +1,6 @@
 package main.java.connections;
 
-import main.java.requirements.Clinic;
+import main.java.entities.Clinic;
 
 public class SelectedClinic {
     private static Clinic clinic;

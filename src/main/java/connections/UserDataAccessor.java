@@ -1,6 +1,6 @@
 package main.java.connections;
 
-import main.java.requirements.User;
+import main.java.entities.User;
 
 import java.sql.*;
 import java.util.Base64;
