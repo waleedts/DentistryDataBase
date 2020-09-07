@@ -1,0 +1,2 @@
+CREATE USER dentist_admin IDENTIFIED BY "!23456";
+GRANT CONNECT, RESOURCE TO dentist_admin;
