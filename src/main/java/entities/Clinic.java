@@ -2,14 +2,12 @@ package main.java.entities;
 
 
 public class Clinic {
-    private String name;
-    private String phoneNumber;
-    private String address;
-    private String doctorName;
-    private int id;
-    private int balance;
-    private String type;
-    private byte[] profilePicture;
+    private final String name;
+    private final String phoneNumber;
+    private final String address;
+    private final int id;
+    private final String type;
+    private final byte[] profilePicture;
     private Doctor doctor;
 
     public void setDoctor(Doctor doctor) {
@@ -20,46 +18,18 @@ public class Clinic {
         return doctor;
     }
 
-    public Clinic(int id, String name, String phoneNumber, String address, String type, int balance,byte[] profilePicture) {
+    public Clinic(int id, String name, String phoneNumber, String address, String type, byte[] profilePicture) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.id = id;
-        this.balance = balance;
         this.type = type;
         this.profilePicture = profilePicture;
     }
 
-    public void setName(String n) {
-        name = n;
-    }
-
-    public void setPhoneNumber(String p) {
-        phoneNumber = p;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getAddress() {
         return address;
-    }
-
-    public void setId(int i) {
-        id = i;
-    }
-
-    public void setBalance(int r) {
-        balance = r;
-    }
-
-    public void setType(String t) {
-        type = t;
-    }
-
-    public void setProfilePicture(byte[] e) {
-        profilePicture = e;
     }
 
     public String getName() {
@@ -81,10 +51,6 @@ public class Clinic {
 
     public int getId() {
         return id;
-    }
-
-    public int getBalance() {
-        return balance;
     }
 
     public byte[] getProfilePicture() {

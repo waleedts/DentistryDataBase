@@ -15,29 +15,24 @@ public class User {
         this.setPersonalInfo(user.getAddress(),user.getPhoneNumber(), user.getGender(), user.getBirthDate(), user.getProfilePic());
         this.setPassword(user.password);
     }
-    public User(){}
-    private String username;
+
+    private final String username;
     private String password;
     private String phoneNumber;
     private char gender;
     private Date birthDate;
     private String address;
-    private String firstName;
-    private String lastName;
+    private final String firstName;
+    private final String lastName;
     private byte[] profilePic;
     public void setProfilePic(byte[] profilePic) {
         this.profilePic=profilePic;
     }
-    public void setUsername(String n) {
-        username = n;
-    }
+
     public void setPassword(String p) {
         password = p;
     }
-    public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber=phoneNumber;
 
-    }
     public void setGender(char gender){
         this.gender=gender;
     }
@@ -55,12 +50,7 @@ public class User {
     public void setAddress(String address){
         this.address=address;
     }
-    public void setFirstName(String f){
-        firstName=f;
-    }
-    public void setLastName(String l){
-        lastName=l;
-    }
+
     public String getUsername(){
         return username;
     }

@@ -1,9 +1,9 @@
-package main.java.controllers;
+package main.java.controllers.panes;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class NumberedPane {
+public class Numbered {
     @FXML
     Label patientName;
     @FXML

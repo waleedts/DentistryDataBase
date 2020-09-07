@@ -1,4 +1,4 @@
-package main.java.controllers;
+package main.java.controllers.pages;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -13,7 +13,8 @@ import main.java.connections.ClinicDataAccessor;
 import main.java.connections.CurrentUser;
 import main.java.connections.Login;
 import main.java.connections.SelectedClinic;
-import main.java.helper.Helper;
+import main.java.controllers.panes.Pane;
+import main.java.helpers.Helper;
 import main.java.entities.Clinic;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -25,7 +26,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 
-public class ClinicsListPage implements Initializable {
+public class ClinicsList implements Initializable {
     @FXML
     JFXListView <javafx.scene.layout.Pane>list;
     @FXML

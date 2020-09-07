@@ -8,7 +8,7 @@
 
 <SplitPane dividerPositions="0.31969949916527546" prefHeight="600" prefWidth="1200"
            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="main.java.controllers.BillsPage">
+           fx:controller="main.java.controllers.pages.Bills">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="600.0"
                 prefWidth="300.0" style="-fx-background-color: #1070AF;">
         <Rectangle fx:id="rec" arcHeight="75.0" arcWidth="75.0" fill="WHITE" height="114.0" layoutX="105.0"

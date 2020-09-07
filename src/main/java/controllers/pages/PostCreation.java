@@ -1,4 +1,4 @@
-package main.java.controllers;
+package main.java.controllers.pages;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
@@ -7,12 +7,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import main.java.connections.PostDataAccessor;
-import main.java.helper.Helper;
+import main.java.helpers.Helper;
 
 import java.io.ByteArrayInputStream;
 import java.sql.SQLException;
 
-public class PostCreationPage {
+public class PostCreation {
     @FXML
     JFXButton uploadPic,Post;
     @FXML

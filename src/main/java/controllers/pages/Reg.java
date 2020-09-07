@@ -1,4 +1,4 @@
-package main.java.controllers;
+package main.java.controllers.pages;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
@@ -14,11 +14,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import main.java.helper.LimitedPasswordField;
-import main.java.helper.LimitedTextField;
+import main.java.helpers.LimitedPasswordField;
+import main.java.helpers.LimitedTextField;
 import main.java.connections.CurrentUser;
 import main.java.connections.Login;
-import main.java.helper.Helper;
+import main.java.helpers.Helper;
 import main.java.entities.User;
 import java.io.ByteArrayInputStream;
 import java.net.URL;
@@ -28,7 +28,7 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class RegPage implements Initializable {
+public class Reg implements Initializable {
     @FXML
     LimitedTextField firstNameField,lastNameField,userField,addressField,phoneField;
     @FXML

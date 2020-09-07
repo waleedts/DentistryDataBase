@@ -23,9 +23,4 @@ public class Doctor extends User{
     public Doctor(User user){
         super(user);
     }
-    public Doctor(Doctor doctor){
-        super(doctor);
-        this.salary= doctor.salary;
-        this.clinicId= doctor.clinicId;
-    }
 }

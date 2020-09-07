@@ -1,4 +1,4 @@
-package main.java.controllers;
+package main.java.controllers.pages;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -13,7 +13,8 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import main.java.connections.PostDataAccessor;
 import main.java.connections.SelectedClinic;
-import main.java.helper.Helper;
+import main.java.controllers.panes.Post;
+import main.java.helpers.Helper;
 import main.java.entities.Clinic;
 
 import java.io.ByteArrayInputStream;
@@ -25,7 +26,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ClinicInfoPage implements Initializable {
+public class ClinicInfo implements Initializable {
     @FXML
     JFXListView<Pane> postsList;
     @FXML
@@ -60,7 +61,7 @@ public class ClinicInfoPage implements Initializable {
             throwables.printStackTrace();
         }
     }
-    String dummy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pretium leo a enim porta, dictum convallis enim aliquet. In turpis orci, facilisis nec pretium sed, tempus quis sem. Aliquam efficitur orci enim, a venenatis lacus vulputate ac. Aliquam elementum, odio at fermentum feugiat, orci nisi pulvinar turpis, dignissim laoreet nunc turpis in tortor. Vestibulum aliquam nisi vitae enim congue malesuada. Fusce eleifend mollis nisi non bibendum. Duis blandit tincidunt enim et lobortis. ";
+    final String dummy="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pretium leo a enim porta, dictum convallis enim aliquet. In turpis orci, facilisis nec pretium sed, tempus quis sem. Aliquam efficitur orci enim, a venenatis lacus vulputate ac. Aliquam elementum, odio at fermentum feugiat, orci nisi pulvinar turpis, dignissim laoreet nunc turpis in tortor. Vestibulum aliquam nisi vitae enim congue malesuada. Fusce eleifend mollis nisi non bibendum. Duis blandit tincidunt enim et lobortis. ";
     Pane create(main.java.entities.Post post) throws IOException {
         Image image=new Image(new ByteArrayInputStream(post.getImage()));
         FXMLLoader loader = new FXMLLoader();

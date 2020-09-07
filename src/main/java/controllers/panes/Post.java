@@ -1,6 +1,5 @@
-package main.java.controllers;
+package main.java.controllers.panes;
 
-import com.jfoenix.controls.JFXTextArea;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

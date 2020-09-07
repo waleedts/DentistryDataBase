@@ -1,12 +1,10 @@
 package main.java;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.concurrent.Service;
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import main.java.connections.Login;
-import main.java.helper.Helper;
+import main.java.helpers.Helper;
 
 public class MainController {
     @FXML

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="727.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.Post">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="727.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.panes.Post">
    <Text fx:id="text" layoutX="35.0" layoutY="21.0" style="-fx-background-color: #ffffff;" wrappingWidth="677.0000123977661" />
    <ImageView fx:id="image" fitHeight="340.0" fitWidth="700.0" layoutX="14.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
    </ImageView>

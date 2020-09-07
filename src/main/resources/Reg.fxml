@@ -9,9 +9,9 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-<?import main.java.helper.LimitedTextField?>
-<?import main.java.helper.LimitedPasswordField?>
-<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.RegPage">
+<?import main.java.helpers.LimitedTextField?>
+<?import main.java.helpers.LimitedPasswordField?>
+<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.pages.Reg">
    <Pane fx:id="p" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070AF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Rectangle arcHeight="90.0" arcWidth="70.0" fill="WHITE" height="156.0" layoutX="215.0" layoutY="51.0" stroke="BLACK" strokeType="INSIDE" width="155.0" />
       <ImageView fitHeight="141.0" fitWidth="120.0" layoutX="237.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
@@ -22,6 +22,7 @@
       <Label layoutX="170.0" layoutY="310.0" text="Password" textFill="WHITE" />
       <JFXRadioButton fx:id="doctorRadio" layoutX="302.0" layoutY="375.0" text="Doctor" textFill="WHITE" toggleGroup="$doctorPatient">
          <toggleGroup>
+            <!--suppress JavaFxUnresolvedFxIdReference -->
             <ToggleGroup fx:id="doctorPatient" />
          </toggleGroup>
          <selectedColor>
@@ -79,6 +80,7 @@
          <Color red="0.062745101749897" green="0.43921568989753723" blue="0.686274528503418" />
       </selectedColor>
       <toggleGroup>
+         <!--suppress JavaFxUnresolvedFxIdReference -->
          <ToggleGroup fx:id="toggle" />
       </toggleGroup>
    </JFXRadioButton>

@@ -18,14 +18,7 @@ public class UserDataAccessor extends DataAccessor{
         user.setPersonalInfo(rs.getString("address"),rs.getString("Phone_number"),c,rs.getDate("birth_date"),image);
         return user;
     }
-    public User getUser(String username) throws SQLException {
-        try (
-                Statement stmnt = connection.createStatement();
-                ResultSet rs = stmnt.executeQuery("select * from \"USER\" where USER_NAME='"+username+"'")
-        ){
-            return getUser(username,rs);
-        }
-    }
+
     protected void setUser(User user) throws  SQLException {
         try(
                 PreparedStatement stmnt = connection.prepareStatement("insert into \"USER\" (FIRST_NAME,LAST_NAME,BIRTH_DATE,PROFILE_PIC,USER_NAME,PASSWORD,ADDRESS,PHONE_NUMBER,GENDER) values " +

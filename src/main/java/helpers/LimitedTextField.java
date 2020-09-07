@@ -1,15 +1,13 @@
-package main.java.helper;
-
-import com.jfoenix.controls.JFXPasswordField;
+package main.java.helpers;
+import java.util.Objects;
+import com.jfoenix.controls.JFXTextField;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+public class LimitedTextField extends JFXTextField {
 
-import java.util.Objects;
-
-public class LimitedPasswordField extends JFXPasswordField {
     private final IntegerProperty maxLength;
 
-    public LimitedPasswordField() {
+    public LimitedTextField() {
         super();
         this.maxLength = new SimpleIntegerProperty(-1);
     }
@@ -40,7 +38,7 @@ public class LimitedPasswordField extends JFXPasswordField {
             // Compute the text that should normally be in the textfield now
             String finalText = currentText.substring(0, start) + insertedText + currentText.substring(end);
 
-            // If the max length is not excedeed
+            // If the max length is not exceeded
             int numberOfExceedingCharacters = finalText.length() - this.getMaxLength();
             if (numberOfExceedingCharacters <= 0) {
                 // Normal behavior

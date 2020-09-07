@@ -24,9 +24,8 @@ public class ClinicDataAccessor extends DataAccessor{
                 String phoneNumber=rs.getString("phone_number");
                 Doctor doctor = new Doctor(rs.getString("first_name"), rs.getString("last_name"),rs.getString("DOCTOR_USER_NAME"));
                 doctor.setProfilePic(Base64.getDecoder().decode(rs.getString(19)));
-                int balance=rs.getInt("balance");
                 String type=rs.getString("type");
-                Clinic clinic = new Clinic(id,name,phoneNumber,address, type,balance,Base64.getDecoder().decode(rs.getString(7)));
+                Clinic clinic = new Clinic(id,name,phoneNumber,address, type,Base64.getDecoder().decode(rs.getString(7)));
                 clinic.setDoctor(doctor);
                 clinicList.add(clinic);
             }
@@ -47,9 +46,8 @@ public class ClinicDataAccessor extends DataAccessor{
                 String name = rs.getString("name");
                 String address = rs.getString("address");
                 String phoneNumber=rs.getString("phone_number");
-                int balance=rs.getInt("balance");
                 String type=rs.getString("type");
-                Clinic clinic = new Clinic(id,name,phoneNumber,address, type,balance,Base64.getDecoder().decode(rs.getString("profile_pic")));
+                Clinic clinic = new Clinic(id,name,phoneNumber,address, type,Base64.getDecoder().decode(rs.getString("profile_pic")));
                 clinicList.add(clinic);
             }
             return clinicList;

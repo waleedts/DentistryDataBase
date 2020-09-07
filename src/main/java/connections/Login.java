@@ -8,7 +8,7 @@ import com.restfb.Version;
 import com.restfb.scope.FacebookPermissions;
 import com.restfb.scope.ScopeBuilder;
 import javafx.stage.Modality;
-import main.java.helper.Helper;
+import main.java.helpers.Helper;
 import main.java.entities.User;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;

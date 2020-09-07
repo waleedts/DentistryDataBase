@@ -8,7 +8,7 @@
 <?import javafx.scene.text.*?>
 <?import org.kordamp.ikonli.javafx.*?>
 
-<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.PostCreationPage">
+<AnchorPane fx:id="aa" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.pages.PostCreation">
    <Pane prefHeight="200.0" prefWidth="1200.0" style="-fx-background-color: #1070af;">
       <Circle fill="WHITE" layoutX="594.0" layoutY="100.0" radius="81.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fitHeight="133.0" fitWidth="126.0" layoutX="542.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">

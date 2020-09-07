@@ -32,7 +32,7 @@ public class PostDataAccessor extends DataAccessor {
         ){
                 List<Post> postList = new ArrayList<>();
                 while (rs.next()) {
-                    Post post =new Post(rs.getString("Text"),Base64.getDecoder().decode(rs.getString("image")));
+                    Post post =new Post(Base64.getDecoder().decode(rs.getString("image")));
                     postList.add(post);
                 }
                 return postList;

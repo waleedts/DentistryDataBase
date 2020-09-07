@@ -1,4 +1,4 @@
-package main.java.helper;
+package main.java.helpers;
 
 import main.java.connections.DataAccessor;
 import net.sf.jasperreports.engine.*;

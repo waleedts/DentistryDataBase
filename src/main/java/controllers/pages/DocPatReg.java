@@ -1,4 +1,4 @@
-package main.java.controllers;
+package main.java.controllers.pages;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -8,12 +8,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
-import main.java.helper.LimitedTextField;
+import main.java.helpers.LimitedTextField;
 import main.java.connections.ClinicDataAccessor;
 import main.java.connections.CurrentUser;
 import main.java.connections.DoctorDataAccessor;
 import main.java.connections.PatientDataAccessor;
-import main.java.helper.Helper;
+import main.java.helpers.Helper;
 import main.java.entities.Clinic;
 import main.java.entities.Doctor;
 import main.java.entities.Patient;

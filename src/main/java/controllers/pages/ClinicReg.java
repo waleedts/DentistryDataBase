@@ -1,16 +1,16 @@
-package main.java.controllers;
+package main.java.controllers.pages;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
-import main.java.helper.LimitedTextField;
+import main.java.helpers.LimitedTextField;
 import main.java.connections.ClinicDataAccessor;
-import main.java.helper.Helper;
+import main.java.helpers.Helper;
 
 import java.sql.SQLException;
 
-public class ClinicRegPage {
+public class ClinicReg {
     @FXML
     private AnchorPane aa;
 

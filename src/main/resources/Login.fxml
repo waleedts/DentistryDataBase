@@ -9,9 +9,9 @@
 <?import javafx.scene.text.*?>
 
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-<?import main.java.helper.LimitedPasswordField?>
-<?import main.java.helper.LimitedTextField?>
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.LoginPage">
+<?import main.java.helpers.LimitedPasswordField?>
+<?import main.java.helpers.LimitedTextField?>
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.pages.Login">
    <Pane  prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070af;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <FontIcon fx:id="b1" iconLiteral="fas-arrow-left:22:white" layoutX="10.0" layoutY="27.0" />
 
@@ -41,6 +41,7 @@
       <JFXButton fx:id="b2" layoutX="249.0" layoutY="412.0" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #FF1493;" text="SIGN IN " textFill="WHITE" />
       <JFXRadioButton fx:id="r1" layoutX="208.0" layoutY="329.0" style="-fx-background-color: #FFFFFF;" text="Doctor">
          <toggleGroup>
+            <!--suppress JavaFxUnresolvedFxIdReference -->
             <ToggleGroup fx:id="toggleGroup" />
          </toggleGroup>
          <selectedColor>

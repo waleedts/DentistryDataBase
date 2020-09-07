@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import org.kordamp.ikonli.javafx.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.ClinicInfoPage">
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.pages.ClinicInfo">
    <Pane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #1070AF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <FontIcon iconLiteral="fas-arrow-left:22:white" layoutX="6.0" layoutY="24.0" onMouseClicked="#goBack" />
       <Pane layoutX="98.0" layoutY="42.0" prefHeight="361.0" prefWidth="256.0" style="-fx-background-color: white;">

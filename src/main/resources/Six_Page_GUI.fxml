@@ -4,8 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import main.java.helper.LimitedTextField?>
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.DocPatReg">
+<?import main.java.helpers.LimitedTextField?>
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.pages.DocPatReg">
     <Pane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1070af;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <Label layoutX="187.0" layoutY="61.0" text="Registration For Doctor's" textFill="WHITE">
             <font>

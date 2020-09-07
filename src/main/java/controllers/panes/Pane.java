@@ -1,4 +1,4 @@
-package main.java.controllers;
+package main.java.controllers.panes;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

@@ -1,4 +1,4 @@
-package main.java.controllers;
+package main.java.controllers.pages;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -9,9 +9,11 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-import main.java.helper.JasperHandler;
+import main.java.controllers.panes.Numbered;
+import main.java.helpers.JasperHandler;
+import main.java.connections.Login;
 import main.java.connections.*;
-import main.java.helper.Helper;
+import main.java.helpers.Helper;
 import main.java.entities.Appointment;
 import main.java.entities.Doctor;
 import java.io.ByteArrayInputStream;
@@ -23,9 +25,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class BillsPage implements Initializable {
+public class Bills implements Initializable {
     @FXML
-    JFXButton b2,reportBtn;
+    private JFXButton b2,reportBtn;
     @FXML
     JFXListView<Pane> list;
     @FXML
@@ -61,7 +63,7 @@ public class BillsPage implements Initializable {
     Pane createPane(Appointment appointment) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane pane = loader.load(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("withNumb.fxml")));
-        NumberedPane controller=loader.getController();
+        Numbered controller=loader.getController();
         controller.setDate(appointment.getTime().toString());
         controller.setDuration(Integer.toString(appointment.getDuration()));
         if(!CurrentUser.isDoctor()) {

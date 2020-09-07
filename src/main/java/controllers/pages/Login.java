@@ -1,4 +1,4 @@
-package main.java.controllers;
+package main.java.controllers.pages;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
@@ -12,13 +12,13 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.Pane;
 import main.java.connections.*;
-import main.java.helper.*;
+import main.java.helpers.*;
 import org.kordamp.ikonli.javafx.FontIcon;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class LoginPage implements Initializable {
+public class Login implements Initializable {
     @FXML
     private FontIcon b1;
     @FXML
